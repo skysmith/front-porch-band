@@ -48,6 +48,14 @@
     "sourcePath": "../charts/blowin-in-the-wind.md"
   },
   {
+    "slug": "bongo-bong",
+    "title": "Bongo Bong",
+    "artist": "Manu Chao",
+    "key": "Am",
+    "chartPath": "./charts/bongo-bong.txt",
+    "sourcePath": "./approved-charts/bongo-bong.md"
+  },
+  {
     "slug": "city-of-new-orleans",
     "title": "City of New Orleans",
     "artist": "Arlo Guthrie",

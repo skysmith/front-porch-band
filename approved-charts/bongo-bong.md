@@ -1,0 +1,118 @@
+Bongo Bong
+Artist: Manu Chao
+[Verse 1]
+Am                           Am
+Mama was queen of the mambo, Papa was king of the Congo
+Dm                              G
+Deep down in a jungle I started banging my first bongo
+Am                       Am
+Every monkey like to be, in my place instead of me
+    Dm                              G
+'Cause I'm the king of Bongo, baby, I'm the king of Bongo Bong
+ 
+[Verse 2]
+  Am                            Am
+I went to the big town where there is a lot of sound
+         Dm                         G
+From the jungle to the city looking for a bigger crown
+     Am                     Am
+So I play my Boogie for the people of big city
+         Dm                      G
+But they don't go crazy when I'm banging all my boogie
+ 
+[Chorus]
+      Am
+I'm the
+                   Am                  Dm
+(King of the Bongo, King of the Bongo Bong)
+Page 1/3
+G
+Hear me when I come, baby
+Am                 Am                  Dm   G
+(King of the Bongo, King of the Bongo Bong)
+ 
+[Verse 3]
+  Am                     Am
+Nobody likes to be in my place instead of me
+         Dm                     G
+'Cause nobody go crazy when I'm banging on my boogie
+      Am                            Am
+I'm a king without a crown, hanging loose in a big town
+    Dm                           G
+But I'm the king of Bongo, baby, I'm the king of Bongo Bong
+ 
+[Chorus]
+Am                 Am                  Dm
+(King of the Bongo, King of the Bongo Bong)
+G
+Hear me when I come, baby
+Am                 Am                  Dm
+(King of the Bongo, King of the Bongo Bong)
+G
+Hear me when I come
+ 
+[Verse 4]
+     Am                           Am
+They said that I'm a clown making too much dirty sound
+     Dm                                G
+They said there is no place for little monkey in this town
+  Am                     Am
+Nobody liked to be in my place instead of me
+         Dm                     G
+'Cause nobody go crazy when I'm banging on my boogie
+ 
+[Chorus]
+      Am
+I'm the
+                   Am                  Dm
+(King of the Bongo, King of the Bongo Bong)
+G
+Hear me when I come, baby
+Am                 Am                  Dm
+(King of the Bongo, King of the Bongo Bong)
+G
+Hear me when I come
+ 
+[Verse 5]
+Am                           Am
+Banging on my bongo all that swing belongs to me
+       Dm                         G
+I'm so happy there's nobody in my place instead of me
+      Am                            Am
+I'm a king without a crown, hanging loose in a big town
+Dm                           G
+I'm the king of Bongo, baby, I'm the king of Bongo Bong
+Page 2/3
+ 
+[Chorus]
+Am                 Am                  Dm
+(King of the Bongo, King of the Bongo Bong)
+G
+Hear me when I come, baby
+Am                 Am                  Dm
+(King of the Bongo, King of the Bongo Bong)
+G
+Hear me when I come
+ 
+[Verse 6]
+Am                           Am
+Mama was queen of the mambo, Papa was king of the Congo
+Dm                              G
+Deep down in a jungle I started banging my first bongo
+Am                       Am
+Every monkey like to be, in my place instead of me
+    Dm                              G
+'Cause I'm the king of Bongo, baby, I'm the king of Bongo Bong
+ 
+[Instrumental]
+|Am   |Am   |Dm   |
+ 
+[Outro]
+G                  Am   Am   Dm
+Hear me when I come
+G
+Hear me when I come, baby
+Am                 Am                  Dm
+(King of the Bongo, King of the Bongo Bong)
+G
+Hear me when I come
