@@ -16,6 +16,14 @@
     "sourcePath": "../charts/and-so-it-goes.md"
   },
   {
+    "slug": "black-velvet-band",
+    "title": "Black Velvet Band",
+    "artist": "Shipwreckers",
+    "key": "G",
+    "chartPath": "./charts/black-velvet-band.txt",
+    "sourcePath": "../charts/black-velvet-band.md"
+  },
+  {
     "slug": "blowin-in-the-wind",
     "title": "Blowin’ in the Wind",
     "artist": "Bob Dylan",
@@ -32,12 +40,28 @@
     "sourcePath": "../charts/city-of-new-orleans.md"
   },
   {
+    "slug": "come-out-ye-black-and-tans",
+    "title": "Come Out Ye Black And Tans",
+    "artist": "Shipwreckers",
+    "key": "",
+    "chartPath": "./charts/come-out-ye-black-and-tans.txt",
+    "sourcePath": "../charts/come-out-ye-black-and-tans.md"
+  },
+  {
     "slug": "days-aren-t-long-enough",
     "title": "Days Aren't Long Enough",
     "artist": "Cover",
     "key": "C",
     "chartPath": "./charts/days-aren-t-long-enough.txt",
     "sourcePath": "../charts/days-aren-t-long-enough.md"
+  },
+  {
+    "slug": "drink-it-up-men",
+    "title": "Drink it up Men",
+    "artist": "Shipwreckers",
+    "key": "C",
+    "chartPath": "./charts/drink-it-up-men.txt",
+    "sourcePath": "../charts/drink-it-up-men.md"
   },
   {
     "slug": "first-day-of-my-life",
@@ -62,6 +86,14 @@
     "key": "G",
     "chartPath": "./charts/freckled-girl.txt",
     "sourcePath": "../charts/freckled-girl.md"
+  },
+  {
+    "slug": "go-to-sea-no-more",
+    "title": "Go to Sea No More",
+    "artist": "Shipwreckers",
+    "key": "Dm",
+    "chartPath": "./charts/go-to-sea-no-more.txt",
+    "sourcePath": "../charts/go-to-sea-no-more.md"
   },
   {
     "slug": "gotta-have-you",
@@ -102,6 +134,22 @@
     "key": "D",
     "chartPath": "./charts/here-comes-the-sun.txt",
     "sourcePath": "../charts/here-comes-the-sun.md"
+  },
+  {
+    "slug": "high-germany",
+    "title": "High Germany",
+    "artist": "Shipwreckers",
+    "key": "Dm",
+    "chartPath": "./charts/high-germany.txt",
+    "sourcePath": "../charts/high-germany.md"
+  },
+  {
+    "slug": "home-boys-home",
+    "title": "Home Boys Home",
+    "artist": "Shipwreckers",
+    "key": "G",
+    "chartPath": "./charts/home-boys-home.txt",
+    "sourcePath": "../charts/home-boys-home.md"
   },
   {
     "slug": "i-am-a-rock",
@@ -160,6 +208,14 @@
     "sourcePath": "../charts/leaving-on-a-jet-plane.md"
   },
   {
+    "slug": "lifeboat-mona",
+    "title": "Lifeboat Mona",
+    "artist": "Shipwreckers",
+    "key": "Cm",
+    "chartPath": "./charts/lifeboat-mona.txt",
+    "sourcePath": "../charts/lifeboat-mona.md"
+  },
+  {
     "slug": "live-high",
     "title": "Live High",
     "artist": "Jason Mraz",
@@ -174,6 +230,22 @@
     "key": "C",
     "chartPath": "./charts/livin-in-the-woods-in-the-trees.txt",
     "sourcePath": "../charts/livin-in-the-woods-in-the-trees.md"
+  },
+  {
+    "slug": "maloney-wants-a-drink",
+    "title": "Maloney Wants a Drink",
+    "artist": "Shipwreckers",
+    "key": "C",
+    "chartPath": "./charts/maloney-wants-a-drink.txt",
+    "sourcePath": "../charts/maloney-wants-a-drink.md"
+  },
+  {
+    "slug": "molly-malone",
+    "title": "Molly Malone",
+    "artist": "Shipwreckers",
+    "key": "D",
+    "chartPath": "./charts/molly-malone.txt",
+    "sourcePath": "../charts/molly-malone.md"
   },
   {
     "slug": "mrs-robinson",
@@ -192,6 +264,22 @@
     "sourcePath": "../charts/no-woman-no-cry.md"
   },
   {
+    "slug": "peat-bog-soldiers",
+    "title": "Peat Bog Soldiers",
+    "artist": "Shipwreckers",
+    "key": "Em",
+    "chartPath": "./charts/peat-bog-soldiers.txt",
+    "sourcePath": "../charts/peat-bog-soldiers.md"
+  },
+  {
+    "slug": "pub-with-no-beer",
+    "title": "Pub with No Beer",
+    "artist": "Shipwreckers",
+    "key": "C",
+    "chartPath": "./charts/pub-with-no-beer.txt",
+    "sourcePath": "../charts/pub-with-no-beer.md"
+  },
+  {
     "slug": "redemption-song",
     "title": "Redemption Song",
     "artist": "Bob Marley",
@@ -200,12 +288,36 @@
     "sourcePath": "../charts/redemption-song.md"
   },
   {
+    "slug": "sally-maclennane",
+    "title": "Sally Maclennane",
+    "artist": "Shipwreckers",
+    "key": "D",
+    "chartPath": "./charts/sally-maclennane.txt",
+    "sourcePath": "../charts/sally-maclennane.md"
+  },
+  {
     "slug": "seashell-tale",
     "title": "Seashell Tale",
     "artist": "M. Ward",
     "key": "C",
     "chartPath": "./charts/seashell-tale.txt",
     "sourcePath": "../charts/seashell-tale.md"
+  },
+  {
+    "slug": "seven-deadly-sins",
+    "title": "Seven Deadly Sins",
+    "artist": "Shipwreckers",
+    "key": "C",
+    "chartPath": "./charts/seven-deadly-sins.txt",
+    "sourcePath": "../charts/seven-deadly-sins.md"
+  },
+  {
+    "slug": "seven-drunken-nights",
+    "title": "Seven Drunken Nights",
+    "artist": "Shipwreckers",
+    "key": "A",
+    "chartPath": "./charts/seven-drunken-nights.txt",
+    "sourcePath": "../charts/seven-drunken-nights.md"
   },
   {
     "slug": "something",
@@ -312,6 +424,14 @@
     "sourcePath": "../charts/the-trapeze-swinger.md"
   },
   {
+    "slug": "the-wild-rover",
+    "title": "The Wild Rover",
+    "artist": "Shipwreckers",
+    "key": "G",
+    "chartPath": "./charts/the-wild-rover.txt",
+    "sourcePath": "../charts/the-wild-rover.md"
+  },
+  {
     "slug": "this-charming-man",
     "title": "This Charming Man",
     "artist": "The Smiths",
@@ -382,6 +502,22 @@
     "key": "Am",
     "chartPath": "./charts/waitin-for-a-superman.txt",
     "sourcePath": "../charts/waitin-for-a-superman.md"
+  },
+  {
+    "slug": "whiskey-in-the-jar",
+    "title": "Whiskey In The Jar",
+    "artist": "Shipwreckers",
+    "key": "C",
+    "chartPath": "./charts/whiskey-in-the-jar.txt",
+    "sourcePath": "../charts/whiskey-in-the-jar.md"
+  },
+  {
+    "slug": "whiskey-on-a-sunday",
+    "title": "Whiskey on a Sunday",
+    "artist": "Shipwreckers",
+    "key": "D",
+    "chartPath": "./charts/whiskey-on-a-sunday.txt",
+    "sourcePath": "../charts/whiskey-on-a-sunday.md"
   },
   {
     "slug": "world-spins-madly-on",

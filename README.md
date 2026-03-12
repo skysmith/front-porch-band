@@ -110,6 +110,31 @@ If you want the repo to clone cleanly without bundling your real song library:
 - keep `.env` local and out of git
 - commit only app code, docs, and any public-safe demo charts
 
+Using this repo for your own personal library
+
+If someone clones the repo and wants to wipe the bundled library right away, they can reset the generated site to their own empty `private-charts` folder:
+
+```bash
+node scripts/setup-private-songbook.mjs
+node scripts/reset-songbook.mjs
+```
+
+That leaves the app intact but rebuilds the song index from `./private-charts` instead of the bundled generated charts.
+
+From there:
+
+```bash
+node scripts/import-inbox.mjs
+node scripts/validate-charts.mjs
+node scripts/sync-charts.mjs
+```
+
+They can also point the reset at a different folder:
+
+```bash
+node scripts/reset-songbook.mjs --source ../my-private-charts
+```
+
 Suggestion inbox
 
 The home screen includes a suggestion box that posts pasted charts to `/api/suggestions` for manual review.
