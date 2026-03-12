@@ -1,3 +1,5 @@
+import { getInstrumentChoices, getInstrumentLabel, renderChordCards } from "./chord-diagrams.js";
+
 const listNode = document.querySelector("#song-list");
 const titleNode = document.querySelector("#song-title");
 const artistNode = document.querySelector("#song-artist");
@@ -6,11 +8,17 @@ const chartNode = document.querySelector("#chart-body");
 const searchNode = document.querySelector("#song-search");
 const fontUpNode = document.querySelector("#font-up");
 const fontDownNode = document.querySelector("#font-down");
+const toggleRailNode = document.querySelector("#toggle-rail");
 const qrImageNode = document.querySelector("#qr-image");
-const qrCaptionNode = document.querySelector("#qr-caption");
-const copyLinkNode = document.querySelector("#copy-link");
+const pageShellNode = document.querySelector(".page-shell");
+const chordGridNode = document.querySelector("#chord-grid");
+const instrumentSelectNode = document.querySelector("#instrument-select");
+const chordHelperMetaNode = document.querySelector("#chord-helper-meta");
+const chordHelperCountNode = document.querySelector("#chord-helper-count");
 
 const FONT_KEY = "front-porch-band-font-scale";
+const RAIL_KEY = "front-porch-band-rail-collapsed";
+const INSTRUMENT_KEY = "front-porch-band-instrument";
 const DEFAULT_FONT_SIZE = 1;
 const FONT_STEP = 0.08;
 const MIN_FONT_SIZE = 0.84;
@@ -18,6 +26,7 @@ const MAX_FONT_SIZE = 1.48;
 
 let songs = [];
 let currentSlug = "";
+let currentChartText = "";
 
 function currentShareUrl() {
   return window.location.href;
@@ -26,9 +35,6 @@ function currentShareUrl() {
 function updateQrCode() {
   const shareUrl = currentShareUrl();
   qrImageNode.src = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=0&data=${encodeURIComponent(shareUrl)}`;
-  qrCaptionNode.textContent = currentSlug
-    ? "Scan for the song currently on screen."
-    : "Open this songbook on your phone.";
 }
 
 function slugFromLocation() {
@@ -44,6 +50,46 @@ function setFontScale(nextScale) {
 function restoreFontScale() {
   const saved = Number(window.localStorage.getItem(FONT_KEY));
   setFontScale(Number.isFinite(saved) && saved > 0 ? saved : DEFAULT_FONT_SIZE);
+}
+
+function setRailCollapsed(collapsed) {
+  pageShellNode.classList.toggle("rail-collapsed", collapsed);
+  toggleRailNode.textContent = collapsed ? "Show songs" : "Hide songs";
+  toggleRailNode.setAttribute("aria-label", collapsed ? "Show song list" : "Collapse song list");
+  window.localStorage.setItem(RAIL_KEY, collapsed ? "1" : "0");
+}
+
+function restoreRailState() {
+  setRailCollapsed(window.localStorage.getItem(RAIL_KEY) === "1");
+}
+
+function currentInstrument() {
+  return instrumentSelectNode.value || window.localStorage.getItem(INSTRUMENT_KEY) || "guitar";
+}
+
+function renderInstrumentChoices() {
+  const choices = getInstrumentChoices();
+  const preferred = window.localStorage.getItem(INSTRUMENT_KEY) || "guitar";
+  const fragment = document.createDocumentFragment();
+
+  choices.forEach((choice) => {
+    const option = document.createElement("option");
+    option.value = choice.id;
+    option.textContent = choice.label;
+    option.selected = choice.id === preferred;
+    fragment.append(option);
+  });
+
+  instrumentSelectNode.replaceChildren(fragment);
+}
+
+function updateChordHelper() {
+  const instrumentId = currentInstrument();
+  const count = renderChordCards(chordGridNode, currentChartText, instrumentId);
+  chordHelperMetaNode.textContent = getInstrumentLabel(instrumentId);
+  chordHelperCountNode.textContent = count
+    ? `${count} chord shape${count === 1 ? "" : "s"} for this song.`
+    : `No saved ${getInstrumentLabel(instrumentId).toLowerCase()} shapes for this chart yet.`;
 }
 
 function createSongLink(song) {
@@ -102,11 +148,15 @@ async function loadSong(song) {
   const response = await fetch(song.chartPath);
   if (!response.ok) {
     chartNode.textContent = `Could not load ${song.title}.`;
+    currentChartText = "";
+    updateChordHelper();
     updateQrCode();
     return;
   }
 
-  chartNode.textContent = await response.text();
+  currentChartText = await response.text();
+  chartNode.textContent = currentChartText;
+  updateChordHelper();
   updateQrCode();
 }
 
@@ -131,6 +181,8 @@ async function selectSongBySlug(slug) {
 
 async function bootstrap() {
   restoreFontScale();
+  restoreRailState();
+  renderInstrumentChoices();
 
   const response = await fetch("./data/songs.json");
   songs = await response.json();
@@ -147,21 +199,9 @@ window.addEventListener("hashchange", () => {
   selectSongBySlug(slugFromLocation());
 });
 
-copyLinkNode.addEventListener("click", async () => {
-  const shareUrl = currentShareUrl();
-
-  try {
-    await navigator.clipboard.writeText(shareUrl);
-    copyLinkNode.textContent = "Copied";
-    window.setTimeout(() => {
-      copyLinkNode.textContent = "Copy link";
-    }, 1400);
-  } catch {
-    copyLinkNode.textContent = "Copy failed";
-    window.setTimeout(() => {
-      copyLinkNode.textContent = "Copy link";
-    }, 1400);
-  }
+instrumentSelectNode.addEventListener("change", () => {
+  window.localStorage.setItem(INSTRUMENT_KEY, instrumentSelectNode.value);
+  updateChordHelper();
 });
 
 fontUpNode.addEventListener("click", () => {
@@ -172,6 +212,10 @@ fontUpNode.addEventListener("click", () => {
 fontDownNode.addEventListener("click", () => {
   const current = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--chart-size"));
   setFontScale(current - FONT_STEP);
+});
+
+toggleRailNode.addEventListener("click", () => {
+  setRailCollapsed(!pageShellNode.classList.contains("rail-collapsed"));
 });
 
 bootstrap().catch((error) => {
