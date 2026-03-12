@@ -1,4 +1,4 @@
-import { readdir } from "node:fs/promises";
+import { access, readdir } from "node:fs/promises";
 import path from "node:path";
 
 export function slugify(name) {
@@ -86,5 +86,24 @@ export function resolveSourceDir(projectDir, argv = process.argv.slice(2), env =
     return path.resolve(projectDir, env.FRONT_PORCH_CHARTS_DIR);
   }
 
-  return path.resolve(projectDir, "..", "charts");
+  return path.resolve(projectDir, "./private-charts");
+}
+
+export async function resolveSourceDirWithFallback(projectDir, argv = process.argv.slice(2), env = process.env) {
+  const sourceArgIndex = argv.findIndex((arg) => arg === "--source");
+  if (sourceArgIndex >= 0 && argv[sourceArgIndex + 1]) {
+    return path.resolve(projectDir, argv[sourceArgIndex + 1]);
+  }
+
+  if (env.FRONT_PORCH_CHARTS_DIR) {
+    return path.resolve(projectDir, env.FRONT_PORCH_CHARTS_DIR);
+  }
+
+  const repoLocal = path.resolve(projectDir, "./private-charts");
+  try {
+    await access(repoLocal);
+    return repoLocal;
+  } catch {
+    return path.resolve(projectDir, "..", "charts");
+  }
 }

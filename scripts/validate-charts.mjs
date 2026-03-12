@@ -1,13 +1,13 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { listMarkdownFiles, resolveSourceDir, validateChart } from "./lib/chart-utils.mjs";
+import { listMarkdownFiles, resolveSourceDirWithFallback, validateChart } from "./lib/chart-utils.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectDir = path.resolve(__dirname, "..");
-const sourceDir = resolveSourceDir(projectDir);
 
 async function main() {
+  const sourceDir = await resolveSourceDirWithFallback(projectDir);
   const entries = await listMarkdownFiles(sourceDir);
   if (!entries.length) {
     console.log(`No chart files found in ${sourceDir}`);

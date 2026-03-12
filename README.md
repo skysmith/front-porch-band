@@ -21,17 +21,18 @@ Why this repo is useful beyond one songbook:
 
 Quick start
 
-1. Pick a chart source folder.
+1. Initialize the repo-local private songbook folders.
 2. Validate the charts.
 3. Sync the generated site data.
 4. Open `index.html` locally or deploy the repo as a static site.
 
 ```bash
+node scripts/setup-private-songbook.mjs
 node scripts/validate-charts.mjs
 node scripts/sync-charts.mjs
 ```
 
-By default, both scripts read from `../charts` relative to this repo.
+By default, the chart scripts now prefer `./private-charts` inside the repo. If that folder does not exist, they fall back to the older sibling-folder pattern at `../charts`.
 
 You can also point the app at a different chart directory:
 
@@ -99,6 +100,15 @@ This repo is meant for static hosting.
 - any static host: serve the folder as-is
 
 Because the app is hash-routed, `404.html` mirrors `index.html` to make direct links friendlier on static hosts.
+
+GitHub-friendly packaging
+
+If you want the repo to clone cleanly without bundling your real song library:
+
+- keep your personal charts in `./private-charts` or another private folder outside git
+- use `node scripts/setup-private-songbook.mjs` once after cloning
+- keep `.env` local and out of git
+- commit only app code, docs, and any public-safe demo charts
 
 Suggestion inbox
 

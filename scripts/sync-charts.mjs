@@ -1,15 +1,15 @@
 import { mkdir, readFile, rm, writeFile, copyFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { listMarkdownFiles, parseChart, resolveSourceDir, slugify, validateChart } from "./lib/chart-utils.mjs";
+import { listMarkdownFiles, parseChart, resolveSourceDirWithFallback, slugify, validateChart } from "./lib/chart-utils.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectDir = path.resolve(__dirname, "..");
-const sourceDir = resolveSourceDir(projectDir);
 const outputDir = path.join(projectDir, "charts");
 const dataDir = path.join(projectDir, "data");
 
 async function main() {
+  const sourceDir = await resolveSourceDirWithFallback(projectDir);
   await rm(outputDir, { recursive: true, force: true });
   await mkdir(outputDir, { recursive: true });
   await mkdir(dataDir, { recursive: true });

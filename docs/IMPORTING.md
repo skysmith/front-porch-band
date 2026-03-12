@@ -23,6 +23,12 @@ Default repo-local folders:
 - charts: `./private-charts`
 - archive: `./private-build/import-archive`
 
+If you are setting up the repo for the first time, start with:
+
+```bash
+node scripts/setup-private-songbook.mjs
+```
+
 Basic workflow:
 
 ```bash

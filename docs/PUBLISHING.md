@@ -20,6 +20,16 @@ FRONT_PORCH_CHARTS_DIR=../my-private-charts node scripts/validate-charts.mjs
 FRONT_PORCH_CHARTS_DIR=../my-private-charts node scripts/sync-charts.mjs
 ```
 
+If you want a tidier cloned-repo workflow, you can also keep the private library inside the repo root but outside git:
+
+```bash
+node scripts/setup-private-songbook.mjs
+node scripts/validate-charts.mjs
+node scripts/sync-charts.mjs
+```
+
+That uses `./private-charts`, which is already gitignored.
+
 Safer public GitHub posture
 
 For a public repo, prefer committing:
