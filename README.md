@@ -9,6 +9,7 @@ What it does:
 - lets each visitor transpose on their own device
 - shows chord diagrams for guitar, mandolin, ukulele, and banjo
 - generates a shareable QR code for the current chart
+- includes a moderation-only suggestion box for pasted charts
 - works as a simple static site with no build step
 
 Why this repo is useful beyond one songbook:
@@ -98,6 +99,14 @@ This repo is meant for static hosting.
 - any static host: serve the folder as-is
 
 Because the app is hash-routed, `404.html` mirrors `index.html` to make direct links friendlier on static hosts.
+
+Suggestion inbox
+
+The home screen includes a suggestion box that posts pasted charts to `/api/suggestions` for manual review.
+
+- local/self-hosted: suggestions are written to `private-build/suggestions`
+- custom durable path: set `FRONT_PORCH_SUGGESTIONS_DIR=/absolute/path`
+- Vercel without a durable suggestions directory: submissions fall back to an ephemeral temp folder, which is fine for testing but not reliable across deployments
 
 Contributing
 

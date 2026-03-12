@@ -27,6 +27,46 @@
         </label>
 
         <nav id="song-list" class="song-list" aria-label="Song list"></nav>
+
+        <section class="suggestion-panel" aria-labelledby="suggestion-heading">
+          <div class="suggestion-copy">
+            <p class="suggestion-kicker">Suggestion Box</p>
+            <h2 id="suggestion-heading">Paste a chart for review.</h2>
+            <p>Drop in lyrics and chords or a rough chart. It lands in a review inbox for manual cleanup before anything goes live.</p>
+          </div>
+
+          <form id="suggestion-form" class="suggestion-form">
+            <label>
+              <span>Song title</span>
+              <input id="suggestion-title" name="title" type="text" maxlength="120" placeholder="Title" />
+            </label>
+
+            <label>
+              <span>Artist</span>
+              <input id="suggestion-artist" name="artist" type="text" maxlength="120" placeholder="Artist" />
+            </label>
+
+            <label>
+              <span>Notes</span>
+              <input id="suggestion-notes" name="notes" type="text" maxlength="180" placeholder="Key, capo, version, etc." />
+            </label>
+
+            <label>
+              <span>Lyrics and chords</span>
+              <textarea
+                id="suggestion-body"
+                name="body"
+                rows="10"
+                maxlength="20000"
+                placeholder="Paste the chart here. Chords above lyrics is perfect, but rough is fine."
+                required
+              ></textarea>
+            </label>
+
+            <button id="suggestion-submit" class="secondary-button suggestion-submit" type="submit">Send for review</button>
+            <p id="suggestion-status" class="suggestion-status" aria-live="polite"></p>
+          </form>
+        </section>
       </aside>
 
       <main class="song-stage">

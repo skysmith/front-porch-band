@@ -19,6 +19,13 @@ const chordHelperCountNode = document.querySelector("#chord-helper-count");
 const chordHelperNode = document.querySelector("#chord-helper");
 const chartCardNode = document.querySelector(".chart-card");
 const homeCardNode = document.querySelector("#home-card");
+const suggestionFormNode = document.querySelector("#suggestion-form");
+const suggestionTitleNode = document.querySelector("#suggestion-title");
+const suggestionArtistNode = document.querySelector("#suggestion-artist");
+const suggestionNotesNode = document.querySelector("#suggestion-notes");
+const suggestionBodyNode = document.querySelector("#suggestion-body");
+const suggestionSubmitNode = document.querySelector("#suggestion-submit");
+const suggestionStatusNode = document.querySelector("#suggestion-status");
 
 const FONT_KEY = "front-porch-band-font-scale";
 const RAIL_KEY = "front-porch-band-rail-collapsed";
@@ -58,6 +65,15 @@ let currentSlug = "";
 let currentChartText = "";
 let currentRawChartText = "";
 let currentSong = null;
+
+function setSuggestionStatus(message, tone = "") {
+  if (!suggestionStatusNode) {
+    return;
+  }
+
+  suggestionStatusNode.textContent = message;
+  suggestionStatusNode.dataset.tone = tone;
+}
 
 function isMobileLayout() {
   return window.matchMedia("(max-width: 860px)").matches;
@@ -506,4 +522,47 @@ bootstrap().catch((error) => {
   artistNode.textContent = "Could not load chart index.";
   chartNode.textContent = String(error);
   updateQrCode();
+});
+
+suggestionFormNode?.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const payload = {
+    title: suggestionTitleNode?.value?.trim() || "",
+    artist: suggestionArtistNode?.value?.trim() || "",
+    notes: suggestionNotesNode?.value?.trim() || "",
+    body: suggestionBodyNode?.value?.trim() || "",
+  };
+
+  if (!payload.body) {
+    setSuggestionStatus("Paste a chart or lyric sheet first.", "error");
+    suggestionBodyNode?.focus();
+    return;
+  }
+
+  suggestionSubmitNode.disabled = true;
+  setSuggestionStatus("Sending to the review inbox...", "pending");
+
+  try {
+    const response = await fetch("/api/suggestions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const result = await response.json().catch(() => ({}));
+
+    if (!response.ok) {
+      throw new Error(result.error || "Could not send suggestion.");
+    }
+
+    suggestionFormNode.reset();
+    setSuggestionStatus(result.message || "Saved for review.", result.storage === "ephemeral" ? "warning" : "success");
+  } catch (error) {
+    setSuggestionStatus(error.message || "Could not send suggestion.", "error");
+  } finally {
+    suggestionSubmitNode.disabled = false;
+  }
 });
