@@ -536,6 +536,14 @@
     "sourcePath": "../charts/whiskey-on-a-sunday.md"
   },
   {
+    "slug": "who-by-fire",
+    "title": "Who by Fire",
+    "artist": "Leonard Cohen",
+    "key": "Am",
+    "chartPath": "./charts/who-by-fire.txt",
+    "sourcePath": "./approved-charts/who-by-fire.md"
+  },
+  {
     "slug": "world-spins-madly-on",
     "title": "World Spins Madly On",
     "artist": "The Weepies",
