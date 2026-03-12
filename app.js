@@ -9,6 +9,7 @@ const searchNode = document.querySelector("#song-search");
 const fontUpNode = document.querySelector("#font-up");
 const fontDownNode = document.querySelector("#font-down");
 const transposeSelectNode = document.querySelector("#transpose-select");
+const resetTransposeNode = document.querySelector("#reset-transpose");
 const toggleRailNode = document.querySelector("#toggle-rail");
 const qrImageNode = document.querySelector("#qr-image");
 const pageShellNode = document.querySelector(".page-shell");
@@ -153,6 +154,26 @@ function currentTransposeTarget() {
   return transposeSelectNode.value || "original";
 }
 
+function resolveTransposeTarget(baseKey, target) {
+  if (!baseKey || target === "original") {
+    return { key: "", label: "" };
+  }
+
+  if (target === "bb-instrument") {
+    return { key: transposeRoot(baseKey, 2), label: "Bb inst" };
+  }
+
+  if (target === "eb-instrument") {
+    return { key: transposeRoot(baseKey, 9), label: "Eb inst" };
+  }
+
+  if (target === "f-instrument") {
+    return { key: transposeRoot(baseKey, 7), label: "F inst" };
+  }
+
+  return { key: target, label: "" };
+}
+
 function transposeStepsForSong(song, rawText) {
   const target = currentTransposeTarget();
   const baseKey = extractBaseKey(song, rawText);
@@ -161,7 +182,8 @@ function transposeStepsForSong(song, rawText) {
   }
 
   const baseIndex = NOTE_INDEX[baseKey];
-  const targetIndex = NOTE_INDEX[target];
+  const resolvedTarget = resolveTransposeTarget(baseKey, target).key;
+  const targetIndex = NOTE_INDEX[resolvedTarget];
   if (baseIndex === undefined || targetIndex === undefined) {
     return 0;
   }
@@ -196,9 +218,21 @@ function renderTransposeChoices(song, rawText) {
     fragment.append(option);
   }
 
+  for (const shortcut of [
+    { value: "bb-instrument", label: "Bb inst" },
+    { value: "eb-instrument", label: "Eb inst" },
+    { value: "f-instrument", label: "F inst" },
+  ]) {
+    const option = document.createElement("option");
+    option.value = shortcut.value;
+    option.textContent = shortcut.label;
+    fragment.append(option);
+  }
+
   transposeSelectNode.replaceChildren(fragment);
   transposeSelectNode.disabled = !baseKey;
   transposeSelectNode.value = baseKey && saved !== "original" ? saved : "original";
+  resetTransposeNode.disabled = transposeSelectNode.value === "original";
 }
 
 function renderInstrumentChoices() {
@@ -233,8 +267,12 @@ function renderCurrentChart() {
 
   const baseKey = extractBaseKey(currentSong, currentRawChartText);
   const target = currentTransposeTarget();
+  const resolvedTarget = resolveTransposeTarget(baseKey, target);
+  resetTransposeNode.disabled = target === "original";
   if (baseKey && target !== "original") {
-    kickerNode.textContent = `Key: ${baseKey} -> ${target}`;
+    kickerNode.textContent = resolvedTarget.label
+      ? `Key: ${baseKey} -> ${resolvedTarget.key} (${resolvedTarget.label})`
+      : `Key: ${baseKey} -> ${resolvedTarget.key}`;
   } else if (baseKey) {
     kickerNode.textContent = `Key: ${baseKey}`;
   } else {
@@ -390,6 +428,12 @@ instrumentSelectNode.addEventListener("change", () => {
 
 transposeSelectNode.addEventListener("change", () => {
   window.localStorage.setItem(TRANSPOSE_KEY, transposeSelectNode.value);
+  renderCurrentChart();
+});
+
+resetTransposeNode.addEventListener("click", () => {
+  transposeSelectNode.value = "original";
+  window.localStorage.setItem(TRANSPOSE_KEY, "original");
   renderCurrentChart();
 });
 

@@ -57,6 +57,25 @@ body::before {
   transition: opacity 180ms ease, transform 180ms ease, padding 180ms ease, border-color 180ms ease;
 }
 
+.song-rail-top {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.7rem;
+}
+
+.rail-toggle {
+  border: 1px solid rgba(219, 233, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  color: #dfe8f7;
+  border-radius: 999px;
+  min-height: 2rem;
+  padding: 0 0.7rem;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  box-shadow: none;
+}
+
 .page-shell.rail-collapsed .song-rail {
   opacity: 0;
   transform: translateX(-18px);
@@ -244,26 +263,27 @@ body::before {
 .transpose-picker select {
   min-width: 5.7rem;
   border: 1px solid var(--panel-border);
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.94);
   color: var(--text-strong);
   border-radius: 999px;
   min-height: 3rem;
   padding: 0 0.9rem;
   font: inherit;
   font-weight: 700;
-  box-shadow: var(--shadow);
+  box-shadow: none;
+  appearance: none;
 }
 
 .view-controls button {
   border: 1px solid var(--panel-border);
-  background: rgba(255, 247, 229, 0.86);
+  background: rgba(255, 255, 255, 0.94);
   color: var(--text-strong);
   border-radius: 999px;
   min-width: 3rem;
   min-height: 3rem;
   font: inherit;
   font-weight: 700;
-  box-shadow: var(--shadow);
+  box-shadow: none;
 }
 
 .chart-card {
@@ -327,6 +347,8 @@ body::before {
   color: var(--text-strong);
   font: inherit;
   padding: 0.65rem 0.8rem;
+  box-shadow: none;
+  appearance: none;
 }
 
 .chord-helper-count {
@@ -428,12 +450,17 @@ body::before {
   border-radius: 0.65rem;
   background: white;
 }
+
+.rail-toggle:hover,
+.rail-toggle:focus-visible,
 .transpose-picker select:hover,
 .transpose-picker select:focus-visible,
+.instrument-picker select:hover,
+.instrument-picker select:focus-visible,
 .view-controls button:hover,
 .view-controls button:focus-visible {
   border-color: rgba(31, 111, 235, 0.32);
-  box-shadow: 0 12px 30px rgba(31, 111, 235, 0.16);
+  box-shadow: none;
   outline: none;
 }
 
