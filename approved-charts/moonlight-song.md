@@ -2,6 +2,7 @@ Moonlight Song
 
 Artist: Blaze Foley
 
+C
 Moonlight shining through the trees
 F
 Moonlight shining down on me
