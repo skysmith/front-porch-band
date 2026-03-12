@@ -50,7 +50,7 @@ body {
 
 .show-rail-button {
   position: fixed;
-  top: 0.9rem;
+  top: 1.2rem;
   left: 0.9rem;
   z-index: 20;
   display: none;
@@ -245,21 +245,16 @@ body {
   overflow-y: auto;
 }
 
+.page-shell.rail-collapsed .song-stage {
+  padding-top: 4.15rem;
+}
+
 .song-header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
   margin-bottom: 1rem;
-}
-
-.song-kicker {
-  margin: 0 0 0.3rem;
-  color: var(--text-soft);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 .song-header h2 {
@@ -381,6 +376,10 @@ body {
 .secondary-button {
   min-width: 5.2rem;
   font-weight: 600;
+}
+
+.tool-row-action {
+  margin-left: auto;
 }
 
 .chord-helper-controls {
@@ -545,6 +544,10 @@ body {
 
   .song-stage {
     padding-top: 1rem;
+  }
+
+  .page-shell.rail-collapsed .song-stage {
+    padding-top: 4.6rem;
   }
 
   .song-header {

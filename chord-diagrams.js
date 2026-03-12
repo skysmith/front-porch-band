@@ -1,7 +1,59 @@
 import { CHORD_ALIASES, CHORD_LIBRARY } from "./chord-library.js";
 
+const ENHARMONIC_EQUIVALENTS = {
+  "A#": "Bb",
+  Bb: "A#",
+  "C#": "Db",
+  Db: "C#",
+  "D#": "Eb",
+  Eb: "D#",
+  "F#": "Gb",
+  Gb: "F#",
+  "G#": "Ab",
+  Ab: "G#",
+};
+
 function normalizeChordName(name) {
   return CHORD_ALIASES[name] || name;
+}
+
+function swapEnharmonicRoot(name) {
+  const match = name.match(/^([A-G](?:#|b)?)(.*)$/);
+  if (!match) {
+    return name;
+  }
+
+  const replacement = ENHARMONIC_EQUIVALENTS[match[1]];
+  if (!replacement) {
+    return name;
+  }
+
+  return `${replacement}${match[2]}`;
+}
+
+function resolveChordNameForInstrument(instrumentId, chordName) {
+  const library = CHORD_LIBRARY[instrumentId]?.shapes || {};
+  const normalized = normalizeChordName(chordName);
+  if (library[normalized]) {
+    return normalized;
+  }
+
+  const [main] = normalized.split("/");
+  if (library[main]) {
+    return main;
+  }
+
+  const enharmonic = swapEnharmonicRoot(normalized);
+  if (enharmonic !== normalized && library[enharmonic]) {
+    return enharmonic;
+  }
+
+  const enharmonicMain = swapEnharmonicRoot(main);
+  if (enharmonicMain !== main && library[enharmonicMain]) {
+    return enharmonicMain;
+  }
+
+  return normalized;
 }
 
 function extractChordTokens(chartText) {
@@ -165,7 +217,16 @@ export function getInstrumentLabel(instrumentId) {
 }
 
 export function renderChordCards(container, chartText, instrumentId) {
-  const chords = extractChordTokens(chartText).filter((chord) => chord in (CHORD_LIBRARY[instrumentId]?.shapes || {}) || chord);
+  const seen = new Set();
+  const chords = extractChordTokens(chartText)
+    .map((chord) => resolveChordNameForInstrument(instrumentId, chord))
+    .filter((chord) => {
+      if (seen.has(chord)) {
+        return false;
+      }
+      seen.add(chord);
+      return true;
+    });
 
   if (!chords.length) {
     container.replaceChildren();

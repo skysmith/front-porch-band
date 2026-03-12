@@ -3,7 +3,6 @@ import { getInstrumentChoices, getInstrumentLabel, renderChordCards } from "./ch
 const listNode = document.querySelector("#song-list");
 const titleNode = document.querySelector("#song-title");
 const artistNode = document.querySelector("#song-artist");
-const kickerNode = document.querySelector("#song-kicker");
 const chartNode = document.querySelector("#chart-body");
 const searchNode = document.querySelector("#song-search");
 const fontUpNode = document.querySelector("#font-up");
@@ -272,21 +271,9 @@ function renderCurrentChart() {
   currentChartText = transposeChartText(currentRawChartText, steps);
   chartNode.textContent = currentChartText;
 
-  const baseKey = extractBaseKey(currentSong, currentRawChartText);
   const target = currentTransposeTarget();
-  const resolvedTarget = resolveTransposeTarget(baseKey, target);
   resetTransposeNode.disabled = target === "original";
   transposeSelectNode.classList.toggle("instrument-target", isInstrumentTranspose(target));
-  if (baseKey && target !== "original") {
-    kickerNode.textContent = resolvedTarget.label
-      ? `Key: ${baseKey} -> ${resolvedTarget.key} (${resolvedTarget.label})`
-      : `Key: ${baseKey} -> ${resolvedTarget.key}`;
-  } else if (baseKey) {
-    kickerNode.textContent = `Key: ${baseKey}`;
-  } else {
-    kickerNode.textContent = "Chord chart";
-  }
-
   updateChordHelper();
 }
 
