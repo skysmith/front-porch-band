@@ -16,6 +16,9 @@ const pageShellNode = document.querySelector(".page-shell");
 const chordGridNode = document.querySelector("#chord-grid");
 const instrumentSelectNode = document.querySelector("#instrument-select");
 const chordHelperCountNode = document.querySelector("#chord-helper-count");
+const chordHelperNode = document.querySelector("#chord-helper");
+const chartCardNode = document.querySelector(".chart-card");
+const homeCardNode = document.querySelector("#home-card");
 
 const FONT_KEY = "front-porch-band-font-scale";
 const RAIL_KEY = "front-porch-band-rail-collapsed";
@@ -349,6 +352,26 @@ function updateActiveLink() {
   }
 }
 
+function showHome() {
+  currentSong = null;
+  currentSlug = "";
+  currentChartText = "";
+  currentRawChartText = "";
+  titleNode.textContent = "Front Porch Band";
+  artistNode.textContent = "Phone-first charts built for quick jams and easy sharing.";
+  chartNode.textContent = "";
+  chordGridNode.replaceChildren();
+  chordHelperCountNode.textContent = "Open a song to see transposition and chord shapes.";
+  transposeSelectNode.replaceChildren();
+  transposeSelectNode.disabled = true;
+  resetTransposeNode.disabled = true;
+  chordHelperNode.hidden = true;
+  chartCardNode.hidden = true;
+  homeCardNode.hidden = false;
+  updateActiveLink();
+  updateQrCode();
+}
+
 async function loadSong(song) {
   currentSong = song;
   currentSlug = song.slug;
@@ -357,6 +380,9 @@ async function loadSong(song) {
   titleNode.textContent = song.title;
   artistNode.textContent = song.artist;
   chartNode.textContent = "Loading chart...";
+  chordHelperNode.hidden = false;
+  chartCardNode.hidden = false;
+  homeCardNode.hidden = true;
 
   const response = await fetch(song.chartPath);
   if (!response.ok) {
@@ -376,13 +402,15 @@ async function loadSong(song) {
 }
 
 async function selectSongBySlug(slug) {
-  const fallback = songs[0];
-  const match = songs.find((song) => song.slug === slug) || fallback;
+  if (!slug) {
+    showHome();
+    return;
+  }
+
+  const match = songs.find((song) => song.slug === slug);
 
   if (!match) {
-    titleNode.textContent = "No charts yet";
-    artistNode.textContent = "Add charts to ../charts and run the sync script.";
-    chartNode.textContent = "";
+    showHome();
     return;
   }
 
