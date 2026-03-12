@@ -240,6 +240,14 @@
     "sourcePath": "../charts/i-will-follow-you-into-the-dark.md"
   },
   {
+    "slug": "i-m-your-man",
+    "title": "I'm Your Man",
+    "artist": "Leonard Cohen",
+    "key": "Em",
+    "chartPath": "./charts/i-m-your-man.txt",
+    "sourcePath": "./approved-charts/i-m-your-man.md"
+  },
+  {
     "slug": "in-my-life",
     "title": "In My Life",
     "artist": "The Beatles",
