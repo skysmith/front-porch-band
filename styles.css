@@ -1,39 +1,37 @@
 :root {
-  --bg-top: #f5f7fb;
-  --bg-bottom: #e8edf5;
-  --panel: rgba(18, 28, 45, 0.9);
-  --panel-soft: rgba(255, 255, 255, 0.9);
-  --panel-border: rgba(18, 28, 45, 0.12);
-  --text-strong: #142033;
-  --text-soft: #5b6b84;
-  --accent: #1f6feb;
-  --accent-soft: #dbe9ff;
+  --bg: #f3f6fb;
+  --bg-muted: #e9eef7;
+  --sidebar: #0f172a;
+  --sidebar-border: rgba(148, 163, 184, 0.18);
+  --panel: #ffffff;
+  --panel-muted: #f8fafc;
+  --border: #d7dee9;
+  --border-strong: #bcc7d8;
+  --text: #142033;
+  --text-muted: #617086;
+  --text-soft: #7b8799;
+  --accent: #2457d6;
+  --accent-soft: rgba(36, 87, 214, 0.12);
   --chart-size: 1rem;
-  --shadow: 0 20px 60px rgba(21, 32, 53, 0.12);
 }
 
 * {
   box-sizing: border-box;
 }
 
-html {
+html,
+body {
   min-height: 100%;
-  background: linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
+}
+
+html {
+  background: var(--bg);
 }
 
 body {
   margin: 0;
-  color: var(--text-strong);
-  font-family: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.72), transparent 30%);
-  opacity: 1;
+  color: var(--text);
+  font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", "Noto Sans", sans-serif;
 }
 
 .page-shell {
@@ -50,21 +48,21 @@ body::before {
 
 .show-rail-button {
   position: fixed;
-  top: 0.95rem;
-  left: 0.95rem;
+  top: 0.9rem;
+  left: 0.9rem;
   z-index: 20;
   display: none;
   align-items: center;
-  border: 1px solid var(--panel-border);
-  background: rgba(255, 255, 255, 0.94);
-  color: var(--text-strong);
-  border-radius: 999px;
-  min-height: 2.1rem;
+  justify-content: center;
+  min-height: 2.15rem;
   padding: 0 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--text);
   font: inherit;
   font-size: 0.8rem;
   font-weight: 700;
-  box-shadow: none;
 }
 
 .page-shell.rail-collapsed .show-rail-button {
@@ -72,31 +70,12 @@ body::before {
 }
 
 .song-rail {
-  padding: 2rem 1rem 1.5rem;
-  background: linear-gradient(180deg, rgba(20, 31, 48, 0.98), rgba(30, 44, 67, 0.98));
-  color: #f7fbff;
-  border-right: 1px solid rgba(219, 233, 255, 0.14);
+  padding: 1rem;
+  background: var(--sidebar);
+  color: #f8fbff;
+  border-right: 1px solid var(--sidebar-border);
   overflow: hidden;
   transition: opacity 180ms ease, transform 180ms ease, padding 180ms ease, border-color 180ms ease;
-}
-
-.song-rail-top {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 0.7rem;
-}
-
-.rail-toggle {
-  border: 1px solid rgba(219, 233, 255, 0.16);
-  background: rgba(255, 255, 255, 0.06);
-  color: #dfe8f7;
-  border-radius: 999px;
-  min-height: 2rem;
-  padding: 0 0.7rem;
-  font: inherit;
-  font-size: 0.78rem;
-  font-weight: 700;
-  box-shadow: none;
 }
 
 .page-shell.rail-collapsed .song-rail {
@@ -107,50 +86,77 @@ body::before {
   border-color: transparent;
 }
 
+.song-rail-top {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.rail-toggle {
+  min-height: 1.95rem;
+  padding: 0 0.7rem;
+  border: 1px solid rgba(226, 232, 240, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #d9e2f2;
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.brand-block {
+  margin-bottom: 1.2rem;
+}
+
 .brand-block h1 {
-  margin: 0.2rem 0 0.75rem;
-  font-size: clamp(2rem, 4vw, 2.8rem);
-  line-height: 0.95;
+  margin: 0.15rem 0 0.6rem;
+  font-size: clamp(1.85rem, 4vw, 2.55rem);
+  line-height: 0.94;
   letter-spacing: -0.04em;
+  font-weight: 800;
 }
 
 .eyebrow {
   margin: 0;
-  color: #9fc0ff;
+  color: #91b4ff;
+  font-size: 0.74rem;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.16em;
-  font-size: 0.76rem;
 }
 
 .tagline {
   margin: 0;
-  color: rgba(228, 237, 248, 0.76);
+  color: rgba(223, 232, 244, 0.76);
+  font-size: 0.92rem;
   line-height: 1.45;
 }
 
 .search-wrap {
   display: grid;
-  gap: 0.45rem;
-  margin: 1.5rem 0 1rem;
-  font-size: 0.88rem;
+  gap: 0.35rem;
+  margin: 0 0 1rem;
 }
 
 .search-wrap span {
-  color: #c8d8ee;
+  color: #d8e3f6;
+  font-size: 0.84rem;
+  font-weight: 700;
 }
 
 .search-wrap input {
   width: 100%;
-  padding: 0.8rem 0.9rem;
-  border: 1px solid rgba(219, 233, 255, 0.18);
+  min-height: 2.7rem;
+  padding: 0 0.85rem;
+  border: 1px solid rgba(226, 232, 240, 0.12);
   border-radius: 0.8rem;
   background: rgba(255, 255, 255, 0.08);
-  color: #f7fbff;
+  color: #f8fbff;
   font: inherit;
 }
 
 .search-wrap input::placeholder {
-  color: rgba(224, 235, 247, 0.5);
+  color: rgba(223, 232, 244, 0.44);
 }
 
 .song-list {
@@ -159,14 +165,14 @@ body::before {
 }
 
 .artist-group {
-  border: 1px solid rgba(219, 233, 255, 0.08);
-  border-radius: 0.85rem;
+  border: 1px solid rgba(226, 232, 240, 0.08);
+  border-radius: 0.9rem;
   background: rgba(255, 255, 255, 0.03);
   overflow: hidden;
 }
 
 .artist-group[open] {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .artist-summary {
@@ -174,7 +180,7 @@ body::before {
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
-  padding: 0.65rem 0.7rem;
+  padding: 0.7rem 0.75rem;
   cursor: pointer;
   list-style: none;
 }
@@ -184,145 +190,122 @@ body::before {
 }
 
 .artist-name {
-  font-size: 0.93rem;
+  font-size: 0.9rem;
   font-weight: 700;
 }
 
 .artist-count {
-  flex: 0 0 auto;
-  color: rgba(221, 231, 245, 0.62);
-  font-size: 0.75rem;
+  color: rgba(223, 232, 244, 0.58);
+  font-size: 0.74rem;
+  font-weight: 700;
 }
 
 .artist-songs {
   display: grid;
-  gap: 0.15rem;
-  padding: 0 0.35rem 0.4rem;
+  gap: 0.12rem;
+  padding: 0 0.35rem 0.35rem;
 }
 
 .song-link {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 0.4rem;
+  display: block;
   padding: 0.45rem 0.55rem;
-  border-radius: 0.7rem;
+  border: 1px solid transparent;
+  border-radius: 0.72rem;
   color: inherit;
   text-decoration: none;
-  border: 1px solid transparent;
-  background: transparent;
-  transition: transform 120ms ease, background-color 120ms ease, border-color 120ms ease;
 }
 
 .song-link:hover,
 .song-link:focus-visible {
   background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(219, 233, 255, 0.1);
+  border-color: rgba(226, 232, 240, 0.1);
   outline: none;
 }
 
 .song-link.active {
-  background: linear-gradient(180deg, rgba(31, 111, 235, 0.28), rgba(31, 111, 235, 0.12));
-  border-color: rgba(159, 192, 255, 0.34);
+  background: var(--accent-soft);
+  border-color: rgba(145, 180, 255, 0.35);
 }
 
 .song-link-title {
   display: block;
-  font-size: 0.96rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 0.92rem;
 }
 
 .song-stage {
   position: relative;
-  padding: 1.4rem;
+  padding: 1.25rem 1.35rem 1.5rem;
 }
 
 .song-header {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
   margin-bottom: 1rem;
 }
 
 .song-kicker {
-  margin: 0 0 0.35rem;
+  margin: 0 0 0.3rem;
   color: var(--text-soft);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 0.76rem;
 }
 
 .song-header h2 {
   margin: 0;
-  font-size: clamp(2.2rem, 5vw, 4rem);
-  line-height: 0.95;
+  font-size: clamp(2.25rem, 7vw, 4.6rem);
+  line-height: 0.92;
   letter-spacing: -0.05em;
+  font-weight: 800;
 }
 
 .song-artist {
-  margin: 0.5rem 0 0;
-  color: var(--text-soft);
-  font-size: 1rem;
+  margin: 0.45rem 0 0;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  font-weight: 700;
 }
 
 .view-controls {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 0.55rem;
+  gap: 0.8rem;
 }
 
-.transpose-picker {
-  display: grid;
-  gap: 0.2rem;
-  color: var(--text-soft);
-  font-size: 0.75rem;
-  font-weight: 600;
-}
-
-.transpose-picker select {
-  min-width: 5.7rem;
-  border: 1px solid var(--panel-border);
-  background: rgba(255, 255, 255, 0.94);
-  color: var(--text-strong);
+.font-pill {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 2.85rem;
+  border: 1px solid var(--border);
   border-radius: 999px;
-  min-height: 3rem;
-  padding: 0 0.9rem;
-  font: inherit;
-  font-weight: 700;
-  box-shadow: none;
-  appearance: none;
+  overflow: hidden;
+  background: var(--panel);
 }
 
-.view-controls button {
-  border: 1px solid var(--panel-border);
-  background: rgba(255, 255, 255, 0.94);
-  color: var(--text-strong);
-  border-radius: 999px;
-  min-width: 3rem;
-  min-height: 3rem;
+.font-pill button {
+  min-width: 3.1rem;
+  border: 0;
+  background: transparent;
+  color: var(--text);
   font: inherit;
-  font-weight: 700;
-  box-shadow: none;
+  font-weight: 800;
 }
 
-.chart-card {
-  padding: 1rem;
-  border-radius: 1.5rem;
-  background: linear-gradient(180deg, var(--panel-soft), rgba(250, 252, 255, 0.96));
-  border: 1px solid var(--panel-border);
-  box-shadow: var(--shadow);
+.font-pill button + button {
+  border-left: 1px solid var(--border);
 }
 
 .chord-helper {
   margin-bottom: 1rem;
-  border: 1px solid var(--panel-border);
-  border-radius: 1.2rem;
-  background: rgba(255, 255, 255, 0.82);
-  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  border-radius: 1.05rem;
+  background: var(--panel);
   overflow: hidden;
 }
 
@@ -331,10 +314,11 @@ body::before {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.9rem 1rem;
+  padding: 0.95rem 1rem;
   cursor: pointer;
   list-style: none;
-  font-weight: 700;
+  font-size: 0.98rem;
+  font-weight: 800;
 }
 
 .chord-helper-summary::-webkit-details-marker {
@@ -342,73 +326,88 @@ body::before {
 }
 
 .chord-helper-meta {
-  color: var(--text-soft);
+  color: var(--text-muted);
   font-size: 0.88rem;
-  font-weight: 600;
+  font-weight: 700;
+}
+
+.chord-tool-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 0.75rem;
+  padding: 0 1rem 1rem;
+}
+
+.transpose-picker,
+.instrument-picker {
+  display: grid;
+  gap: 0.3rem;
+  color: var(--text-muted);
+  font-size: 0.77rem;
+  font-weight: 700;
+}
+
+.transpose-picker select,
+.instrument-picker select,
+.secondary-button {
+  min-height: 2.7rem;
+  padding: 0 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+  background: var(--panel);
+  color: var(--text);
+  font: inherit;
+  font-weight: 700;
+  box-shadow: none;
+  appearance: none;
+}
+
+.secondary-button {
+  min-width: 5.2rem;
 }
 
 .chord-helper-controls {
   display: flex;
-  align-items: end;
   justify-content: space-between;
   gap: 1rem;
   padding: 0 1rem 1rem;
 }
 
-.instrument-picker {
-  display: grid;
-  gap: 0.35rem;
-  font-size: 0.86rem;
-  color: var(--text-soft);
-}
-
-.instrument-picker select {
-  min-width: 10rem;
-  border: 1px solid var(--panel-border);
-  border-radius: 0.8rem;
-  background: rgba(255, 255, 255, 0.92);
-  color: var(--text-strong);
-  font: inherit;
-  padding: 0.65rem 0.8rem;
-  box-shadow: none;
-  appearance: none;
-}
-
 .chord-helper-count {
   margin: 0;
-  color: var(--text-soft);
+  color: var(--text-muted);
   font-size: 0.86rem;
 }
 
 .chord-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
-  gap: 0.85rem;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.8rem;
   padding: 0 1rem 1rem;
 }
 
 .chord-card {
   padding: 0.8rem;
-  border: 1px solid rgba(18, 28, 45, 0.1);
-  border-radius: 1rem;
-  background: rgba(252, 254, 255, 0.94);
+  border: 1px solid var(--border);
+  border-radius: 0.95rem;
+  background: var(--panel-muted);
 }
 
 .chord-card-title {
   margin: 0 0 0.4rem;
-  font-size: 0.94rem;
+  font-size: 0.92rem;
 }
 
 .chord-card-missing {
   display: grid;
   place-items: center;
   min-height: 150px;
-  background: rgba(243, 247, 252, 0.9);
 }
 
 .chord-card-note {
   margin: 0;
-  color: var(--text-soft);
+  color: var(--text-muted);
   font-size: 0.82rem;
   line-height: 1.35;
 }
@@ -420,7 +419,7 @@ body::before {
 
 .chord-string-line,
 .chord-fret-line {
-  stroke: #96a4ba;
+  stroke: #a0aec0;
   stroke-width: 1.5;
 }
 
@@ -430,11 +429,11 @@ body::before {
 }
 
 .chord-finger-dot {
-  fill: #1f6feb;
+  fill: var(--accent);
 }
 
 .chord-finger-label {
-  fill: white;
+  fill: #ffffff;
   font-size: 8px;
   font-weight: 700;
 }
@@ -443,56 +442,28 @@ body::before {
 .chord-svg-label,
 .chord-svg-open,
 .chord-svg-base {
-  fill: #51627a;
+  fill: #63748c;
   font-size: 9px;
   font-family: "SFMono-Regular", "JetBrains Mono", monospace;
 }
 
 .chord-svg-name {
-  fill: #15233a;
+  fill: var(--text);
   font-size: 11px;
   font-weight: 700;
 }
 
-.qr-card {
-  position: fixed;
-  right: 1.4rem;
-  bottom: 1.4rem;
-  width: 164px;
-  padding: 0.6rem;
-  border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid var(--panel-border);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(12px);
-}
-
-.qr-image {
-  display: block;
-  width: 100%;
-  border-radius: 0.65rem;
-  background: white;
-}
-
-.rail-toggle:hover,
-.rail-toggle:focus-visible,
-.show-rail-button:hover,
-.show-rail-button:focus-visible,
-.transpose-picker select:hover,
-.transpose-picker select:focus-visible,
-.instrument-picker select:hover,
-.instrument-picker select:focus-visible,
-.view-controls button:hover,
-.view-controls button:focus-visible {
-  border-color: rgba(31, 111, 235, 0.32);
-  box-shadow: none;
-  outline: none;
+.chart-card {
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+  background: var(--panel);
 }
 
 .chart-body {
   margin: 0;
   overflow-x: auto;
-  color: #1f120a;
+  color: #231910;
   font-family: "SFMono-Regular", "JetBrains Mono", "Cascadia Mono", Consolas, monospace;
   font-size: var(--chart-size);
   line-height: 1.42;
@@ -500,68 +471,97 @@ body::before {
   tab-size: 2;
 }
 
-@media (max-width: 860px) {
-  .page-shell {
-    grid-template-columns: 1fr;
-  }
+.qr-card {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  width: 148px;
+  padding: 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.96);
+}
 
+.qr-image {
+  display: block;
+  width: 100%;
+  border-radius: 0.55rem;
+  background: #ffffff;
+}
+
+.show-rail-button:hover,
+.show-rail-button:focus-visible,
+.rail-toggle:hover,
+.rail-toggle:focus-visible,
+.song-link:hover,
+.song-link:focus-visible,
+.font-pill button:hover,
+.font-pill button:focus-visible,
+.transpose-picker select:hover,
+.transpose-picker select:focus-visible,
+.instrument-picker select:hover,
+.instrument-picker select:focus-visible,
+.secondary-button:hover,
+.secondary-button:focus-visible {
+  outline: none;
+}
+
+@media (max-width: 860px) {
+  .page-shell,
   .page-shell.rail-collapsed {
     grid-template-columns: 1fr;
   }
 
   .song-rail {
     border-right: 0;
-    border-bottom: 1px solid rgba(255, 233, 196, 0.14);
+    border-bottom: 1px solid var(--sidebar-border);
   }
 
   .page-shell.rail-collapsed .song-rail {
     display: none;
   }
 
-  .song-list {
-    grid-template-columns: 1fr;
+  .page-shell.rail-collapsed .show-rail-button {
+    display: inline-flex;
   }
 
   .song-stage {
     padding-top: 1rem;
   }
 
-  .qr-card {
-    display: none;
-  }
-
-  .chord-helper-controls {
-    flex-direction: column;
-    align-items: stretch;
-  }
-}
-
-@media (max-width: 560px) {
-  .song-stage,
-  .song-rail {
-    padding-left: 0.9rem;
-    padding-right: 0.9rem;
-  }
-
   .song-header {
     flex-direction: column;
   }
 
-  .transpose-picker {
+  .chord-tool-row,
+  .chord-helper-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .transpose-picker select,
+  .instrument-picker select,
+  .secondary-button {
     width: 100%;
   }
 
-  .transpose-picker select {
-    width: 100%;
+  .qr-card {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .song-rail,
+  .song-stage {
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
   }
 
-  .view-controls button {
-    min-width: 2.7rem;
-    min-height: 2.7rem;
+  .brand-block h1 {
+    font-size: 2rem;
   }
 
-  .chart-card {
-    padding: 0.85rem;
-    border-radius: 1.1rem;
+  .song-header h2 {
+    font-size: 2.75rem;
   }
 }

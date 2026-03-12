@@ -8,6 +8,54 @@
     "sourcePath": "../charts/days-aren-t-long-enough.md"
   },
   {
+    "slug": "first-day-of-my-life",
+    "title": "First Day of my Life",
+    "artist": "Bright Eyes",
+    "key": "C",
+    "chartPath": "./charts/first-day-of-my-life.txt",
+    "sourcePath": "../charts/first-day-of-my-life.md"
+  },
+  {
+    "slug": "flightless-bird-american-mouth",
+    "title": "Flightless Bird, American Mouth",
+    "artist": "Iron & Wine",
+    "key": "C",
+    "chartPath": "./charts/flightless-bird-american-mouth.txt",
+    "sourcePath": "../charts/flightless-bird-american-mouth.md"
+  },
+  {
+    "slug": "freckled-girl",
+    "title": "Freckled Girl",
+    "artist": "Iron & Wine",
+    "key": "G",
+    "chartPath": "./charts/freckled-girl.txt",
+    "sourcePath": "../charts/freckled-girl.md"
+  },
+  {
+    "slug": "i-will-follow-you-into-the-dark",
+    "title": "I will follow you into the dark",
+    "artist": "Death Cab for Cutie",
+    "key": "C",
+    "chartPath": "./charts/i-will-follow-you-into-the-dark.txt",
+    "sourcePath": "../charts/i-will-follow-you-into-the-dark.md"
+  },
+  {
+    "slug": "indian-moon-long-view-farm",
+    "title": "Indian Moon (Long View Farm)",
+    "artist": "State Radio / Chadwick Stokes",
+    "key": "Em",
+    "chartPath": "./charts/indian-moon-long-view-farm.txt",
+    "sourcePath": "../charts/indian-moon-long-view-farm.md"
+  },
+  {
+    "slug": "judgement",
+    "title": "Judgement",
+    "artist": "Iron & Wine",
+    "key": "F",
+    "chartPath": "./charts/judgement.txt",
+    "sourcePath": "../charts/judgement.md"
+  },
+  {
     "slug": "such-great-heights",
     "title": "Such Great Heights",
     "artist": "The Postal Service",
@@ -110,14 +158,6 @@
     "key": "",
     "chartPath": "./charts/waitin-for-a-superman.txt",
     "sourcePath": "../charts/waitin-for-a-superman.md"
-  },
-  {
-    "slug": "wherever-you-go",
-    "title": "Wherever You Go",
-    "artist": "Chadwick Stokes",
-    "key": "Em",
-    "chartPath": "./charts/wherever-you-go.txt",
-    "sourcePath": "../charts/wherever-you-go.md"
   },
   {
     "slug": "you-belong-to-me",

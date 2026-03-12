@@ -38,27 +38,32 @@
           </div>
 
           <div class="view-controls">
-            <label class="transpose-picker" for="transpose-select">
-              <span>Key</span>
-              <select id="transpose-select"></select>
-            </label>
-            <button id="reset-transpose" type="button" aria-label="Reset transposition">Reset</button>
-            <button id="font-down" type="button" aria-label="Decrease chart size">A-</button>
-            <button id="font-up" type="button" aria-label="Increase chart size">A+</button>
+            <div class="font-pill" aria-label="Chart font size">
+              <button id="font-down" type="button" aria-label="Decrease chart size">A-</button>
+              <button id="font-up" type="button" aria-label="Increase chart size">A+</button>
+            </div>
           </div>
         </header>
 
         <details class="chord-helper" id="chord-helper">
           <summary class="chord-helper-summary">
-            <span>Chord Shapes</span>
+            <span>Chart Tools</span>
             <span id="chord-helper-meta" class="chord-helper-meta">Guitar</span>
           </summary>
 
-          <div class="chord-helper-controls">
+          <div class="chord-tool-row">
+            <label class="transpose-picker" for="transpose-select">
+              <span>Transpose</span>
+              <select id="transpose-select"></select>
+            </label>
+            <button id="reset-transpose" class="secondary-button" type="button" aria-label="Reset transposition">Reset</button>
             <label class="instrument-picker" for="instrument-select">
               <span>Instrument</span>
               <select id="instrument-select"></select>
             </label>
+          </div>
+
+          <div class="chord-helper-controls">
             <p id="chord-helper-count" class="chord-helper-count">No chords loaded yet.</p>
           </div>
 
