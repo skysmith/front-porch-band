@@ -559,12 +559,6 @@ body {
   padding: 0 1rem 1rem;
 }
 
-.custom-toggle.active {
-  border-color: rgba(36, 87, 214, 0.34);
-  background: rgba(36, 87, 214, 0.1);
-  color: var(--accent);
-}
-
 .capo-hint {
   margin: 0;
   padding: 0 1rem 1rem;

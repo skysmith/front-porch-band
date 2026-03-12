@@ -10,7 +10,6 @@ const fontDownNode = document.querySelector("#font-down");
 const mobileQrToggleNode = document.querySelector("#mobile-qr-toggle");
 const transposeSelectNode = document.querySelector("#transpose-select");
 const capoSelectNode = document.querySelector("#capo-select");
-const customToggleNode = document.querySelector("#custom-toggle");
 const customKeyWrapNode = document.querySelector("#custom-key-wrap");
 const customKeySelectNode = document.querySelector("#custom-key-select");
 const capoHintNode = document.querySelector("#capo-hint");
@@ -39,7 +38,6 @@ const RAIL_KEY = "front-porch-band-rail-collapsed";
 const INSTRUMENT_KEY = "front-porch-band-instrument";
 const MOBILE_QR_KEY = "front-porch-band-mobile-qr";
 const TRANSPOSE_KEY = "front-porch-band-transpose";
-const CUSTOM_OPEN_KEY = "front-porch-band-custom-open";
 const DEFAULT_FONT_SIZE = 1;
 const FONT_STEP = 0.08;
 const MIN_FONT_SIZE = 0.84;
@@ -351,18 +349,11 @@ function transposeChartText(text, steps) {
 }
 
 function setCustomMode(open) {
-  if (!customKeyWrapNode || !customToggleNode) {
+  if (!customKeyWrapNode) {
     return;
   }
 
   customKeyWrapNode.hidden = !open;
-  customToggleNode.setAttribute("aria-expanded", open ? "true" : "false");
-  customToggleNode.classList.toggle("active", open);
-  window.localStorage.setItem(CUSTOM_OPEN_KEY, open ? "1" : "0");
-}
-
-function restoreCustomMode() {
-  setCustomMode(window.localStorage.getItem(CUSTOM_OPEN_KEY) === "1");
 }
 
 function renderSimpleTransposeChoices(song, rawText) {
@@ -379,6 +370,7 @@ function renderSimpleTransposeChoices(song, rawText) {
     { value: "bb-instrument", label: "Bb instrument" },
     { value: "eb-instrument", label: "Eb instrument" },
     { value: "f-instrument", label: "F instrument" },
+    { value: "custom", label: "Custom..." },
   ]) {
     const option = document.createElement("option");
     option.value = shortcut.value;
@@ -388,7 +380,10 @@ function renderSimpleTransposeChoices(song, rawText) {
 
   transposeSelectNode.replaceChildren(fragment);
   transposeSelectNode.disabled = !baseKey;
-  transposeSelectNode.value = isInstrumentTranspose(saved) ? saved : "original";
+  transposeSelectNode.value =
+    isInstrumentTranspose(saved) || (!isCapoTarget(saved) && saved !== "original" && !NOTE_NAMES.includes(saved))
+      ? saved
+      : "original";
   transposeSelectNode.classList.toggle("instrument-target", isInstrumentTranspose(transposeSelectNode.value));
 }
 
@@ -447,10 +442,10 @@ function renderTransposeChoices(song, rawText) {
   renderSimpleTransposeChoices(song, rawText);
   renderCapoChoices(song, rawText);
   renderCustomKeyChoices(song, rawText);
-  if (!isInstrumentTranspose(saved) && !isCapoTarget(saved) && saved !== "original") {
+  if (NOTE_NAMES.includes(saved)) {
     setCustomMode(true);
   } else {
-    restoreCustomMode();
+    setCustomMode(false);
   }
   resetTransposeNode.disabled = currentTransposeTarget() === "original";
 }
@@ -681,7 +676,6 @@ async function selectSongBySlug(slug) {
 async function bootstrap() {
   restoreFontScale();
   restoreRailState();
-  restoreCustomMode();
   renderInstrumentChoices();
 
   const response = await fetch("./data/songs.json");
@@ -717,8 +711,14 @@ instrumentSelectNode.addEventListener("change", () => {
 
 transposeSelectNode.addEventListener("change", () => {
   capoSelectNode.value = "original";
-  customKeySelectNode.value = "original";
-  window.localStorage.setItem(TRANSPOSE_KEY, transposeSelectNode.value);
+  if (transposeSelectNode.value === "custom") {
+    setCustomMode(true);
+    window.localStorage.setItem(TRANSPOSE_KEY, customKeySelectNode.value || "original");
+  } else {
+    setCustomMode(false);
+    customKeySelectNode.value = "original";
+    window.localStorage.setItem(TRANSPOSE_KEY, transposeSelectNode.value);
+  }
   transposeSelectNode.classList.toggle("instrument-target", isInstrumentTranspose(transposeSelectNode.value));
   renderCurrentChart();
 });
@@ -726,17 +726,15 @@ transposeSelectNode.addEventListener("change", () => {
 capoSelectNode.addEventListener("change", () => {
   transposeSelectNode.value = "original";
   customKeySelectNode.value = "original";
+  setCustomMode(false);
   window.localStorage.setItem(TRANSPOSE_KEY, capoSelectNode.value);
   renderCurrentChart();
 });
 
-customToggleNode?.addEventListener("click", () => {
-  setCustomMode(customKeyWrapNode.hidden);
-});
-
 customKeySelectNode?.addEventListener("change", () => {
-  transposeSelectNode.value = "original";
+  transposeSelectNode.value = "custom";
   capoSelectNode.value = "original";
+  setCustomMode(true);
   window.localStorage.setItem(TRANSPOSE_KEY, customKeySelectNode.value);
   renderCurrentChart();
 });
@@ -745,6 +743,7 @@ resetTransposeNode.addEventListener("click", () => {
   transposeSelectNode.value = "original";
   capoSelectNode.value = "original";
   customKeySelectNode.value = "original";
+  setCustomMode(false);
   window.localStorage.setItem(TRANSPOSE_KEY, "original");
   transposeSelectNode.classList.remove("instrument-target");
   renderCurrentChart();
