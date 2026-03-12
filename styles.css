@@ -607,12 +607,14 @@ body {
   .page-shell,
   .page-shell.rail-collapsed {
     grid-template-columns: 1fr;
+    min-height: 100dvh;
   }
 
   .song-rail {
     border-right: 0;
     border-bottom: 0;
-    min-height: 100vh;
+    min-height: 100dvh;
+    padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
   }
 
   .page-shell.mobile-home .song-stage,
@@ -631,6 +633,8 @@ body {
 
   .song-stage {
     padding-top: 1rem;
+    padding-bottom: calc(6.5rem + env(safe-area-inset-bottom, 0px));
+    min-height: 100dvh;
   }
 
   .show-rail-button,
