@@ -31,12 +31,14 @@ jobs:
         run: |
           git config user.name "front-porch-band[bot]"
           git config user.email "front-porch-band[bot]@users.noreply.github.com"
-          if git diff --quiet; then
+          git add approved-charts charts data/songs.json
+          if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          git add approved-charts charts data/songs.json
           git commit -m "Approve song suggestion #${{ github.event.issue.number }}"
+          git fetch origin main
+          git pull --rebase origin main
           git push
           echo "changed=true" >> "$GITHUB_OUTPUT"
 
