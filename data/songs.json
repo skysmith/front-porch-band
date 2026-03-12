@@ -504,6 +504,14 @@
     "sourcePath": "./approved-charts/test-porch-approval.md"
   },
   {
+    "slug": "that-funny-feeling",
+    "title": "That Funny Feeling",
+    "artist": "Bo Burnham",
+    "key": "D",
+    "chartPath": "./charts/that-funny-feeling.txt",
+    "sourcePath": "./approved-charts/that-funny-feeling.md"
+  },
+  {
     "slug": "the-59th-street-bridge-song",
     "title": "The 59th Street Bridge Song",
     "artist": "Simon and Garfunkel",
