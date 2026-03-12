@@ -248,6 +248,14 @@
     "sourcePath": "./approved-charts/i-m-your-man.md"
   },
   {
+    "slug": "if-i-could-only-fly",
+    "title": "If I could Only Fly",
+    "artist": "Blaze Foley",
+    "key": "C",
+    "chartPath": "./charts/if-i-could-only-fly.txt",
+    "sourcePath": "./approved-charts/if-i-could-only-fly.md"
+  },
+  {
     "slug": "in-my-life",
     "title": "In My Life",
     "artist": "The Beatles",
