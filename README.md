@@ -104,9 +104,58 @@ Suggestion inbox
 
 The home screen includes a suggestion box that posts pasted charts to `/api/suggestions` for manual review.
 
-- local/self-hosted: suggestions are written to `private-build/suggestions`
-- custom durable path: set `FRONT_PORCH_SUGGESTIONS_DIR=/absolute/path`
-- Vercel without a durable suggestions directory: submissions fall back to an ephemeral temp folder, which is fine for testing but not reliable across deployments
+Recommended setup: GitHub Issues
+
+Set these env vars in your host:
+
+```bash
+FRONT_PORCH_GITHUB_REPO=owner/repo
+FRONT_PORCH_GITHUB_TOKEN=github_pat_or_fine_grained_token
+FRONT_PORCH_GITHUB_LABELS=song-suggestion
+```
+
+Then each suggestion becomes an open labeled issue in that repo.
+
+Fallback behavior:
+
+- local/self-hosted without GitHub env vars: suggestions are written to `private-build/suggestions`
+- custom local path: set `FRONT_PORCH_SUGGESTIONS_DIR=/absolute/path`
+- Vercel without GitHub env vars or a durable local directory: submissions fall back to an ephemeral temp folder, which is only useful for testing
+
+Reviewing GitHub suggestions
+
+Use the GitHub review helper to inspect or approve submitted charts:
+
+```bash
+node scripts/review-github-suggestions.mjs list
+node scripts/review-github-suggestions.mjs show 123
+node scripts/review-github-suggestions.mjs approve 123 --charts ../charts
+node scripts/review-github-suggestions.mjs reject 123
+```
+
+What approval does:
+
+- fetches the issue body
+- converts it into a chart file
+- writes it into your chart library
+- comments on the issue
+- closes the issue
+
+What rejection does:
+
+- comments on the issue
+- closes the issue without importing
+
+Local review inbox
+
+If you are running without GitHub issues, there is still a local file-based review helper:
+
+```bash
+node scripts/review-suggestions.mjs list
+node scripts/review-suggestions.mjs show <filename>
+node scripts/review-suggestions.mjs approve <filename> --charts ./private-charts
+node scripts/review-suggestions.mjs reject <filename>
+```
 
 Contributing
 

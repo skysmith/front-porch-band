@@ -33,6 +33,80 @@ function pickReviewDir() {
   };
 }
 
+function getGitHubConfig() {
+  const repo = String(
+    process.env.FRONT_PORCH_GITHUB_REPO || process.env.GITHUB_REPOSITORY || "",
+  ).trim();
+  const token = String(
+    process.env.FRONT_PORCH_GITHUB_TOKEN || process.env.GITHUB_TOKEN || "",
+  ).trim();
+
+  if (!repo || !token || !repo.includes("/")) {
+    return null;
+  }
+
+  const [owner, name] = repo.split("/", 2);
+  const labels = String(process.env.FRONT_PORCH_GITHUB_LABELS || "song-suggestion")
+    .split(",")
+    .map((label) => label.trim())
+    .filter(Boolean);
+
+  return { owner, repo: name, token, labels };
+}
+
+function issueTitle({ title, artist }) {
+  const cleanTitle = title || "Untitled song";
+  const cleanArtist = artist || "Unknown artist";
+  return `Song suggestion: ${cleanTitle} - ${cleanArtist}`;
+}
+
+function issueBody({ title, artist, notes, body, submittedAt, source }) {
+  const noteBlock = notes ? `Notes: ${notes}\n` : "";
+
+  return [
+    "<!-- front-porch-band:suggestion -->",
+    `Title: ${title || "Unknown title"}`,
+    `Artist: ${artist || "Unknown artist"}`,
+    `Submitted: ${submittedAt}`,
+    `Source: ${source}`,
+    noteBlock.trimEnd(),
+    "",
+    "```text",
+    body.trim(),
+    "```",
+    "",
+  ]
+    .filter(Boolean)
+    .join("\n");
+}
+
+async function createGitHubIssue(config, suggestion) {
+  const response = await fetch(
+    `https://api.github.com/repos/${config.owner}/${config.repo}/issues`,
+    {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${config.token}`,
+        Accept: "application/vnd.github+json",
+        "Content-Type": "application/json",
+        "User-Agent": "front-porch-band",
+      },
+      body: JSON.stringify({
+        title: issueTitle(suggestion),
+        body: issueBody(suggestion),
+        labels: config.labels,
+      }),
+    },
+  );
+
+  if (!response.ok) {
+    const text = await response.text();
+    throw new Error(`GitHub issue create failed (${response.status}): ${text}`);
+  }
+
+  return response.json();
+}
+
 function toMarkdown({ title, artist, notes, body, submittedAt, source }) {
   return [
     `Title: ${title || "Unknown title"}`,
@@ -70,19 +144,42 @@ module.exports = async (req, res) => {
     return;
   }
 
-  const { dir, storage } = pickReviewDir();
   const submittedAt = new Date().toISOString();
-  const stamp = submittedAt.replaceAll(":", "-");
-  const label = [artist, title].filter(Boolean).join(" - ") || "song-suggestion";
-  const filename = `${stamp}-${slugify(label) || "song-suggestion"}.md`;
-  const content = toMarkdown({
+  const suggestion = {
     title,
     artist,
     notes,
     body,
     submittedAt,
     source: req.headers["x-forwarded-for"] || req.socket.remoteAddress || "unknown",
-  });
+  };
+
+  const github = getGitHubConfig();
+  if (github) {
+    try {
+      const issue = await createGitHubIssue(github, suggestion);
+      res.status(200).json({
+        ok: true,
+        storage: "github-issues",
+        message: "Sent to the review inbox.",
+        issueNumber: issue.number,
+        issueUrl: issue.html_url,
+      });
+      return;
+    } catch (error) {
+      res.status(502).json({
+        error: "Could not send that suggestion to GitHub yet.",
+        detail: error.message,
+      });
+      return;
+    }
+  }
+
+  const { dir, storage } = pickReviewDir();
+  const stamp = submittedAt.replaceAll(":", "-");
+  const label = [artist, title].filter(Boolean).join(" - ") || "song-suggestion";
+  const filename = `${stamp}-${slugify(label) || "song-suggestion"}.md`;
+  const content = toMarkdown(suggestion);
 
   try {
     await fs.mkdir(dir, { recursive: true });
@@ -93,10 +190,10 @@ module.exports = async (req, res) => {
       storage,
       message:
         storage === "ephemeral"
-          ? "Saved to the review inbox for now. Add a durable suggestions directory later to keep submissions between deployments."
-          : "Saved to the review inbox.",
+          ? "Saved to the review inbox for now. Add GitHub issue env vars or a durable suggestions directory later."
+          : "Saved to the local review inbox.",
     });
-  } catch (error) {
+  } catch {
     res.status(500).json({ error: "Could not save that suggestion yet." });
   }
 };

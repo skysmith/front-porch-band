@@ -236,7 +236,9 @@ function buildChordCard(instrumentId, chordName) {
 }
 
 export function getInstrumentChoices() {
-  return Object.entries(CHORD_LIBRARY).map(([id, info]) => ({ id, label: info.label }));
+  return Object.entries(CHORD_LIBRARY)
+    .filter(([id]) => id !== "bouzouki")
+    .map(([id, info]) => ({ id, label: info.label }));
 }
 
 export function getInstrumentLabel(instrumentId) {
