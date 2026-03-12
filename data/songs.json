@@ -114,7 +114,7 @@
   {
     "slug": "i-believe-i-can-fly",
     "title": "I Believe I can Fly",
-    "artist": "R. Kelly",
+    "artist": "A. Stinker",
     "key": "C",
     "chartPath": "./charts/i-believe-i-can-fly.txt",
     "sourcePath": "../charts/i-believe-i-can-fly.md"
@@ -166,6 +166,14 @@
     "key": "A",
     "chartPath": "./charts/live-high.txt",
     "sourcePath": "../charts/live-high.md"
+  },
+  {
+    "slug": "livin-in-the-woods-in-the-trees",
+    "title": "Livin' in the Woods in the Trees",
+    "artist": "Blaze Foley",
+    "key": "C",
+    "chartPath": "./charts/livin-in-the-woods-in-the-trees.txt",
+    "sourcePath": "../charts/livin-in-the-woods-in-the-trees.md"
   },
   {
     "slug": "mrs-robinson",
