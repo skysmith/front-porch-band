@@ -59,6 +59,16 @@ let currentChartText = "";
 let currentRawChartText = "";
 let currentSong = null;
 
+function isMobileLayout() {
+  return window.matchMedia("(max-width: 860px)").matches;
+}
+
+function updatePageMode() {
+  const onHome = !currentSlug;
+  pageShellNode.classList.toggle("mobile-home", isMobileLayout() && onHome);
+  pageShellNode.classList.toggle("mobile-song", isMobileLayout() && !onHome);
+}
+
 function currentShareUrl() {
   return window.location.href;
 }
@@ -84,6 +94,9 @@ function restoreFontScale() {
 }
 
 function setRailCollapsed(collapsed) {
+  if (isMobileLayout()) {
+    return;
+  }
   pageShellNode.classList.toggle("rail-collapsed", collapsed);
   toggleRailNode.textContent = collapsed ? "Show songs" : "Hide songs";
   toggleRailNode.setAttribute("aria-label", collapsed ? "Show song list" : "Collapse song list");
@@ -92,6 +105,10 @@ function setRailCollapsed(collapsed) {
 }
 
 function restoreRailState() {
+  if (isMobileLayout()) {
+    pageShellNode.classList.remove("rail-collapsed");
+    return;
+  }
   setRailCollapsed(window.localStorage.getItem(RAIL_KEY) === "1");
 }
 
@@ -369,6 +386,7 @@ function showHome() {
   chartCardNode.hidden = true;
   homeCardNode.hidden = false;
   updateActiveLink();
+  updatePageMode();
   updateQrCode();
 }
 
@@ -383,6 +401,7 @@ async function loadSong(song) {
   chordHelperNode.hidden = false;
   chartCardNode.hidden = false;
   homeCardNode.hidden = true;
+  updatePageMode();
 
   const response = await fetch(song.chartPath);
   if (!response.ok) {
@@ -440,6 +459,11 @@ searchNode.addEventListener("input", () => {
 
 window.addEventListener("hashchange", () => {
   selectSongBySlug(slugFromLocation());
+});
+
+window.addEventListener("resize", () => {
+  restoreRailState();
+  updatePageMode();
 });
 
 instrumentSelectNode.addEventListener("change", () => {
