@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Front Porch Band</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <aside class="song-rail">
+        <div class="brand-block">
+          <p class="eyebrow">Songbook</p>
+          <h1>Front Porch Band</h1>
+          <p class="tagline">Phone-first chord charts for the porch, the kitchen, and whoever forgot the second verse.</p>
+        </div>
+
+        <label class="search-wrap" for="song-search">
+          <span>Find a song</span>
+          <input id="song-search" type="search" placeholder="Search title or artist" autocomplete="off" />
+        </label>
+
+        <nav id="song-list" class="song-list" aria-label="Song list"></nav>
+      </aside>
+
+      <main class="song-stage">
+        <header class="song-header">
+          <div>
+            <p id="song-kicker" class="song-kicker">Select a chart</p>
+            <h2 id="song-title">Front Porch Band</h2>
+            <p id="song-artist" class="song-artist">Charts stay monospace so spacing survives on mobile.</p>
+          </div>
+
+          <div class="view-controls">
+            <button id="font-down" type="button" aria-label="Decrease chart size">A-</button>
+            <button id="font-up" type="button" aria-label="Increase chart size">A+</button>
+          </div>
+        </header>
+
+        <section class="chart-card">
+          <pre id="chart-body" class="chart-body">Choose a song from the list on the left.</pre>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

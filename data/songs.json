@@ -1,0 +1,34 @@
+[
+  {
+    "slug": "take-it-easy",
+    "title": "Take It Easy",
+    "artist": "Eagles",
+    "key": "G",
+    "chartPath": "./charts/take-it-easy.txt",
+    "sourcePath": "../charts/take-it-easy.md"
+  },
+  {
+    "slug": "the-boxer",
+    "title": "The Boxer",
+    "artist": "Simon & Garfunkel",
+    "key": "C",
+    "chartPath": "./charts/the-boxer.txt",
+    "sourcePath": "../charts/the-boxer.md"
+  },
+  {
+    "slug": "this-charming-man",
+    "title": "This Charming Man",
+    "artist": "The Smiths",
+    "key": "Asus2",
+    "chartPath": "./charts/this-charming-man.txt",
+    "sourcePath": "../charts/this-charming-man.md"
+  },
+  {
+    "slug": "wherever-you-go",
+    "title": "Wherever You Go",
+    "artist": "Chadwick Stokes",
+    "key": "Em",
+    "chartPath": "./charts/wherever-you-go.txt",
+    "sourcePath": "../charts/wherever-you-go.md"
+  }
+]
