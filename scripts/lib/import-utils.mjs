@@ -104,6 +104,19 @@ export function stripExistingHeader(lines, fallbackTitle) {
   if (lines[startIndex]?.trim().startsWith("Artist:")) {
     artist = lines[startIndex].trim().replace(/^Artist:\s*/, "").trim();
     startIndex += 1;
+  } else {
+    const possibleArtist = lines[startIndex]?.trim() || "";
+    const nextAfterPossibleArtist = lines[startIndex + 1]?.trim() || "";
+    if (
+      possibleArtist &&
+      !/[|]/.test(possibleArtist) &&
+      !/\b[A-G][#b]?(?:\/[A-G](?:#|b)?)?(?:maj7|m7|sus2|sus4|m|6|7)\b/.test(possibleArtist) &&
+      !/[.,!?]$/.test(possibleArtist) &&
+      nextAfterPossibleArtist === ""
+    ) {
+      artist = possibleArtist;
+      startIndex += 1;
+    }
   }
 
   while (startIndex < lines.length && !lines[startIndex].trim()) {

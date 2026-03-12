@@ -186,7 +186,7 @@ body {
 }
 
 .artist-group[open] {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .artist-summary {
@@ -197,6 +197,8 @@ body {
   padding: 0.7rem 0.75rem;
   cursor: pointer;
   list-style: none;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.06);
+  background: rgba(15, 23, 42, 0.18);
 }
 
 .artist-summary::-webkit-details-marker {
@@ -204,29 +206,44 @@ body {
 }
 
 .artist-name {
-  font-size: 0.9rem;
+  font-size: 0.82rem;
   font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #a8c1f7;
 }
 
 .artist-count {
-  color: rgba(223, 232, 244, 0.58);
-  font-size: 0.74rem;
+  color: rgba(223, 232, 244, 0.52);
+  font-size: 0.68rem;
   font-weight: 700;
 }
 
 .artist-songs {
   display: grid;
-  gap: 0.12rem;
-  padding: 0 0.35rem 0.35rem;
+  gap: 0.16rem;
+  padding: 0.3rem 0.35rem 0.35rem 0.7rem;
 }
 
 .song-link {
   display: block;
-  padding: 0.45rem 0.55rem;
+  padding: 0.42rem 0.55rem 0.42rem 0.75rem;
   border: 1px solid transparent;
   border-radius: 0.72rem;
   color: inherit;
   text-decoration: none;
+  position: relative;
+}
+
+.song-link::before {
+  content: "";
+  position: absolute;
+  left: 0.18rem;
+  top: 50%;
+  width: 0.35rem;
+  height: 1px;
+  background: rgba(168, 193, 247, 0.38);
+  transform: translateY(-50%);
 }
 
 .song-link:hover,
@@ -247,6 +264,7 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 0.92rem;
+  color: #f4f7fd;
 }
 
 .song-stage {
@@ -532,28 +550,10 @@ body {
   line-height: 1.55;
 }
 
-.landing-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.9rem;
-}
-
-.landing-tip {
-  padding: 1rem;
-  border: 1px solid var(--border);
-  border-radius: 1rem;
-  background: rgba(255, 255, 255, 0.72);
-}
-
-.landing-tip h4 {
-  margin: 0 0 0.4rem;
-  font-size: 0.96rem;
-}
-
-.landing-tip p {
+.landing-note {
   margin: 0;
-  color: var(--text-muted);
-  font-size: 0.9rem;
+  color: var(--text-soft);
+  font-size: 0.92rem;
   line-height: 1.5;
 }
 
@@ -682,9 +682,6 @@ body {
     display: none;
   }
 
-  .landing-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 560px) {
