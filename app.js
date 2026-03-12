@@ -8,6 +8,7 @@ const chartNode = document.querySelector("#chart-body");
 const searchNode = document.querySelector("#song-search");
 const fontUpNode = document.querySelector("#font-up");
 const fontDownNode = document.querySelector("#font-down");
+const transposeSelectNode = document.querySelector("#transpose-select");
 const toggleRailNode = document.querySelector("#toggle-rail");
 const qrImageNode = document.querySelector("#qr-image");
 const pageShellNode = document.querySelector(".page-shell");
@@ -19,14 +20,41 @@ const chordHelperCountNode = document.querySelector("#chord-helper-count");
 const FONT_KEY = "front-porch-band-font-scale";
 const RAIL_KEY = "front-porch-band-rail-collapsed";
 const INSTRUMENT_KEY = "front-porch-band-instrument";
+const TRANSPOSE_KEY = "front-porch-band-transpose";
 const DEFAULT_FONT_SIZE = 1;
 const FONT_STEP = 0.08;
 const MIN_FONT_SIZE = 0.84;
 const MAX_FONT_SIZE = 1.48;
+const NOTE_NAMES = ["C", "Db", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"];
+const NOTE_INDEX = {
+  C: 0,
+  "B#": 0,
+  "C#": 1,
+  Db: 1,
+  D: 2,
+  "D#": 3,
+  Eb: 3,
+  E: 4,
+  Fb: 4,
+  F: 5,
+  "E#": 5,
+  "F#": 6,
+  Gb: 6,
+  G: 7,
+  "G#": 8,
+  Ab: 8,
+  A: 9,
+  "A#": 10,
+  Bb: 10,
+  B: 11,
+  Cb: 11,
+};
 
 let songs = [];
 let currentSlug = "";
 let currentChartText = "";
+let currentRawChartText = "";
+let currentSong = null;
 
 function currentShareUrl() {
   return window.location.href;
@@ -67,6 +95,112 @@ function currentInstrument() {
   return instrumentSelectNode.value || window.localStorage.getItem(INSTRUMENT_KEY) || "guitar";
 }
 
+function parseChordToken(token) {
+  const match = token.match(/^([A-G](?:#|b)?)(.*)$/);
+  if (!match) {
+    return null;
+  }
+
+  return {
+    root: match[1],
+    suffix: match[2] || "",
+  };
+}
+
+function transposeRoot(root, steps) {
+  const index = NOTE_INDEX[root];
+  if (index === undefined) {
+    return root;
+  }
+  return NOTE_NAMES[(index + steps + 120) % 12];
+}
+
+function transposeChordToken(token, steps) {
+  if (!steps) {
+    return token;
+  }
+
+  const [main, bass] = token.split("/");
+  const parsedMain = parseChordToken(main);
+  if (!parsedMain) {
+    return token;
+  }
+
+  const nextMain = `${transposeRoot(parsedMain.root, steps)}${parsedMain.suffix}`;
+  if (!bass) {
+    return nextMain;
+  }
+
+  const parsedBass = parseChordToken(bass);
+  if (!parsedBass) {
+    return nextMain;
+  }
+
+  return `${nextMain}/${transposeRoot(parsedBass.root, steps)}`;
+}
+
+function extractBaseKey(song, rawText) {
+  const fromSong = song?.key?.match(/^([A-G](?:#|b)?)/)?.[1];
+  if (fromSong) {
+    return fromSong;
+  }
+
+  const fromChart = rawText.match(/\b([A-G](?:#|b)?)(?:\/[A-G](?:#|b)?)?(?:maj7|m7|sus2|sus4|m|6|7)?\b/);
+  return fromChart?.[1] || "";
+}
+
+function currentTransposeTarget() {
+  return transposeSelectNode.value || "original";
+}
+
+function transposeStepsForSong(song, rawText) {
+  const target = currentTransposeTarget();
+  const baseKey = extractBaseKey(song, rawText);
+  if (!baseKey || target === "original") {
+    return 0;
+  }
+
+  const baseIndex = NOTE_INDEX[baseKey];
+  const targetIndex = NOTE_INDEX[target];
+  if (baseIndex === undefined || targetIndex === undefined) {
+    return 0;
+  }
+
+  return targetIndex - baseIndex;
+}
+
+function transposeChartText(text, steps) {
+  if (!steps) {
+    return text;
+  }
+
+  return text.replace(/\b[A-G](?:#|b)?(?:\/[A-G](?:#|b)?)?(?:maj7|m7|sus2|sus4|m|6|7)?\b/g, (token) =>
+    transposeChordToken(token, steps),
+  );
+}
+
+function renderTransposeChoices(song, rawText) {
+  const baseKey = extractBaseKey(song, rawText);
+  const saved = window.localStorage.getItem(TRANSPOSE_KEY) || "original";
+  const fragment = document.createDocumentFragment();
+
+  const original = document.createElement("option");
+  original.value = "original";
+  original.textContent = baseKey ? `Orig (${baseKey})` : "Original";
+  fragment.append(original);
+
+  for (const note of NOTE_NAMES) {
+    const option = document.createElement("option");
+    option.value = note;
+    option.textContent = note;
+    fragment.append(option);
+  }
+
+  transposeSelectNode.replaceChildren(fragment);
+  transposeSelectNode.disabled = !baseKey;
+  transposeSelectNode.value = baseKey && saved !== "original" ? saved : "original";
+}
+
 function renderInstrumentChoices() {
   const choices = getInstrumentChoices();
   const preferred = window.localStorage.getItem(INSTRUMENT_KEY) || "guitar";
@@ -90,6 +224,24 @@ function updateChordHelper() {
   chordHelperCountNode.textContent = count
     ? `${count} chord shape${count === 1 ? "" : "s"} for this song.`
     : `No saved ${getInstrumentLabel(instrumentId).toLowerCase()} shapes for this chart yet.`;
+}
+
+function renderCurrentChart() {
+  const steps = transposeStepsForSong(currentSong, currentRawChartText);
+  currentChartText = transposeChartText(currentRawChartText, steps);
+  chartNode.textContent = currentChartText;
+
+  const baseKey = extractBaseKey(currentSong, currentRawChartText);
+  const target = currentTransposeTarget();
+  if (baseKey && target !== "original") {
+    kickerNode.textContent = `Key: ${baseKey} -> ${target}`;
+  } else if (baseKey) {
+    kickerNode.textContent = `Key: ${baseKey}`;
+  } else {
+    kickerNode.textContent = "Chord chart";
+  }
+
+  updateChordHelper();
 }
 
 function createSongLink(song) {
@@ -167,26 +319,28 @@ function updateActiveLink() {
 }
 
 async function loadSong(song) {
+  currentSong = song;
   currentSlug = song.slug;
   updateActiveLink();
 
   titleNode.textContent = song.title;
   artistNode.textContent = song.artist;
-  kickerNode.textContent = song.key ? `Key: ${song.key}` : "Chord chart";
   chartNode.textContent = "Loading chart...";
 
   const response = await fetch(song.chartPath);
   if (!response.ok) {
     chartNode.textContent = `Could not load ${song.title}.`;
     currentChartText = "";
+    currentRawChartText = "";
+    renderTransposeChoices(song, "");
     updateChordHelper();
     updateQrCode();
     return;
   }
 
-  currentChartText = await response.text();
-  chartNode.textContent = currentChartText;
-  updateChordHelper();
+  currentRawChartText = await response.text();
+  renderTransposeChoices(song, currentRawChartText);
+  renderCurrentChart();
   updateQrCode();
 }
 
@@ -232,6 +386,11 @@ window.addEventListener("hashchange", () => {
 instrumentSelectNode.addEventListener("change", () => {
   window.localStorage.setItem(INSTRUMENT_KEY, instrumentSelectNode.value);
   updateChordHelper();
+});
+
+transposeSelectNode.addEventListener("change", () => {
+  window.localStorage.setItem(TRANSPOSE_KEY, transposeSelectNode.value);
+  renderCurrentChart();
 });
 
 fontUpNode.addEventListener("click", () => {

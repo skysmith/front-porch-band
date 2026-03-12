@@ -1,21 +1,5 @@
 [
   {
-    "slug": "better-half",
-    "title": "Better Half",
-    "artist": "Tony Grove",
-    "key": "",
-    "chartPath": "./charts/better-half.txt",
-    "sourcePath": "../charts/better-half.md"
-  },
-  {
-    "slug": "bitterness",
-    "title": "Bitterness",
-    "artist": "Tony Grove",
-    "key": "",
-    "chartPath": "./charts/bitterness.txt",
-    "sourcePath": "../charts/bitterness.md"
-  },
-  {
     "slug": "days-aren-t-long-enough",
     "title": "Days Aren't Long Enough",
     "artist": "Cover",
@@ -38,14 +22,6 @@
     "key": "",
     "chartPath": "./charts/freckled-girl.txt",
     "sourcePath": "../charts/freckled-girl.md"
-  },
-  {
-    "slug": "haley-s-song",
-    "title": "Haley's Song",
-    "artist": "Tony Grove",
-    "key": "",
-    "chartPath": "./charts/haley-s-song.txt",
-    "sourcePath": "../charts/haley-s-song.md"
   },
   {
     "slug": "i-m-yours",
@@ -72,14 +48,6 @@
     "sourcePath": "../charts/judgement.md"
   },
   {
-    "slug": "lay-the-anchor",
-    "title": "Lay the Anchor",
-    "artist": "Tony Grove",
-    "key": "",
-    "chartPath": "./charts/lay-the-anchor.txt",
-    "sourcePath": "../charts/lay-the-anchor.md"
-  },
-  {
     "slug": "seashell-tale",
     "title": "Seashell Tale",
     "artist": "Cover",
@@ -88,28 +56,12 @@
     "sourcePath": "../charts/seashell-tale.md"
   },
   {
-    "slug": "space-age",
-    "title": "Space Age",
-    "artist": "Tony Grove",
-    "key": "C",
-    "chartPath": "./charts/space-age.txt",
-    "sourcePath": "../charts/space-age.md"
-  },
-  {
     "slug": "spring-cleaning",
     "title": "Spring Cleaning",
     "artist": "Cover",
     "key": "",
     "chartPath": "./charts/spring-cleaning.txt",
     "sourcePath": "../charts/spring-cleaning.md"
-  },
-  {
-    "slug": "stand-up",
-    "title": "Stand Up",
-    "artist": "Tony Grove",
-    "key": "C",
-    "chartPath": "./charts/stand-up.txt",
-    "sourcePath": "../charts/stand-up.md"
   },
   {
     "slug": "such-great-heights",
@@ -152,6 +104,54 @@
     "sourcePath": "../charts/this-charming-man.md"
   },
   {
+    "slug": "tony-grove-better-half",
+    "title": "Better Half",
+    "artist": "Tony Grove",
+    "key": "",
+    "chartPath": "./charts/tony-grove-better-half.txt",
+    "sourcePath": "../charts/tony-grove/better-half.md"
+  },
+  {
+    "slug": "tony-grove-bitterness",
+    "title": "Bitterness",
+    "artist": "Tony Grove",
+    "key": "",
+    "chartPath": "./charts/tony-grove-bitterness.txt",
+    "sourcePath": "../charts/tony-grove/bitterness.md"
+  },
+  {
+    "slug": "tony-grove-haley-s-song",
+    "title": "Haley's Song",
+    "artist": "Tony Grove",
+    "key": "",
+    "chartPath": "./charts/tony-grove-haley-s-song.txt",
+    "sourcePath": "../charts/tony-grove/haley-s-song.md"
+  },
+  {
+    "slug": "tony-grove-lay-the-anchor",
+    "title": "Lay the Anchor",
+    "artist": "Tony Grove",
+    "key": "",
+    "chartPath": "./charts/tony-grove-lay-the-anchor.txt",
+    "sourcePath": "../charts/tony-grove/lay-the-anchor.md"
+  },
+  {
+    "slug": "tony-grove-space-age",
+    "title": "Space Age",
+    "artist": "Tony Grove",
+    "key": "C",
+    "chartPath": "./charts/tony-grove-space-age.txt",
+    "sourcePath": "../charts/tony-grove/space-age.md"
+  },
+  {
+    "slug": "tony-grove-stand-up",
+    "title": "Stand Up",
+    "artist": "Tony Grove",
+    "key": "C",
+    "chartPath": "./charts/tony-grove-stand-up.txt",
+    "sourcePath": "../charts/tony-grove/stand-up.md"
+  },
+  {
     "slug": "wagon-wheel",
     "title": "Wagon Wheel",
     "artist": "Old Crow Medicine Show",
@@ -174,14 +174,6 @@
     "key": "Em",
     "chartPath": "./charts/wherever-you-go.txt",
     "sourcePath": "../charts/wherever-you-go.md"
-  },
-  {
-    "slug": "you-are-your-mother-s-child",
-    "title": "You are your Mother's Child",
-    "artist": "Cover",
-    "key": "",
-    "chartPath": "./charts/you-are-your-mother-s-child.txt",
-    "sourcePath": "../charts/you-are-your-mother-s-child.md"
   },
   {
     "slug": "you-belong-to-me",

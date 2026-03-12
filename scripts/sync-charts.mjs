@@ -1,4 +1,4 @@
-import { mkdir, readdir, readFile, writeFile, copyFile } from "node:fs/promises";
+import { mkdir, readdir, readFile, rm, writeFile, copyFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -7,6 +7,23 @@ const projectDir = path.resolve(__dirname, "..");
 const sourceDir = path.resolve(projectDir, "..", "charts");
 const outputDir = path.join(projectDir, "charts");
 const dataDir = path.join(projectDir, "data");
+
+async function listMarkdownFiles(dir, prefix = "") {
+  const entries = await readdir(dir, { withFileTypes: true });
+  const files = [];
+
+  for (const entry of entries.sort((a, b) => a.name.localeCompare(b.name))) {
+    const relPath = prefix ? path.join(prefix, entry.name) : entry.name;
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...(await listMarkdownFiles(fullPath, relPath)));
+    } else if (entry.isFile() && entry.name.endsWith(".md")) {
+      files.push(relPath);
+    }
+  }
+
+  return files;
+}
 
 function slugify(name) {
   return name
@@ -33,17 +50,18 @@ function parseChart(fileText) {
 }
 
 async function main() {
+  await rm(outputDir, { recursive: true, force: true });
   await mkdir(outputDir, { recursive: true });
   await mkdir(dataDir, { recursive: true });
 
-  const entries = (await readdir(sourceDir)).filter((file) => file.endsWith(".md")).sort();
+  const entries = await listMarkdownFiles(sourceDir);
   const songs = [];
 
   for (const entry of entries) {
     const sourcePath = path.join(sourceDir, entry);
     const sourceText = await readFile(sourcePath, "utf8");
     const parsed = parseChart(sourceText);
-    const slug = slugify(path.basename(entry, ".md"));
+    const slug = slugify(entry.replace(/\.md$/, "").replace(/[\\/]/g, "-"));
     const chartFile = `${slug}.txt`;
     const outputPath = path.join(outputDir, chartFile);
 
@@ -55,7 +73,7 @@ async function main() {
       artist: parsed.artist,
       key: parsed.key,
       chartPath: `./charts/${chartFile}`,
-      sourcePath: `../charts/${entry}`,
+      sourcePath: `../charts/${entry.replace(/\\/g, "/")}`,
     });
   }
 

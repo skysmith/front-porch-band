@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectDir = path.resolve(__dirname, "..");
 const chartsDir = path.resolve(projectDir, "..", "charts");
+const tonyGroveDir = path.join(chartsDir, "tony-grove");
 const sourceRoot = "/Users/sky/Documents/Personal Projects/Songs";
 
 const COVER_ARTISTS = {
@@ -91,7 +92,8 @@ async function importDirectory(directoryPath, isCover) {
     const title = displayTitleFromStem(filenameStem);
     const artist = inferArtist(filenameStem, isCover);
     const body = normalizeBody(convertDocxToText(sourcePath), title);
-    const destination = path.join(chartsDir, `${slugify(title)}.md`);
+    const destinationRoot = isCover ? chartsDir : tonyGroveDir;
+    const destination = path.join(destinationRoot, `${slugify(title)}.md`);
     const fileText = `${title}\n\nArtist: ${artist}\n\n${body}\n`;
 
     await writeFile(destination, fileText, "utf8");
@@ -103,6 +105,7 @@ async function importDirectory(directoryPath, isCover) {
 
 async function main() {
   await mkdir(chartsDir, { recursive: true });
+  await mkdir(tonyGroveDir, { recursive: true });
 
   const importedRoot = await importDirectory(sourceRoot, false);
   const importedCovers = await importDirectory(path.join(sourceRoot, "Covers"), true);

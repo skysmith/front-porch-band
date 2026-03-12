@@ -228,7 +228,30 @@ body::before {
 
 .view-controls {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 0.55rem;
+}
+
+.transpose-picker {
+  display: grid;
+  gap: 0.2rem;
+  color: var(--text-soft);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.transpose-picker select {
+  min-width: 5.7rem;
+  border: 1px solid var(--panel-border);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--text-strong);
+  border-radius: 999px;
+  min-height: 3rem;
+  padding: 0 0.9rem;
+  font: inherit;
+  font-weight: 700;
+  box-shadow: var(--shadow);
 }
 
 .view-controls button {
@@ -405,6 +428,8 @@ body::before {
   border-radius: 0.65rem;
   background: white;
 }
+.transpose-picker select:hover,
+.transpose-picker select:focus-visible,
 .view-controls button:hover,
 .view-controls button:focus-visible {
   border-color: rgba(31, 111, 235, 0.32);
@@ -468,6 +493,14 @@ body::before {
 
   .song-header {
     flex-direction: column;
+  }
+
+  .transpose-picker {
+    width: 100%;
+  }
+
+  .transpose-picker select {
+    width: 100%;
   }
 
   .view-controls button {
