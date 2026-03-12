@@ -83,16 +83,7 @@ function splitChartSections(text) {
 }
 
 function shouldUseDesktopColumns(text, sections) {
-  if (isMobileLayout()) {
-    return false;
-  }
-
-  if (window.innerWidth < 1180) {
-    return false;
-  }
-
-  const lineCount = text.split("\n").length;
-  return lineCount >= 46 && sections.length >= 6;
+  return false;
 }
 
 function renderChartBlocks(text) {
