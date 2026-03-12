@@ -4,10 +4,6 @@ Front Porch Band is a static, phone-friendly songbook for jam sessions. It keeps
 
 ## Screenshots
 
-Home / browse view:
-
-![Front Porch Band home](./docs/screenshots/front-porch-home.png)
-
 Song view:
 
 ![Front Porch Band song view](./docs/screenshots/front-porch-song.png)
