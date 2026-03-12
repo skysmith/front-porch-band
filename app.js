@@ -69,6 +69,50 @@ let currentChartText = "";
 let currentRawChartText = "";
 let currentSong = null;
 
+function splitChartSections(text) {
+  return text
+    .replace(/\r/g, "")
+    .split(/\n{2,}/)
+    .map((section) => section.trimEnd())
+    .filter(Boolean);
+}
+
+function shouldUseDesktopColumns(text, sections) {
+  if (isMobileLayout()) {
+    return false;
+  }
+
+  if (window.innerWidth < 1180) {
+    return false;
+  }
+
+  const lineCount = text.split("\n").length;
+  return lineCount >= 46 && sections.length >= 6;
+}
+
+function renderChartBlocks(text) {
+  const sections = splitChartSections(text);
+  const useColumns = shouldUseDesktopColumns(text, sections);
+  const fragment = document.createDocumentFragment();
+
+  chartNode.classList.toggle("chart-body-columns", useColumns);
+
+  sections.forEach((section) => {
+    const block = document.createElement("pre");
+    block.className = "chart-section";
+    block.textContent = section;
+    fragment.append(block);
+  });
+
+  if (!sections.length) {
+    chartNode.textContent = text;
+    chartNode.classList.remove("chart-body-columns");
+    return;
+  }
+
+  chartNode.replaceChildren(fragment);
+}
+
 function setSuggestionStatus(message, tone = "") {
   if (!suggestionStatusNode) {
     return;
@@ -324,7 +368,7 @@ function updateChordHelper() {
 function renderCurrentChart() {
   const steps = transposeStepsForSong(currentSong, currentRawChartText);
   currentChartText = transposeChartText(currentRawChartText, steps);
-  chartNode.textContent = currentChartText;
+  renderChartBlocks(currentChartText);
 
   const target = currentTransposeTarget();
   resetTransposeNode.disabled = target === "original";
@@ -413,7 +457,8 @@ function showHome() {
   currentRawChartText = "";
   titleNode.textContent = "Front Porch Band";
   artistNode.textContent = "Phone-first charts built for quick jams and easy sharing.";
-  chartNode.textContent = "";
+  chartNode.replaceChildren();
+  chartNode.classList.remove("chart-body-columns");
   chordGridNode.replaceChildren();
   chordHelperCountNode.textContent = "Open a song to see transposition and chord shapes.";
   transposeSelectNode.replaceChildren();
@@ -439,6 +484,7 @@ async function loadSong(song) {
   titleNode.textContent = song.title;
   artistNode.textContent = song.artist;
   chartNode.textContent = "Loading chart...";
+  chartNode.classList.remove("chart-body-columns");
   chordHelperNode.hidden = false;
   chartCardNode.hidden = false;
   homeCardNode.hidden = true;
@@ -447,6 +493,7 @@ async function loadSong(song) {
   const response = await fetch(song.chartPath);
   if (!response.ok) {
     chartNode.textContent = `Could not load ${song.title}.`;
+    chartNode.classList.remove("chart-body-columns");
     currentChartText = "";
     currentRawChartText = "";
     renderTransposeChoices(song, "");

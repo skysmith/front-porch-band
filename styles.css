@@ -712,6 +712,19 @@ body {
 }
 
 .chart-body {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+}
+
+.chart-body-columns {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 1.15rem 1.35rem;
+}
+
+.chart-section {
+  min-width: 0;
   margin: 0;
   overflow-x: auto;
   color: #231910;
@@ -838,6 +851,15 @@ body {
   .instrument-picker select,
   .secondary-button {
     width: 100%;
+  }
+
+  .chart-body-columns {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+
+  .chart-section {
+    font-size: calc(var(--chart-size) * 0.95);
   }
 
   .qr-card {
