@@ -381,9 +381,13 @@ function renderSimpleTransposeChoices(song, rawText) {
   transposeSelectNode.replaceChildren(fragment);
   transposeSelectNode.disabled = !baseKey;
   transposeSelectNode.value =
-    isInstrumentTranspose(saved) || (!isCapoTarget(saved) && saved !== "original" && !NOTE_NAMES.includes(saved))
+    isInstrumentTranspose(saved)
       ? saved
-      : "original";
+      : NOTE_NAMES.includes(saved)
+        ? "custom"
+        : !isCapoTarget(saved) && saved !== "original" && !NOTE_NAMES.includes(saved)
+          ? saved
+          : "original";
   transposeSelectNode.classList.toggle("instrument-target", isInstrumentTranspose(transposeSelectNode.value));
 }
 
