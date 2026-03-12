@@ -56,6 +56,14 @@
     "sourcePath": "../charts/city-of-new-orleans.md"
   },
   {
+    "slug": "clandestino",
+    "title": "Clandestino",
+    "artist": "Manu Chao",
+    "key": "Bm",
+    "chartPath": "./charts/clandestino.txt",
+    "sourcePath": "./approved-charts/clandestino.md"
+  },
+  {
     "slug": "come-out-ye-black-and-tans",
     "title": "Come Out Ye Black And Tans",
     "artist": "Shipwreckers",
