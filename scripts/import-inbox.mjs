@@ -13,15 +13,45 @@ const archiveDir = path.join(musicDir, "import-archive");
 
 const SUPPORTED_EXTENSIONS = new Set([".md", ".txt", ".docx", ".rtf"]);
 const TITLE_ARTISTS = {
+  "Have You Ever Seen The Rain": "Creedence Clearwater Revival",
   "First Day Of My Life": "Bright Eyes",
+  "Take Me Home, Country Roads": "John Denver",
   "Freckled Girl": "Iron & Wine",
   "I'm Yours": "Jason Mraz",
   "I Will Follow You Into The Dark": "Death Cab for Cutie",
   Judgement: "Iron & Wine",
   "Seashell Tale": "M. Ward",
   "Spring Cleaning": "Bright Eyes / Neva Dinova",
+  "Sweet Caroline": "Neil Diamond",
+  "The Trapeze Swinger": "Iron & Wine",
+  "Waitin For A Superman": "The Flaming Lips",
   "Flightless Bird": "Iron & Wine",
   "Flightless Bird, American Mouth": "Iron & Wine",
+  "You Belong To Me": "Bob Dylan",
+  "Such Great Heights": "The Postal Service",
+};
+const TITLE_CANONICAL = {
+  "have-you-ever-seen-the-rain": "Have You Ever Seen the Rain",
+  "first-day-of-my-life": "First Day of my Life",
+  "freckled-girl": "Freckled Girl",
+  "i-m-yours": "I'm Yours",
+  "im-yours": "I'm Yours",
+  "i-will-follow-you-into-the-dark": "I Will Follow You into the Dark",
+  judgement: "Judgement",
+  "seashell-tale": "Seashell Tale",
+  "spring-cleaning": "Spring Cleaning",
+  "spring-cleaning-chords-by-bright-eyes-feat-neva-dinova": "Spring Cleaning",
+  "flightless-bird": "Flightless Bird, American Mouth",
+  "flightless-bird-american-mouth": "Flightless Bird, American Mouth",
+  "take-me-home-country-road": "Take Me Home, Country Roads",
+  "take-me-home-country-roads": "Take Me Home, Country Roads",
+  "such-great-heights": "Such Great Heights",
+  "trapeze-swinger": "The Trapeze Swinger",
+  "waitin-for-a-superman": "Waitin for a Superman",
+  "wagon-wheel": "Wagon Wheel",
+  "you-belong-to-me": "You Belong to Me",
+  "wherever-you-go": "Indian Moon (Long View Farm)",
+  "indian-moon-long-view-farm": "Indian Moon (Long View Farm)",
 };
 
 function slugify(value) {
@@ -36,6 +66,7 @@ function titleFromFilename(filePath) {
     .basename(filePath, path.extname(filePath))
     .replace(/\s+-\s+.+$/, "")
     .replace(/\s+Chord Chart$/i, "")
+    .replace(/\s+Chords?\s+by.+$/i, "")
     .trim();
 }
 
@@ -45,6 +76,14 @@ function titleCase(value) {
     .filter(Boolean)
     .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
     .join(" ");
+}
+
+function canonicalTitle(rawTitle) {
+  const cleaned = rawTitle
+    .replace(/\u00a0/g, " ")
+    .replace(/\s+Chords?\s+by.+$/i, "")
+    .trim();
+  return TITLE_CANONICAL[slugify(cleaned)] || cleaned;
 }
 
 function convertDocxToText(filePath) {
@@ -96,6 +135,12 @@ function stripExistingHeader(lines, fallbackTitle) {
       bodyLines.shift();
     }
   }
+  if (bodyLines[0]?.trim().toLowerCase() === artist.toLowerCase()) {
+    bodyLines.shift();
+    if (!bodyLines[0]?.trim()) {
+      bodyLines.shift();
+    }
+  }
 
   return { title, artist, body: bodyLines.join("\n").replace(/\n{3,}/g, "\n\n").trim() };
 }
@@ -105,7 +150,7 @@ function inferArtistFromPath(filePath, explicitArtist) {
     return explicitArtist;
   }
 
-  const inferredTitle = titleCase(titleFromFilename(filePath));
+  const inferredTitle = titleCase(canonicalTitle(titleFromFilename(filePath)));
   if (TITLE_ARTISTS[inferredTitle]) {
     return TITLE_ARTISTS[inferredTitle];
   }
@@ -196,7 +241,7 @@ async function main() {
     const rawText = await readSourceText(sourcePath);
     const normalized = stripExistingHeader(rawText.replace(/\r/g, "").split("\n"), fallbackTitle);
     const artist = inferArtistFromPath(sourcePath, normalized.artist);
-    const title = normalized.title || fallbackTitle;
+    const title = canonicalTitle(normalized.title || fallbackTitle);
     const destination = destinationForArtist(artist, title);
     const nextText = `${title}\n\nArtist: ${artist}\n\n${normalized.body}\n`;
     const finalText = await choosePreferredText(destination, nextText);

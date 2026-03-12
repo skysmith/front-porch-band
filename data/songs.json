@@ -32,6 +32,14 @@
     "sourcePath": "../charts/freckled-girl.md"
   },
   {
+    "slug": "have-you-ever-seen-the-rain",
+    "title": "Have You Ever Seen the Rain",
+    "artist": "Creedence Clearwater Revival",
+    "key": "C",
+    "chartPath": "./charts/have-you-ever-seen-the-rain.txt",
+    "sourcePath": "../charts/have-you-ever-seen-the-rain.md"
+  },
+  {
     "slug": "i-will-follow-you-into-the-dark",
     "title": "I will follow you into the dark",
     "artist": "Death Cab for Cutie",
@@ -75,9 +83,17 @@
     "slug": "such-great-heights",
     "title": "Such Great Heights",
     "artist": "The Postal Service",
-    "key": "",
+    "key": "C",
     "chartPath": "./charts/such-great-heights.txt",
     "sourcePath": "../charts/such-great-heights.md"
+  },
+  {
+    "slug": "sweet-caroline",
+    "title": "Sweet Caroline",
+    "artist": "Neil Diamond",
+    "key": "E",
+    "chartPath": "./charts/sweet-caroline.txt",
+    "sourcePath": "../charts/sweet-caroline.md"
   },
   {
     "slug": "take-it-easy",
@@ -86,6 +102,14 @@
     "key": "G",
     "chartPath": "./charts/take-it-easy.txt",
     "sourcePath": "../charts/take-it-easy.md"
+  },
+  {
+    "slug": "take-me-home-country-roads",
+    "title": "Take Me Home, Country Roads",
+    "artist": "John Denver",
+    "key": "G",
+    "chartPath": "./charts/take-me-home-country-roads.txt",
+    "sourcePath": "../charts/take-me-home-country-roads.md"
   },
   {
     "slug": "the-boxer",
@@ -99,7 +123,7 @@
     "slug": "the-trapeze-swinger",
     "title": "The Trapeze Swinger",
     "artist": "Iron & Wine",
-    "key": "A",
+    "key": "C",
     "chartPath": "./charts/the-trapeze-swinger.txt",
     "sourcePath": "../charts/the-trapeze-swinger.md"
   },
@@ -171,15 +195,15 @@
     "slug": "waitin-for-a-superman",
     "title": "Waitin for a Superman",
     "artist": "The Flaming Lips",
-    "key": "",
+    "key": "Am",
     "chartPath": "./charts/waitin-for-a-superman.txt",
     "sourcePath": "../charts/waitin-for-a-superman.md"
   },
   {
     "slug": "you-belong-to-me",
     "title": "You Belong to Me",
-    "artist": "Cover",
-    "key": "",
+    "artist": "Bob Dylan",
+    "key": "C",
     "chartPath": "./charts/you-belong-to-me.txt",
     "sourcePath": "../charts/you-belong-to-me.md"
   }
