@@ -77,6 +77,18 @@ First line of the chart
 
 See [docs/CHART_FORMAT.md](./docs/CHART_FORMAT.md) for the full format.
 
+Importing rough files
+
+If you have rough charts in `.txt`, `.md`, `.docx`, or `.rtf`, there is a scripted import path. See [docs/IMPORTING.md](./docs/IMPORTING.md).
+
+Default import flow:
+
+```bash
+node scripts/import-inbox.mjs
+node scripts/validate-charts.mjs --source ./private-charts
+node scripts/sync-charts.mjs --source ./private-charts
+```
+
 Deployment
 
 This repo is meant for static hosting.

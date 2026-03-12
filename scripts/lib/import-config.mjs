@@ -1,0 +1,47 @@
+export const IMPORT_TITLE_ARTISTS = {
+  "Have You Ever Seen The Rain": "Creedence Clearwater Revival",
+  "First Day Of My Life": "Bright Eyes",
+  "Take Me Home, Country Roads": "John Denver",
+  "Freckled Girl": "Iron & Wine",
+  "I'm Yours": "Jason Mraz",
+  "I Will Follow You Into The Dark": "Death Cab for Cutie",
+  Judgement: "Iron & Wine",
+  "Seashell Tale": "M. Ward",
+  "Spring Cleaning": "Bright Eyes / Neva Dinova",
+  "Sweet Caroline": "Neil Diamond",
+  "The Trapeze Swinger": "Iron & Wine",
+  "Waitin For A Superman": "The Flaming Lips",
+  "Flightless Bird": "Iron & Wine",
+  "Flightless Bird, American Mouth": "Iron & Wine",
+  "You Belong To Me": "Bob Dylan",
+  "Such Great Heights": "The Postal Service",
+};
+
+export const IMPORT_TITLE_CANONICAL = {
+  "have-you-ever-seen-the-rain": "Have You Ever Seen the Rain",
+  "first-day-of-my-life": "First Day of my Life",
+  "freckled-girl": "Freckled Girl",
+  "i-m-yours": "I'm Yours",
+  "im-yours": "I'm Yours",
+  "i-will-follow-you-into-the-dark": "I Will Follow You into the Dark",
+  judgement: "Judgement",
+  "seashell-tale": "Seashell Tale",
+  "spring-cleaning": "Spring Cleaning",
+  "spring-cleaning-chords-by-bright-eyes-feat-neva-dinova": "Spring Cleaning",
+  "flightless-bird": "Flightless Bird, American Mouth",
+  "flightless-bird-american-mouth": "Flightless Bird, American Mouth",
+  "take-me-home-country-road": "Take Me Home, Country Roads",
+  "take-me-home-country-roads": "Take Me Home, Country Roads",
+  "such-great-heights": "Such Great Heights",
+  "trapeze-swinger": "The Trapeze Swinger",
+  "waitin-for-a-superman": "Waitin for a Superman",
+  "wagon-wheel": "Wagon Wheel",
+  "you-belong-to-me": "You Belong To Me",
+  "wherever-you-go": "Indian Moon (Long View Farm)",
+  "indian-moon-long-view-farm": "Indian Moon (Long View Farm)",
+};
+
+export const IMPORT_ORIGINAL_ARTISTS = new Map([
+  ["tony grove", "Tony Grove"],
+  ["originals", "Originals"],
+]);
