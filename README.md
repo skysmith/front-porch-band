@@ -113,6 +113,46 @@ node scripts/validate-charts.mjs --source ./private-charts
 node scripts/sync-charts.mjs --source ./private-charts
 ```
 
+Correction inbox
+
+If you want a lightweight “fix this chart” workflow, save a corrected chart into your import inbox using the normal chart format:
+
+```text
+Song Title
+
+Artist: Artist Name
+
+G            C
+First line of the chart
+```
+
+Then run:
+
+```bash
+node scripts/apply-import-fixes.mjs
+```
+
+That helper will:
+
+- read files from the import inbox
+- overwrite the matching existing source chart when it finds one
+- regenerate the matching `charts/<slug>.txt`
+- update `data/songs.json`
+- archive the processed import file
+
+By default in this workspace, it expects:
+
+- inbox: `../import`
+- archive: `../import-archive`
+- local chart library: `../charts`
+- approved repo charts: `./approved-charts`
+
+You can also point it elsewhere with:
+
+```bash
+node scripts/apply-import-fixes.mjs --inbox ../import --library ../charts --approved ./approved-charts
+```
+
 Deployment
 
 This repo is meant for static hosting.
