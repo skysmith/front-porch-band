@@ -8,62 +8,6 @@
     "sourcePath": "../charts/days-aren-t-long-enough.md"
   },
   {
-    "slug": "first-day-of-my-life",
-    "title": "First Day of my Life",
-    "artist": "Bright Eyes",
-    "key": "",
-    "chartPath": "./charts/first-day-of-my-life.txt",
-    "sourcePath": "../charts/first-day-of-my-life.md"
-  },
-  {
-    "slug": "freckled-girl",
-    "title": "Freckled Girl",
-    "artist": "Cover",
-    "key": "",
-    "chartPath": "./charts/freckled-girl.txt",
-    "sourcePath": "../charts/freckled-girl.md"
-  },
-  {
-    "slug": "i-m-yours",
-    "title": "I'm Yours",
-    "artist": "Jason Mraz",
-    "key": "",
-    "chartPath": "./charts/i-m-yours.txt",
-    "sourcePath": "../charts/i-m-yours.md"
-  },
-  {
-    "slug": "i-will-follow-you-into-the-dark",
-    "title": "I Will Follow You into the Dark",
-    "artist": "Death Cab for Cutie",
-    "key": "",
-    "chartPath": "./charts/i-will-follow-you-into-the-dark.txt",
-    "sourcePath": "../charts/i-will-follow-you-into-the-dark.md"
-  },
-  {
-    "slug": "judgement",
-    "title": "Judgement",
-    "artist": "Cover",
-    "key": "A",
-    "chartPath": "./charts/judgement.txt",
-    "sourcePath": "../charts/judgement.md"
-  },
-  {
-    "slug": "seashell-tale",
-    "title": "Seashell Tale",
-    "artist": "Cover",
-    "key": "A",
-    "chartPath": "./charts/seashell-tale.txt",
-    "sourcePath": "../charts/seashell-tale.md"
-  },
-  {
-    "slug": "spring-cleaning",
-    "title": "Spring Cleaning",
-    "artist": "Cover",
-    "key": "",
-    "chartPath": "./charts/spring-cleaning.txt",
-    "sourcePath": "../charts/spring-cleaning.md"
-  },
-  {
     "slug": "such-great-heights",
     "title": "Such Great Heights",
     "artist": "The Postal Service",
@@ -155,7 +99,7 @@
     "slug": "wagon-wheel",
     "title": "Wagon Wheel",
     "artist": "Old Crow Medicine Show",
-    "key": "",
+    "key": "C",
     "chartPath": "./charts/wagon-wheel.txt",
     "sourcePath": "../charts/wagon-wheel.md"
   },

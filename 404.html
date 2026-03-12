@@ -8,7 +8,13 @@
   </head>
   <body>
     <div class="page-shell">
+      <button id="show-rail" class="show-rail-button" type="button" aria-label="Show song list">Songs</button>
+
       <aside class="song-rail" id="song-rail">
+        <div class="song-rail-top">
+          <button id="toggle-rail" class="rail-toggle" type="button" aria-label="Collapse song list">Hide songs</button>
+        </div>
+
         <div class="brand-block">
           <p class="eyebrow">Songbook</p>
           <h1>Front Porch Band</h1>
@@ -32,7 +38,11 @@
           </div>
 
           <div class="view-controls">
-            <button id="toggle-rail" type="button" aria-label="Collapse song list">Songs</button>
+            <label class="transpose-picker" for="transpose-select">
+              <span>Key</span>
+              <select id="transpose-select"></select>
+            </label>
+            <button id="reset-transpose" type="button" aria-label="Reset transposition">Reset</button>
             <button id="font-down" type="button" aria-label="Decrease chart size">A-</button>
             <button id="font-up" type="button" aria-label="Increase chart size">A+</button>
           </div>

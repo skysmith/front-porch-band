@@ -11,6 +11,7 @@ const fontDownNode = document.querySelector("#font-down");
 const transposeSelectNode = document.querySelector("#transpose-select");
 const resetTransposeNode = document.querySelector("#reset-transpose");
 const toggleRailNode = document.querySelector("#toggle-rail");
+const showRailNode = document.querySelector("#show-rail");
 const qrImageNode = document.querySelector("#qr-image");
 const pageShellNode = document.querySelector(".page-shell");
 const chordGridNode = document.querySelector("#chord-grid");
@@ -85,6 +86,7 @@ function setRailCollapsed(collapsed) {
   pageShellNode.classList.toggle("rail-collapsed", collapsed);
   toggleRailNode.textContent = collapsed ? "Show songs" : "Hide songs";
   toggleRailNode.setAttribute("aria-label", collapsed ? "Show song list" : "Collapse song list");
+  showRailNode.setAttribute("aria-hidden", collapsed ? "false" : "true");
   window.localStorage.setItem(RAIL_KEY, collapsed ? "1" : "0");
 }
 
@@ -449,6 +451,10 @@ fontDownNode.addEventListener("click", () => {
 
 toggleRailNode.addEventListener("click", () => {
   setRailCollapsed(!pageShellNode.classList.contains("rail-collapsed"));
+});
+
+showRailNode.addEventListener("click", () => {
+  setRailCollapsed(false);
 });
 
 bootstrap().catch((error) => {
