@@ -45,6 +45,11 @@ export const CHORD_LIBRARY = {
       "F#m": { frets: [2, 4, 5, 5], fingers: [1, 2, 3, 4], baseFret: 1 },
     },
   },
+  bouzouki: {
+    label: "Bouzouki (GDAD)",
+    strings: ["G", "D", "A", "D"],
+    shapes: {},
+  },
   ukulele: {
     label: "Ukulele",
     strings: ["G", "C", "E", "A"],

@@ -440,6 +440,10 @@ body {
   gap: 0.8rem;
 }
 
+.mobile-qr-toggle {
+  display: none;
+}
+
 .font-pill {
   display: inline-grid;
   grid-template-columns: 1fr 1fr;
@@ -816,6 +820,13 @@ body {
     justify-content: flex-start;
   }
 
+  .mobile-qr-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 5.8rem;
+  }
+
   .chord-tool-row,
   .chord-helper-controls,
   .chord-shapes-summary {
@@ -831,6 +842,16 @@ body {
 
   .qr-card {
     display: none;
+  }
+
+  .page-shell.mobile-qr-visible .qr-card {
+    display: block;
+    position: fixed;
+    right: 0.9rem;
+    bottom: calc(5.75rem + env(safe-area-inset-bottom, 0px));
+    width: 112px;
+    padding: 0.45rem;
+    z-index: 18;
   }
 
 }

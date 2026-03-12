@@ -7,6 +7,7 @@ const chartNode = document.querySelector("#chart-body");
 const searchNode = document.querySelector("#song-search");
 const fontUpNode = document.querySelector("#font-up");
 const fontDownNode = document.querySelector("#font-down");
+const mobileQrToggleNode = document.querySelector("#mobile-qr-toggle");
 const transposeSelectNode = document.querySelector("#transpose-select");
 const resetTransposeNode = document.querySelector("#reset-transpose");
 const toggleRailNode = document.querySelector("#toggle-rail");
@@ -31,6 +32,7 @@ const suggestionStatusNode = document.querySelector("#suggestion-status");
 const FONT_KEY = "front-porch-band-font-scale";
 const RAIL_KEY = "front-porch-band-rail-collapsed";
 const INSTRUMENT_KEY = "front-porch-band-instrument";
+const MOBILE_QR_KEY = "front-porch-band-mobile-qr";
 const TRANSPOSE_KEY = "front-porch-band-transpose";
 const DEFAULT_FONT_SIZE = 1;
 const FONT_STEP = 0.08;
@@ -84,6 +86,21 @@ function updatePageMode() {
   const onHome = !currentSlug;
   pageShellNode.classList.toggle("mobile-home", isMobileLayout() && onHome);
   pageShellNode.classList.toggle("mobile-song", isMobileLayout() && !onHome);
+  updateMobileQrState();
+}
+
+function isMobileQrEnabled() {
+  return window.localStorage.getItem(MOBILE_QR_KEY) === "1";
+}
+
+function updateMobileQrState() {
+  const enabled = isMobileLayout() && isMobileQrEnabled();
+  pageShellNode.classList.toggle("mobile-qr-visible", enabled);
+
+  if (mobileQrToggleNode) {
+    mobileQrToggleNode.textContent = enabled ? "QR on" : "QR off";
+    mobileQrToggleNode.setAttribute("aria-pressed", enabled ? "true" : "false");
+  }
 }
 
 function currentShareUrl() {
@@ -488,6 +505,12 @@ window.addEventListener("hashchange", () => {
 window.addEventListener("resize", () => {
   restoreRailState();
   updatePageMode();
+});
+
+mobileQrToggleNode?.addEventListener("click", () => {
+  const next = isMobileQrEnabled() ? "0" : "1";
+  window.localStorage.setItem(MOBILE_QR_KEY, next);
+  updateMobileQrState();
 });
 
 instrumentSelectNode.addEventListener("change", () => {
