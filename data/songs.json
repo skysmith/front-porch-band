@@ -16,6 +16,22 @@
     "sourcePath": "../charts/and-so-it-goes.md"
   },
   {
+    "slug": "tony-grove-better-half",
+    "title": "Better Half",
+    "artist": "Tony Grove",
+    "key": "",
+    "chartPath": "./charts/tony-grove-better-half.txt",
+    "sourcePath": "../charts/tony-grove/better-half.md"
+  },
+  {
+    "slug": "tony-grove-bitterness",
+    "title": "Bitterness",
+    "artist": "Tony Grove",
+    "key": "",
+    "chartPath": "./charts/tony-grove-bitterness.txt",
+    "sourcePath": "../charts/tony-grove/bitterness.md"
+  },
+  {
     "slug": "black-velvet-band",
     "title": "Black Velvet Band",
     "artist": "Shipwreckers",
@@ -112,6 +128,14 @@
     "sourcePath": "../charts/gotta-serve-somebody.md"
   },
   {
+    "slug": "tony-grove-haley-s-song",
+    "title": "Haley's Song",
+    "artist": "Tony Grove",
+    "key": "",
+    "chartPath": "./charts/tony-grove-haley-s-song.txt",
+    "sourcePath": "../charts/tony-grove/haley-s-song.md"
+  },
+  {
     "slug": "hallelujah",
     "title": "Hallelujah",
     "artist": "Leonard Cohen",
@@ -198,6 +222,14 @@
     "key": "F",
     "chartPath": "./charts/judgement.txt",
     "sourcePath": "../charts/judgement.md"
+  },
+  {
+    "slug": "tony-grove-lay-the-anchor",
+    "title": "Lay the Anchor",
+    "artist": "Tony Grove",
+    "key": "",
+    "chartPath": "./charts/tony-grove-lay-the-anchor.txt",
+    "sourcePath": "../charts/tony-grove/lay-the-anchor.md"
   },
   {
     "slug": "leaving-on-a-jet-plane",
@@ -336,12 +368,28 @@
     "sourcePath": "../charts/sound-of-silence.md"
   },
   {
+    "slug": "tony-grove-space-age",
+    "title": "Space Age",
+    "artist": "Tony Grove",
+    "key": "C",
+    "chartPath": "./charts/tony-grove-space-age.txt",
+    "sourcePath": "../charts/tony-grove/space-age.md"
+  },
+  {
     "slug": "spring-cleaning",
     "title": "Spring Cleaning",
     "artist": "Bright Eyes / Neva Dinova",
     "key": "C",
     "chartPath": "./charts/spring-cleaning.txt",
     "sourcePath": "../charts/spring-cleaning.md"
+  },
+  {
+    "slug": "tony-grove-stand-up",
+    "title": "Stand Up",
+    "artist": "Tony Grove",
+    "key": "C",
+    "chartPath": "./charts/tony-grove-stand-up.txt",
+    "sourcePath": "../charts/tony-grove/stand-up.md"
   },
   {
     "slug": "such-great-heights",
@@ -400,6 +448,14 @@
     "sourcePath": "../charts/teach-your-children-well.md"
   },
   {
+    "slug": "test-porch-approval",
+    "title": "Test Porch Approval",
+    "artist": "Front Porch Band",
+    "key": "D",
+    "chartPath": "./charts/test-porch-approval.txt",
+    "sourcePath": "./approved-charts/test-porch-approval.md"
+  },
+  {
     "slug": "the-59th-street-bridge-song",
     "title": "The 59th Street Bridge Song",
     "artist": "Simon and Garfunkel",
@@ -438,54 +494,6 @@
     "key": "Asus2",
     "chartPath": "./charts/this-charming-man.txt",
     "sourcePath": "../charts/this-charming-man.md"
-  },
-  {
-    "slug": "tony-grove-better-half",
-    "title": "Better Half",
-    "artist": "Tony Grove",
-    "key": "",
-    "chartPath": "./charts/tony-grove-better-half.txt",
-    "sourcePath": "../charts/tony-grove/better-half.md"
-  },
-  {
-    "slug": "tony-grove-bitterness",
-    "title": "Bitterness",
-    "artist": "Tony Grove",
-    "key": "",
-    "chartPath": "./charts/tony-grove-bitterness.txt",
-    "sourcePath": "../charts/tony-grove/bitterness.md"
-  },
-  {
-    "slug": "tony-grove-haley-s-song",
-    "title": "Haley's Song",
-    "artist": "Tony Grove",
-    "key": "",
-    "chartPath": "./charts/tony-grove-haley-s-song.txt",
-    "sourcePath": "../charts/tony-grove/haley-s-song.md"
-  },
-  {
-    "slug": "tony-grove-lay-the-anchor",
-    "title": "Lay the Anchor",
-    "artist": "Tony Grove",
-    "key": "",
-    "chartPath": "./charts/tony-grove-lay-the-anchor.txt",
-    "sourcePath": "../charts/tony-grove/lay-the-anchor.md"
-  },
-  {
-    "slug": "tony-grove-space-age",
-    "title": "Space Age",
-    "artist": "Tony Grove",
-    "key": "C",
-    "chartPath": "./charts/tony-grove-space-age.txt",
-    "sourcePath": "../charts/tony-grove/space-age.md"
-  },
-  {
-    "slug": "tony-grove-stand-up",
-    "title": "Stand Up",
-    "artist": "Tony Grove",
-    "key": "C",
-    "chartPath": "./charts/tony-grove-stand-up.txt",
-    "sourcePath": "../charts/tony-grove/stand-up.md"
   },
   {
     "slug": "wagon-wheel",

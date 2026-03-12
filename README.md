@@ -2,6 +2,16 @@ Front Porch Band
 
 Front Porch Band is a static, phone-friendly songbook for jam sessions. It keeps charts readable on mobile, supports per-device transposition and instrument views, and stays easy to host on any static platform.
 
+## Screenshots
+
+Home / browse view:
+
+![Front Porch Band home](./docs/screenshots/front-porch-home.png)
+
+Song view:
+
+![Front Porch Band song view](./docs/screenshots/front-porch-song.png)
+
 What it does:
 
 - groups songs by artist in a collapsible sidebar
@@ -32,7 +42,7 @@ node scripts/validate-charts.mjs
 node scripts/sync-charts.mjs
 ```
 
-By default, the chart scripts now prefer `./private-charts` inside the repo. If that folder does not exist, they fall back to the older sibling-folder pattern at `../charts`.
+By default, the chart scripts prefer `./private-charts` inside the repo. If that folder does not exist, they fall back to the older sibling-folder pattern at `../charts`.
 
 You can also point the app at a different chart directory:
 
@@ -58,10 +68,11 @@ front-porch-band/
   styles.css
   chord-library.js
   chord-diagrams.js
-  charts/              generated chart text
-  data/songs.json      generated index
-  docs/                project docs
-  scripts/             sync, validate, and import helpers
+  approved-charts/      issue-approved source charts committed to the repo
+  charts/               generated chart text
+  data/songs.json       generated index
+  docs/                 project docs
+  scripts/              sync, validate, import, and moderation helpers
 ```
 
 Chart format
@@ -78,6 +89,21 @@ First line of the chart
 ```
 
 See [docs/CHART_FORMAT.md](./docs/CHART_FORMAT.md) for the full format.
+
+Public repo content
+
+This repo is already set up for a public-code / optional-private-library split:
+
+- code license: `MIT`
+- public sample content: a tiny `Front Porch Band` sample songbook in `examples/sample-songbook/`
+- personal library support: `private-charts/` and `private-build/` stay out of git
+
+If you want a contributor-safe demo build, point the app at the sample set:
+
+```bash
+node scripts/validate-charts.mjs --source ./examples/sample-songbook
+node scripts/sync-charts.mjs --source ./examples/sample-songbook
+```
 
 Importing rough files
 
@@ -159,7 +185,7 @@ Fallback behavior:
 
 Reviewing GitHub suggestions
 
-Use the GitHub review helper to inspect or approve submitted charts:
+Use the local GitHub review helper when you want manual moderation from your machine:
 
 ```bash
 node scripts/review-github-suggestions.mjs list
@@ -168,18 +194,24 @@ node scripts/review-github-suggestions.mjs approve 123 --charts ../charts
 node scripts/review-github-suggestions.mjs reject 123
 ```
 
-What approval does:
+Web approval flow
 
-- fetches the issue body
-- converts it into a chart file
-- writes it into your chart library
-- comments on the issue
-- closes the issue
+If you want to approve from the GitHub web UI instead of the local CLI:
 
-What rejection does:
+1. open the suggestion issue
+2. add the `approved-song` label
+3. wait for the `Approve Song Suggestion` GitHub Action to run
 
-- comments on the issue
-- closes the issue without importing
+That workflow will:
+
+- parse the pasted chart from the issue body
+- save a source-style copy under `approved-charts/`
+- update `charts/<slug>.txt`
+- update `data/songs.json`
+- commit the change back to `main`
+- comment on the issue and close it
+
+This path is meant for repo-native suggestions only. Your larger private/local chart library can still use the local review CLI when you want finer control.
 
 Local review inbox
 
@@ -206,19 +238,13 @@ See [docs/PUBLISHING.md](./docs/PUBLISHING.md) for the recommended split between
 
 Open-source note
 
-The app code is straightforward to open source. Song content is a separate question. If you publish the repo publicly, it is safer to:
+The app code is MIT-licensed and ready to share. Song content is the separate question. If you publish the repo publicly, it is still safer to:
 
 - keep personal or copyrighted charts in a private source folder outside the repo
 - include only original songs, public-domain material, or explicit sample/demo charts in the public repository
 
-Good next steps before a broader public launch:
-
-- choose a license for the code
-- decide what sample content, if any, belongs in the public repo
-- add screenshots to this README
-- consider a small sample chart set for first-time contributors
-
-There is a starter sample chart here:
+The public repo currently includes this small sample set for first-time contributors:
 
 - [examples/sample-chart.md](./examples/sample-chart.md)
 - [examples/sample-songbook/welcome-to-the-porch.md](./examples/sample-songbook/welcome-to-the-porch.md)
+- [examples/sample-songbook/back-porch-forecast.md](./examples/sample-songbook/back-porch-forecast.md)
