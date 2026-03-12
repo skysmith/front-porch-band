@@ -54,13 +54,27 @@
               <span>Transpose</span>
               <select id="transpose-select"></select>
             </label>
+            <label class="capo-picker" for="capo-select">
+              <span>Capo shapes</span>
+              <select id="capo-select"></select>
+            </label>
             <label class="instrument-picker" for="instrument-select">
               <span>Instrument</span>
               <select id="instrument-select"></select>
             </label>
+            <button id="custom-toggle" class="secondary-button custom-toggle" type="button" aria-expanded="false" aria-controls="custom-key-wrap">Custom</button>
             <button id="mobile-qr-toggle" class="secondary-button mobile-qr-toggle" type="button" aria-label="Toggle QR code">QR off</button>
             <button id="reset-transpose" class="secondary-button tool-row-action" type="button" aria-label="Reset transposition">Reset</button>
           </div>
+
+          <div id="custom-key-wrap" class="custom-key-wrap" hidden>
+            <label class="custom-key-picker" for="custom-key-select">
+              <span>Chromatic transpose</span>
+              <select id="custom-key-select"></select>
+            </label>
+          </div>
+
+          <p id="capo-hint" class="capo-hint" hidden></p>
 
           <details class="chord-shapes" id="chord-shapes">
             <summary class="chord-shapes-summary">

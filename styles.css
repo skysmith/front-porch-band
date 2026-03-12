@@ -510,7 +510,9 @@ body {
 }
 
 .transpose-picker,
-.instrument-picker {
+.capo-picker,
+.instrument-picker,
+.custom-key-picker {
   display: grid;
   gap: 0.3rem;
   color: var(--text-muted);
@@ -519,7 +521,9 @@ body {
 }
 
 .transpose-picker select,
+.capo-picker select,
 .instrument-picker select,
+.custom-key-picker select,
 .secondary-button {
   min-height: 2.7rem;
   padding: 0 0.9rem;
@@ -546,6 +550,27 @@ body {
 
 .tool-row-action {
   margin-left: auto;
+}
+
+.custom-key-wrap {
+  display: flex;
+  align-items: end;
+  gap: 0.75rem;
+  padding: 0 1rem 1rem;
+}
+
+.custom-toggle.active {
+  border-color: rgba(36, 87, 214, 0.34);
+  background: rgba(36, 87, 214, 0.1);
+  color: var(--accent);
+}
+
+.capo-hint {
+  margin: 0;
+  padding: 0 1rem 1rem;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.45;
 }
 
 .chord-helper-controls {
@@ -848,7 +873,9 @@ body {
   }
 
   .transpose-picker select,
+  .capo-picker select,
   .instrument-picker select,
+  .custom-key-picker select,
   .secondary-button {
     width: 100%;
   }

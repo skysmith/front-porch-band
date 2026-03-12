@@ -9,6 +9,11 @@ const fontUpNode = document.querySelector("#font-up");
 const fontDownNode = document.querySelector("#font-down");
 const mobileQrToggleNode = document.querySelector("#mobile-qr-toggle");
 const transposeSelectNode = document.querySelector("#transpose-select");
+const capoSelectNode = document.querySelector("#capo-select");
+const customToggleNode = document.querySelector("#custom-toggle");
+const customKeyWrapNode = document.querySelector("#custom-key-wrap");
+const customKeySelectNode = document.querySelector("#custom-key-select");
+const capoHintNode = document.querySelector("#capo-hint");
 const resetTransposeNode = document.querySelector("#reset-transpose");
 const toggleRailNode = document.querySelector("#toggle-rail");
 const showRailNode = document.querySelector("#show-rail");
@@ -34,6 +39,7 @@ const RAIL_KEY = "front-porch-band-rail-collapsed";
 const INSTRUMENT_KEY = "front-porch-band-instrument";
 const MOBILE_QR_KEY = "front-porch-band-mobile-qr";
 const TRANSPOSE_KEY = "front-porch-band-transpose";
+const CUSTOM_OPEN_KEY = "front-porch-band-custom-open";
 const DEFAULT_FONT_SIZE = 1;
 const FONT_STEP = 0.08;
 const MIN_FONT_SIZE = 0.84;
@@ -62,6 +68,7 @@ const NOTE_INDEX = {
   B: 11,
   Cb: 11,
 };
+const CAPO_SHAPES = ["G", "C", "D", "A", "E"];
 
 let songs = [];
 let currentSlug = "";
@@ -249,11 +256,40 @@ function extractBaseKey(song, rawText) {
 }
 
 function currentTransposeTarget() {
-  return transposeSelectNode.value || "original";
+  if (capoSelectNode?.value && capoSelectNode.value !== "original") {
+    return capoSelectNode.value;
+  }
+
+  if (transposeSelectNode?.value && transposeSelectNode.value !== "original") {
+    return transposeSelectNode.value;
+  }
+
+  if (customKeySelectNode?.value && customKeySelectNode.value !== "original") {
+    return customKeySelectNode.value;
+  }
+
+  return "original";
 }
 
 function isInstrumentTranspose(target = currentTransposeTarget()) {
   return ["bb-instrument", "eb-instrument", "f-instrument"].includes(target);
+}
+
+function isCapoTarget(target = currentTransposeTarget()) {
+  return target.startsWith("capo:");
+}
+
+function capoShapeFromTarget(target = currentTransposeTarget()) {
+  return isCapoTarget(target) ? target.split(":")[1] || "" : "";
+}
+
+function capoFretForShape(baseKey, shapeKey) {
+  const baseIndex = NOTE_INDEX[baseKey];
+  const shapeIndex = NOTE_INDEX[shapeKey];
+  if (baseIndex === undefined || shapeIndex === undefined) {
+    return null;
+  }
+  return (baseIndex - shapeIndex + 12) % 12;
 }
 
 function resolveTransposeTarget(baseKey, target) {
@@ -271,6 +307,17 @@ function resolveTransposeTarget(baseKey, target) {
 
   if (target === "f-instrument") {
     return { key: transposeRoot(baseKey, 7), label: "F inst" };
+  }
+
+  if (target.startsWith("capo:")) {
+    const shapeKey = target.split(":")[1] || "";
+    const fret = capoFretForShape(baseKey, shapeKey);
+    return {
+      key: shapeKey,
+      label: fret === null ? "" : `Capo ${fret}`,
+      fret,
+      shapeKey,
+    };
   }
 
   return { key: target, label: "" };
@@ -303,7 +350,22 @@ function transposeChartText(text, steps) {
   );
 }
 
-function renderTransposeChoices(song, rawText) {
+function setCustomMode(open) {
+  if (!customKeyWrapNode || !customToggleNode) {
+    return;
+  }
+
+  customKeyWrapNode.hidden = !open;
+  customToggleNode.setAttribute("aria-expanded", open ? "true" : "false");
+  customToggleNode.classList.toggle("active", open);
+  window.localStorage.setItem(CUSTOM_OPEN_KEY, open ? "1" : "0");
+}
+
+function restoreCustomMode() {
+  setCustomMode(window.localStorage.getItem(CUSTOM_OPEN_KEY) === "1");
+}
+
+function renderSimpleTransposeChoices(song, rawText) {
   const baseKey = extractBaseKey(song, rawText);
   const saved = window.localStorage.getItem(TRANSPOSE_KEY) || "original";
   const fragment = document.createDocumentFragment();
@@ -324,6 +386,50 @@ function renderTransposeChoices(song, rawText) {
     fragment.append(option);
   }
 
+  transposeSelectNode.replaceChildren(fragment);
+  transposeSelectNode.disabled = !baseKey;
+  transposeSelectNode.value = isInstrumentTranspose(saved) ? saved : "original";
+  transposeSelectNode.classList.toggle("instrument-target", isInstrumentTranspose(transposeSelectNode.value));
+}
+
+function renderCapoChoices(song, rawText) {
+  const baseKey = extractBaseKey(song, rawText);
+  const saved = window.localStorage.getItem(TRANSPOSE_KEY) || "original";
+  const fragment = document.createDocumentFragment();
+
+  const original = document.createElement("option");
+  original.value = "original";
+  original.textContent = "Original shapes";
+  fragment.append(original);
+
+  if (baseKey) {
+    CAPO_SHAPES.forEach((shapeKey) => {
+      const fret = capoFretForShape(baseKey, shapeKey);
+      if (fret === null || fret === 0) {
+        return;
+      }
+      const option = document.createElement("option");
+      option.value = `capo:${shapeKey}`;
+      option.textContent = `${shapeKey} shapes (capo ${fret})`;
+      fragment.append(option);
+    });
+  }
+
+  capoSelectNode.replaceChildren(fragment);
+  capoSelectNode.disabled = !baseKey;
+  capoSelectNode.value = isCapoTarget(saved) ? saved : "original";
+}
+
+function renderCustomKeyChoices(song, rawText) {
+  const baseKey = extractBaseKey(song, rawText);
+  const saved = window.localStorage.getItem(TRANSPOSE_KEY) || "original";
+  const fragment = document.createDocumentFragment();
+
+  const original = document.createElement("option");
+  original.value = "original";
+  original.textContent = baseKey ? `Original (${baseKey})` : "Original";
+  fragment.append(original);
+
   for (const note of NOTE_NAMES) {
     const option = document.createElement("option");
     option.value = note;
@@ -331,11 +437,22 @@ function renderTransposeChoices(song, rawText) {
     fragment.append(option);
   }
 
-  transposeSelectNode.replaceChildren(fragment);
-  transposeSelectNode.disabled = !baseKey;
-  transposeSelectNode.value = baseKey && saved !== "original" ? saved : "original";
-  resetTransposeNode.disabled = transposeSelectNode.value === "original";
-  transposeSelectNode.classList.toggle("instrument-target", isInstrumentTranspose(transposeSelectNode.value));
+  customKeySelectNode.replaceChildren(fragment);
+  customKeySelectNode.disabled = !baseKey;
+  customKeySelectNode.value = !isInstrumentTranspose(saved) && !isCapoTarget(saved) ? saved : "original";
+}
+
+function renderTransposeChoices(song, rawText) {
+  const saved = window.localStorage.getItem(TRANSPOSE_KEY) || "original";
+  renderSimpleTransposeChoices(song, rawText);
+  renderCapoChoices(song, rawText);
+  renderCustomKeyChoices(song, rawText);
+  if (!isInstrumentTranspose(saved) && !isCapoTarget(saved) && saved !== "original") {
+    setCustomMode(true);
+  } else {
+    restoreCustomMode();
+  }
+  resetTransposeNode.disabled = currentTransposeTarget() === "original";
 }
 
 function renderInstrumentChoices() {
@@ -365,6 +482,30 @@ function updateChordHelper() {
   }
 }
 
+function updateCapoHint() {
+  if (!capoHintNode) {
+    return;
+  }
+
+  const target = currentTransposeTarget();
+  if (!currentSong || !currentRawChartText || !isCapoTarget(target)) {
+    capoHintNode.hidden = true;
+    capoHintNode.textContent = "";
+    return;
+  }
+
+  const baseKey = extractBaseKey(currentSong, currentRawChartText);
+  const resolved = resolveTransposeTarget(baseKey, target);
+  if (!baseKey || !resolved.shapeKey || resolved.fret === null) {
+    capoHintNode.hidden = true;
+    capoHintNode.textContent = "";
+    return;
+  }
+
+  capoHintNode.hidden = false;
+  capoHintNode.textContent = `Capo ${resolved.fret}. Play ${resolved.shapeKey} shapes to sound in ${baseKey}.`;
+}
+
 function renderCurrentChart() {
   const steps = transposeStepsForSong(currentSong, currentRawChartText);
   currentChartText = transposeChartText(currentRawChartText, steps);
@@ -373,6 +514,7 @@ function renderCurrentChart() {
   const target = currentTransposeTarget();
   resetTransposeNode.disabled = target === "original";
   transposeSelectNode.classList.toggle("instrument-target", isInstrumentTranspose(target));
+  updateCapoHint();
   updateChordHelper();
 }
 
@@ -463,6 +605,13 @@ function showHome() {
   chordHelperCountNode.textContent = "Open a song to see transposition and chord shapes.";
   transposeSelectNode.replaceChildren();
   transposeSelectNode.disabled = true;
+  capoSelectNode.replaceChildren();
+  capoSelectNode.disabled = true;
+  customKeySelectNode.replaceChildren();
+  customKeySelectNode.disabled = true;
+  setCustomMode(false);
+  capoHintNode.hidden = true;
+  capoHintNode.textContent = "";
   resetTransposeNode.disabled = true;
   chordHelperNode.hidden = true;
   if (chordShapesNode) {
@@ -532,6 +681,7 @@ async function selectSongBySlug(slug) {
 async function bootstrap() {
   restoreFontScale();
   restoreRailState();
+  restoreCustomMode();
   renderInstrumentChoices();
 
   const response = await fetch("./data/songs.json");
@@ -566,14 +716,37 @@ instrumentSelectNode.addEventListener("change", () => {
 });
 
 transposeSelectNode.addEventListener("change", () => {
+  capoSelectNode.value = "original";
+  customKeySelectNode.value = "original";
   window.localStorage.setItem(TRANSPOSE_KEY, transposeSelectNode.value);
   transposeSelectNode.classList.toggle("instrument-target", isInstrumentTranspose(transposeSelectNode.value));
   renderCurrentChart();
 });
 
+capoSelectNode.addEventListener("change", () => {
+  transposeSelectNode.value = "original";
+  customKeySelectNode.value = "original";
+  window.localStorage.setItem(TRANSPOSE_KEY, capoSelectNode.value);
+  renderCurrentChart();
+});
+
+customToggleNode?.addEventListener("click", () => {
+  setCustomMode(customKeyWrapNode.hidden);
+});
+
+customKeySelectNode?.addEventListener("change", () => {
+  transposeSelectNode.value = "original";
+  capoSelectNode.value = "original";
+  window.localStorage.setItem(TRANSPOSE_KEY, customKeySelectNode.value);
+  renderCurrentChart();
+});
+
 resetTransposeNode.addEventListener("click", () => {
   transposeSelectNode.value = "original";
+  capoSelectNode.value = "original";
+  customKeySelectNode.value = "original";
   window.localStorage.setItem(TRANSPOSE_KEY, "original");
+  transposeSelectNode.classList.remove("instrument-target");
   renderCurrentChart();
 });
 
