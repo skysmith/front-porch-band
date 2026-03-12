@@ -152,12 +152,7 @@ function buildChordCard(instrumentId, chordName) {
 
   const card = document.createElement("article");
   card.className = "chord-card";
-
-  const title = document.createElement("h4");
-  title.className = "chord-card-title";
-  title.textContent = chordName;
-
-  card.append(title, buildDiagramSvg(instrument, chordName, shape));
+  card.append(buildDiagramSvg(instrument, chordName, shape));
   return card;
 }
 

@@ -56,6 +56,22 @@
     "sourcePath": "../charts/judgement.md"
   },
   {
+    "slug": "seashell-tale",
+    "title": "Seashell Tale",
+    "artist": "M. Ward",
+    "key": "C",
+    "chartPath": "./charts/seashell-tale.txt",
+    "sourcePath": "../charts/seashell-tale.md"
+  },
+  {
+    "slug": "spring-cleaning",
+    "title": "Spring Cleaning",
+    "artist": "Bright Eyes / Neva Dinova",
+    "key": "C",
+    "chartPath": "./charts/spring-cleaning.txt",
+    "sourcePath": "../charts/spring-cleaning.md"
+  },
+  {
     "slug": "such-great-heights",
     "title": "Such Great Heights",
     "artist": "The Postal Service",

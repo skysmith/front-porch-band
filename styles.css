@@ -252,24 +252,24 @@ body {
   margin: 0 0 0.3rem;
   color: var(--text-soft);
   font-size: 0.8rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .song-header h2 {
   margin: 0;
-  font-size: clamp(2.25rem, 7vw, 4.6rem);
-  line-height: 0.92;
-  letter-spacing: -0.05em;
-  font-weight: 800;
+  font-size: clamp(1.9rem, 5.4vw, 3.5rem);
+  line-height: 0.96;
+  letter-spacing: -0.045em;
+  font-weight: 700;
 }
 
 .song-artist {
   margin: 0.45rem 0 0;
   color: var(--text-muted);
   font-size: 1.05rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .view-controls {
@@ -294,7 +294,11 @@ body {
   background: transparent;
   color: var(--text);
   font: inherit;
-  font-weight: 800;
+  font-weight: 700;
+}
+
+#font-down {
+  font-size: 0.8em;
 }
 
 .font-pill button + button {
@@ -318,7 +322,7 @@ body {
   cursor: pointer;
   list-style: none;
   font-size: 0.98rem;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .chord-helper-summary::-webkit-details-marker {
@@ -328,7 +332,7 @@ body {
 .chord-helper-meta {
   color: var(--text-muted);
   font-size: 0.88rem;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .chord-tool-row {
@@ -345,7 +349,7 @@ body {
   gap: 0.3rem;
   color: var(--text-muted);
   font-size: 0.77rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .transpose-picker select,
@@ -358,13 +362,20 @@ body {
   background: var(--panel);
   color: var(--text);
   font: inherit;
-  font-weight: 700;
+  font-weight: 500;
   box-shadow: none;
   appearance: none;
 }
 
+.transpose-picker select.instrument-target {
+  border-color: rgba(36, 87, 214, 0.34);
+  background: rgba(36, 87, 214, 0.1);
+  color: var(--accent);
+}
+
 .secondary-button {
   min-width: 5.2rem;
+  font-weight: 600;
 }
 
 .chord-helper-controls {
@@ -378,6 +389,7 @@ body {
   margin: 0;
   color: var(--text-muted);
   font-size: 0.86rem;
+  font-weight: 500;
 }
 
 .chord-grid {
@@ -397,6 +409,7 @@ body {
 .chord-card-title {
   margin: 0 0 0.4rem;
   font-size: 0.92rem;
+  font-weight: 600;
 }
 
 .chord-card-missing {

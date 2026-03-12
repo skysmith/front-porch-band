@@ -156,6 +156,10 @@ function currentTransposeTarget() {
   return transposeSelectNode.value || "original";
 }
 
+function isInstrumentTranspose(target = currentTransposeTarget()) {
+  return ["bb-instrument", "eb-instrument", "f-instrument"].includes(target);
+}
+
 function resolveTransposeTarget(baseKey, target) {
   if (!baseKey || target === "original") {
     return { key: "", label: "" };
@@ -213,17 +217,10 @@ function renderTransposeChoices(song, rawText) {
   original.textContent = baseKey ? `Orig (${baseKey})` : "Original";
   fragment.append(original);
 
-  for (const note of NOTE_NAMES) {
-    const option = document.createElement("option");
-    option.value = note;
-    option.textContent = note;
-    fragment.append(option);
-  }
-
   for (const shortcut of [
-    { value: "bb-instrument", label: "Bb inst" },
-    { value: "eb-instrument", label: "Eb inst" },
-    { value: "f-instrument", label: "F inst" },
+    { value: "bb-instrument", label: "Bb instrument" },
+    { value: "eb-instrument", label: "Eb instrument" },
+    { value: "f-instrument", label: "F instrument" },
   ]) {
     const option = document.createElement("option");
     option.value = shortcut.value;
@@ -231,10 +228,18 @@ function renderTransposeChoices(song, rawText) {
     fragment.append(option);
   }
 
+  for (const note of NOTE_NAMES) {
+    const option = document.createElement("option");
+    option.value = note;
+    option.textContent = note;
+    fragment.append(option);
+  }
+
   transposeSelectNode.replaceChildren(fragment);
   transposeSelectNode.disabled = !baseKey;
   transposeSelectNode.value = baseKey && saved !== "original" ? saved : "original";
   resetTransposeNode.disabled = transposeSelectNode.value === "original";
+  transposeSelectNode.classList.toggle("instrument-target", isInstrumentTranspose(transposeSelectNode.value));
 }
 
 function renderInstrumentChoices() {
@@ -271,6 +276,7 @@ function renderCurrentChart() {
   const target = currentTransposeTarget();
   const resolvedTarget = resolveTransposeTarget(baseKey, target);
   resetTransposeNode.disabled = target === "original";
+  transposeSelectNode.classList.toggle("instrument-target", isInstrumentTranspose(target));
   if (baseKey && target !== "original") {
     kickerNode.textContent = resolvedTarget.label
       ? `Key: ${baseKey} -> ${resolvedTarget.key} (${resolvedTarget.label})`
@@ -430,6 +436,7 @@ instrumentSelectNode.addEventListener("change", () => {
 
 transposeSelectNode.addEventListener("change", () => {
   window.localStorage.setItem(TRANSPOSE_KEY, transposeSelectNode.value);
+  transposeSelectNode.classList.toggle("instrument-target", isInstrumentTranspose(transposeSelectNode.value));
   renderCurrentChart();
 });
 
