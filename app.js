@@ -17,6 +17,7 @@ const chordGridNode = document.querySelector("#chord-grid");
 const instrumentSelectNode = document.querySelector("#instrument-select");
 const chordHelperCountNode = document.querySelector("#chord-helper-count");
 const chordHelperNode = document.querySelector("#chord-helper");
+const chordShapesNode = document.querySelector("#chord-shapes");
 const chartCardNode = document.querySelector(".chart-card");
 const homeCardNode = document.querySelector("#home-card");
 const suggestionFormNode = document.querySelector("#suggestion-form");
@@ -298,6 +299,9 @@ function updateChordHelper() {
   chordHelperCountNode.textContent = count
     ? `${count} chord shape${count === 1 ? "" : "s"} for this song.`
     : `No saved ${getInstrumentLabel(instrumentId).toLowerCase()} shapes for this chart yet.`;
+  if (chordShapesNode) {
+    chordShapesNode.hidden = !count;
+  }
 }
 
 function renderCurrentChart() {
@@ -399,6 +403,10 @@ function showHome() {
   transposeSelectNode.disabled = true;
   resetTransposeNode.disabled = true;
   chordHelperNode.hidden = true;
+  if (chordShapesNode) {
+    chordShapesNode.hidden = true;
+    chordShapesNode.open = false;
+  }
   chartCardNode.hidden = true;
   homeCardNode.hidden = false;
   updateActiveLink();

@@ -101,11 +101,14 @@
             <button id="reset-transpose" class="secondary-button tool-row-action" type="button" aria-label="Reset transposition">Reset</button>
           </div>
 
-          <div class="chord-helper-controls">
-            <p id="chord-helper-count" class="chord-helper-count">No chords loaded yet.</p>
-          </div>
+          <details class="chord-shapes" id="chord-shapes">
+            <summary class="chord-shapes-summary">
+              <span>Chord Shapes</span>
+              <span id="chord-helper-count" class="chord-helper-count">No chords loaded yet.</span>
+            </summary>
 
-          <div id="chord-grid" class="chord-grid"></div>
+            <div id="chord-grid" class="chord-grid"></div>
+          </details>
         </details>
 
         <section id="home-card" class="landing-card">

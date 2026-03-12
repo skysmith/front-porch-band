@@ -34,26 +34,53 @@ function swapEnharmonicRoot(name) {
 function resolveChordNameForInstrument(instrumentId, chordName) {
   const library = CHORD_LIBRARY[instrumentId]?.shapes || {};
   const normalized = normalizeChordName(chordName);
-  if (library[normalized]) {
-    return normalized;
-  }
-
   const [main] = normalized.split("/");
-  if (library[main]) {
-    return main;
-  }
+  const candidates = [
+    normalized,
+    main,
+    swapEnharmonicRoot(normalized),
+    swapEnharmonicRoot(main),
+    ...buildRelaxedCandidates(normalized),
+    ...buildRelaxedCandidates(main),
+  ].filter(Boolean);
 
-  const enharmonic = swapEnharmonicRoot(normalized);
-  if (enharmonic !== normalized && library[enharmonic]) {
-    return enharmonic;
-  }
-
-  const enharmonicMain = swapEnharmonicRoot(main);
-  if (enharmonicMain !== main && library[enharmonicMain]) {
-    return enharmonicMain;
+  for (const candidate of candidates) {
+    if (library[candidate]) {
+      return candidate;
+    }
   }
 
   return normalized;
+}
+
+function buildRelaxedCandidates(name) {
+  const match = name.match(/^([A-G](?:#|b)?)(.*)$/);
+  if (!match) {
+    return [];
+  }
+
+  const [, root, suffix] = match;
+  const relaxed = [];
+
+  function add(nextSuffix) {
+    const candidate = `${root}${nextSuffix}`;
+    if (candidate !== name && !relaxed.includes(candidate)) {
+      relaxed.push(candidate);
+      const enharmonic = swapEnharmonicRoot(candidate);
+      if (enharmonic !== candidate && !relaxed.includes(enharmonic)) {
+        relaxed.push(enharmonic);
+      }
+    }
+  }
+
+  if (suffix.endsWith("maj7")) add("");
+  if (suffix.endsWith("m7")) add("m");
+  if (suffix.endsWith("7")) add("");
+  if (suffix.endsWith("add9")) add("");
+  if (suffix.endsWith("6")) add("");
+  if (suffix.endsWith("sus2") || suffix.endsWith("sus4")) add("");
+
+  return relaxed;
 }
 
 function extractChordTokens(chartText) {
