@@ -1,0 +1,80 @@
+Famous Blue Raincoat
+Artist: Leonard Cohen
+[Verse 1]
+     Am                       F
+It's four in the morning, the end of December
+Dm7                            Em7
+   I'm writing you now just to see if you're better
+Am                     F
+New York is cold, but I like where I'm living
+       Dm7                      Em7
+There's music on Clinton Street all through the evening
+Am                   Bm                   Am                Bm
+  I hear that you're building your little house deep in the desert
+Am                  G                          Am                   G
+  You're living for nothing now, I hope you're keeping some kind of record
+ 
+ 
+[Chorus 1]
+         C         C                      G
+Yes, and Jane came by with a lock of your hair
+    G                        Am       Am                           Bm    G
+She said that you gave it to her that night that you planned to go clear
+F                 Em7
+  Did you ever go clear?
+ 
+ 
+[Verse 2]
+        Am                        F
+Ah, the last time we saw you, you looked so much older
+     Dm7                      Em7
+Your famous blue raincoat was torn at the shoulder
+      Am                     F
+You'd been to the station to meet every train
+Dm7                          Em7
+   And you came home without Lili Marlene
+        Am         Bm         Am            Bm
+And you treated my woman to a flake of your life
+Am                  G   Am                 G
+  And when she came back, she was nobody's wife
+ 
+ 
+[Chorus 2]
+        C       C                           G     G
+Well, I see you there with the rose in your teeth
+                   Am    Am                    Bm   G
+One more thin gypsy thief, well, I see Jane's awake
+F                 Em7
+  She sends her regards
+ 
+ 
+[Instrumental]
+Am   F   Dm7   Em7
+ 
+ 
+[Verse 3]
+    Am                     F
+And what can I tell you my brother, my killer?
+Dm7                    Em7
+   What can I possibly say?
+  Am                    F
+I guess that I miss you, I guess I forgive you
+Dm7                         Em7
+   I'm glad you stood in my way
+Am                 Bm     Am                Bm
+  If you ever come by here, for Jane or for me
+Am                    G       Am                 G
+  Well, your enemy is sleeping, and his woman is free
+ 
+ 
+[Chorus 3]
+         C     C                    G             G
+Yes, and thanks for the trouble you took from her eyes
+                 Am        Am               Bm     G
+I thought it was there for good, so I never tried
+    C         C                      G
+And Jane came by with a lock of your hair
+    G                        Am       Am                           Bm    G
+She said that you gave it to her that night that you planned to go clear
+F               Em7
+  Sincerely, L. Cohen

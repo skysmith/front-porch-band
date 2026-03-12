@@ -112,6 +112,14 @@
     "sourcePath": "./approved-charts/everybody-knows.md"
   },
   {
+    "slug": "famous-blue-raincoat",
+    "title": "Famous Blue Raincoat",
+    "artist": "Leonard Cohen",
+    "key": "Am",
+    "chartPath": "./charts/famous-blue-raincoat.txt",
+    "sourcePath": "./approved-charts/famous-blue-raincoat.md"
+  },
+  {
     "slug": "first-day-of-my-life",
     "title": "First Day of my Life",
     "artist": "Bright Eyes",
