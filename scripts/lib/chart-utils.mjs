@@ -34,8 +34,24 @@ export function parseChart(fileText) {
   const title = lines[0]?.trim() ?? "";
   const artistLine = lines.find((line) => line.startsWith("Artist:")) ?? "";
   const artist = artistLine.replace(/^Artist:\s*/, "").trim();
-  const chartStart = lines.findIndex((line) => line.startsWith("Artist:"));
-  const body = chartStart >= 0 ? lines.slice(chartStart + 2).join("\n").trimEnd() : "";
+  const artistIndex = lines.findIndex((line) => line.startsWith("Artist:"));
+  let bodyStart = -1;
+
+  if (artistIndex >= 0) {
+    for (let index = artistIndex + 1; index < lines.length; index += 1) {
+      const line = lines[index];
+      if (!line.trim()) {
+        continue;
+      }
+      if (/^[A-Za-z][A-Za-z0-9 _-]*:\s*/.test(line)) {
+        continue;
+      }
+      bodyStart = index;
+      break;
+    }
+  }
+
+  const body = bodyStart >= 0 ? lines.slice(bodyStart).join("\n").trimEnd() : "";
   const keyMatch = body.match(/\b([A-G][#b]?(?:m|maj7|m7|7|sus2|sus4|6)?)\b/);
 
   return {

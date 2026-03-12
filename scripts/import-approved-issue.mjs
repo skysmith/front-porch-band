@@ -31,17 +31,14 @@ function parseIssueSuggestion(text = "") {
 }
 
 function toSourceChartText(suggestion) {
-  return [
-    suggestion.title,
-    "",
-    `Artist: ${suggestion.artist}`,
-    suggestion.notes ? `Notes: ${suggestion.notes}` : "",
-    "",
-    suggestion.body.trim(),
-    "",
-  ]
-    .filter(Boolean)
-    .join("\n");
+  const lines = [suggestion.title, "", `Artist: ${suggestion.artist}`];
+
+  if (suggestion.notes) {
+    lines.push(`Notes: ${suggestion.notes}`);
+  }
+
+  lines.push("", suggestion.body.trim(), "");
+  return lines.join("\n");
 }
 
 async function readEventIssue(eventPath) {
