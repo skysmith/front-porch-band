@@ -88,6 +88,14 @@
     "sourcePath": "../charts/days-aren-t-long-enough.md"
   },
   {
+    "slug": "desaparecido",
+    "title": "Desaparecido",
+    "artist": "Manu Chao",
+    "key": "Am",
+    "chartPath": "./charts/desaparecido.txt",
+    "sourcePath": "./approved-charts/desaparecido.md"
+  },
+  {
     "slug": "drink-it-up-men",
     "title": "Drink it up Men",
     "artist": "Shipwreckers",
