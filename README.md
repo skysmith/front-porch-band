@@ -91,6 +91,14 @@ Contributing
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md).
 
+Publishing
+
+See [docs/PUBLISHING.md](./docs/PUBLISHING.md) for the recommended split between:
+
+- public app code
+- private real-world chart libraries
+- public sample/demo content
+
 Open-source note
 
 The app code is straightforward to open source. Song content is a separate question. If you publish the repo publicly, it is safer to:
@@ -108,3 +116,4 @@ Good next steps before a broader public launch:
 There is a starter sample chart here:
 
 - [examples/sample-chart.md](./examples/sample-chart.md)
+- [examples/sample-songbook/welcome-to-the-porch.md](./examples/sample-songbook/welcome-to-the-porch.md)

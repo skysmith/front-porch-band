@@ -1,0 +1,13 @@
+Welcome to the Porch
+
+Artist: Front Porch Band
+
+G                   C
+Pick a song and settle in
+D                   G
+Find the key that fits your voice
+
+Em                  C
+Swap the instrument if you need to
+G                   D
+Then let the room make some noise
