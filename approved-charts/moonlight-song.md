@@ -1,0 +1,50 @@
+Moonlight Song
+
+Artist: Blaze Foley
+
+Moonlight shining through the trees
+F
+Moonlight shining down on me
+C                                G7
+Lights the way for lovers in the dark
+C
+Moonbeams dance on rain-drenched trees
+F
+Sparkle for our eyes to see
+C                  G7                C  F  C  G
+Moonlight shine on down and shine on me
+ 
+ 
+[Verse 2]
+C
+Moonlight bathes the woods around
+F
+Paradise that we have found
+C                                  G7
+Here among the trees and things we love
+C
+Shines on friends, all far away
+F
+Takes us to another day;
+C                  G7                C  F  C  G
+Moonlight shine on down and shine on me
+ 
+[Instrumental]
+C    C  C7 F   F
+C    G     C F C G
+ 
+[Verse 3]
+C
+Layin' with the one I love
+F
+Lookin' at the moon above
+C                           G7
+Bein' where we really wanna be
+C
+The autumn winds for now are still
+F
+The moon shines on, it always will;
+C                  G7                C  F  C  G
+Moonlight shine on down and shine on me
+C                  G7                F   C
+Moonlight shine on down and shine on me

@@ -336,6 +336,14 @@
     "sourcePath": "../charts/molly-malone.md"
   },
   {
+    "slug": "moonlight-song",
+    "title": "Moonlight Song",
+    "artist": "Blaze Foley",
+    "key": "F",
+    "chartPath": "./charts/moonlight-song.txt",
+    "sourcePath": "./approved-charts/moonlight-song.md"
+  },
+  {
     "slug": "mrs-robinson",
     "title": "Mrs. Robinson",
     "artist": "Simon and Garfunkel",
