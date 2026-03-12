@@ -1,39 +1,41 @@
-If I could Only Fly
+If I Could Only Fly
+
 Artist: Blaze Foley
-C                            F
+
+C                                         F
 I almost felt you touchin' me just now 
-C                          G
+C                                             G
 I wish I knew which way to turn and go 
-C                     F
+C                                    F
 I feel so good then I feel so bad 
-G                    C  F C
+G                                     C  F C
 Wonder what I oughta do 
  
  
-           F
+                 F
 If I could only fly 
-           C
+                 C
 If I could only fly 
-             G
+                    G
 I'd bid this place goodbye 
-                    C
+                                       C
 To come and be with you 
-          F
+                 F
 But I can hardly stand 
-      C
+              C
 Got nowhere to run 
-        G
+                G
 Another sinkin' sun 
-                C    F    C
+                                C    F    C
 One more lonely night 
  
-C                                F
+        C                                                       F
 The wind keeps blowin' somewhere every day
-C                                        G
+C                                                                          G
 They tell me things get better somewhere up the way 
-C                         F
+C                                          F
 Just dismal thinkin' on a dismal day 
-G                   C    F   C
+G                                C    F   C
 Sad songs for us to bear 
  
 C  F  G  CFC x2
@@ -42,37 +44,37 @@ C
 You know sometimes I write happy songs 
 F
 But then sometimes little things are wrong 
-C                              G
+C                                                    G
 You know I wish they all could make you smile 
 C
 Tomorrow maybe we can get away 
 F
 I'm coming home soon and I want to stay 
-G                                    C        F   C
+G                                                                   C        F   C
 I wish you could come with me when I go again 
  
-           F
+                 F
 If I could only fly 
-           C
+                 C
 If I could only fly 
-             G
+                    G
 I'd bid this place goodbye 
-                    C  F  C
+                                     C  F  C
 To come and be with you
-          F
+                F
 But I can hardly stand
-      C
+               C
 Got nowhere to run
-        G
+                G
 Another sinkin' sun
-                C
+                                C
 One more lonely night 
  
-           F
+                F
 If I could only fly 
-             C
+                     C
 If you could only fly 
-            G
+                     G
 If we could only fly 
                           C      F      C
 There'd be no more lonely nights
