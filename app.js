@@ -15,7 +15,6 @@ const qrImageNode = document.querySelector("#qr-image");
 const pageShellNode = document.querySelector(".page-shell");
 const chordGridNode = document.querySelector("#chord-grid");
 const instrumentSelectNode = document.querySelector("#instrument-select");
-const chordHelperMetaNode = document.querySelector("#chord-helper-meta");
 const chordHelperCountNode = document.querySelector("#chord-helper-count");
 
 const FONT_KEY = "front-porch-band-font-scale";
@@ -260,7 +259,6 @@ function renderInstrumentChoices() {
 function updateChordHelper() {
   const instrumentId = currentInstrument();
   const count = renderChordCards(chordGridNode, currentChartText, instrumentId);
-  chordHelperMetaNode.textContent = getInstrumentLabel(instrumentId);
   chordHelperCountNode.textContent = count
     ? `${count} chord shape${count === 1 ? "" : "s"} for this song.`
     : `No saved ${getInstrumentLabel(instrumentId).toLowerCase()} shapes for this chart yet.`;

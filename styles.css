@@ -329,12 +329,6 @@ body {
   display: none;
 }
 
-.chord-helper-meta {
-  color: var(--text-muted);
-  font-size: 0.88rem;
-  font-weight: 500;
-}
-
 .chord-tool-row {
   display: flex;
   flex-wrap: wrap;
