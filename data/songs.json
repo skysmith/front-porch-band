@@ -80,6 +80,14 @@
     "sourcePath": "../charts/drink-it-up-men.md"
   },
   {
+    "slug": "everybody-knows",
+    "title": "Everybody Knows",
+    "artist": "Leonard Cohen",
+    "key": "Dm",
+    "chartPath": "./charts/everybody-knows.txt",
+    "sourcePath": "./approved-charts/everybody-knows.md"
+  },
+  {
     "slug": "first-day-of-my-life",
     "title": "First Day of my Life",
     "artist": "Bright Eyes",
