@@ -104,6 +104,14 @@
     "sourcePath": "../charts/drink-it-up-men.md"
   },
   {
+    "slug": "election-day",
+    "title": "Election Day",
+    "artist": "Blaze Foley",
+    "key": "Am",
+    "chartPath": "./charts/election-day.txt",
+    "sourcePath": "./approved-charts/election-day.md"
+  },
+  {
     "slug": "everybody-knows",
     "title": "Everybody Knows",
     "artist": "Leonard Cohen",
