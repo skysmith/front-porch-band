@@ -102,29 +102,59 @@ function createSongLink(song) {
   title.className = "song-link-title";
   title.textContent = song.title;
 
-  const artist = document.createElement("span");
-  artist.className = "song-link-artist";
-  artist.textContent = song.artist;
-
-  link.append(title, artist);
+  link.append(title);
   return link;
 }
 
 function renderSongList(filter = "") {
   const normalized = filter.trim().toLowerCase();
   const fragment = document.createDocumentFragment();
+  const filteredSongs = songs.filter((song) => {
+    if (!normalized) {
+      return true;
+    }
 
-  songs
-    .filter((song) => {
-      if (!normalized) {
-        return true;
-      }
+    return `${song.title} ${song.artist}`.toLowerCase().includes(normalized);
+  });
 
-      return `${song.title} ${song.artist}`.toLowerCase().includes(normalized);
-    })
-    .forEach((song) => {
-      fragment.append(createSongLink(song));
-    });
+  const groups = new Map();
+  filteredSongs.forEach((song) => {
+    const key = song.artist || "Unknown";
+    if (!groups.has(key)) {
+      groups.set(key, []);
+    }
+    groups.get(key).push(song);
+  });
+
+  for (const [artist, artistSongs] of [...groups.entries()].sort((a, b) => a[0].localeCompare(b[0]))) {
+    const group = document.createElement("details");
+    group.className = "artist-group";
+    group.open = Boolean(normalized) || artistSongs.some((song) => song.slug === currentSlug);
+
+    const summary = document.createElement("summary");
+    summary.className = "artist-summary";
+
+    const name = document.createElement("span");
+    name.className = "artist-name";
+    name.textContent = artist;
+
+    const count = document.createElement("span");
+    count.className = "artist-count";
+    count.textContent = `${artistSongs.length}`;
+
+    summary.append(name, count);
+
+    const songWrap = document.createElement("div");
+    songWrap.className = "artist-songs";
+    artistSongs
+      .sort((a, b) => a.title.localeCompare(b.title))
+      .forEach((song) => {
+        songWrap.append(createSongLink(song));
+      });
+
+    group.append(summary, songWrap);
+    fragment.append(group);
+  }
 
   listNode.replaceChildren(fragment);
   updateActiveLink();
