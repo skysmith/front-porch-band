@@ -186,6 +186,34 @@ body {
   background: rgba(255, 255, 255, 0.04);
 }
 
+.suggestion-panel-main {
+  margin-top: 1.25rem;
+  border-color: var(--border);
+  background: rgba(248, 250, 252, 0.78);
+}
+
+.suggestion-panel-main .suggestion-copy p,
+.suggestion-panel-main .suggestion-form span,
+.suggestion-panel-main .suggestion-status {
+  color: var(--text-muted);
+}
+
+.suggestion-panel-main .suggestion-kicker {
+  color: var(--accent);
+}
+
+.suggestion-panel-main .suggestion-form input,
+.suggestion-panel-main .suggestion-form textarea {
+  border-color: var(--border);
+  background: var(--panel);
+  color: var(--text);
+}
+
+.suggestion-panel-main .suggestion-form input::placeholder,
+.suggestion-panel-main .suggestion-form textarea::placeholder {
+  color: var(--text-soft);
+}
+
 .suggestion-copy h2 {
   margin: 0 0 0.4rem;
   font-size: 1.05rem;
