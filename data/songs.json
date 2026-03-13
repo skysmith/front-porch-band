@@ -424,6 +424,14 @@
     "sourcePath": "../charts/seven-drunken-nights.md"
   },
   {
+    "slug": "skinny-love",
+    "title": "Skinny Love",
+    "artist": "Bon Iver",
+    "key": "Am",
+    "chartPath": "./charts/skinny-love.txt",
+    "sourcePath": "./approved-charts/skinny-love.md"
+  },
+  {
     "slug": "something",
     "title": "Something",
     "artist": "The Beatles",
