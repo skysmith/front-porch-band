@@ -8,6 +8,14 @@
     "sourcePath": "../charts/a-hard-rain-s-a-gonna-fall.md"
   },
   {
+    "slug": "all-too-well",
+    "title": "All Too Well",
+    "artist": "Taylor Swift",
+    "key": "C",
+    "chartPath": "./charts/all-too-well.txt",
+    "sourcePath": "./approved-charts/all-too-well.md"
+  },
+  {
     "slug": "and-so-it-goes",
     "title": "And So It Goes",
     "artist": "Billy Joel",
