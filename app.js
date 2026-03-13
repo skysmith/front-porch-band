@@ -28,7 +28,6 @@ const homeCardNode = document.querySelector("#home-card");
 const suggestionFormNode = document.querySelector("#suggestion-form");
 const suggestionTitleNode = document.querySelector("#suggestion-title");
 const suggestionArtistNode = document.querySelector("#suggestion-artist");
-const suggestionNotesNode = document.querySelector("#suggestion-notes");
 const suggestionBodyNode = document.querySelector("#suggestion-body");
 const suggestionSubmitNode = document.querySelector("#suggestion-submit");
 const suggestionStatusNode = document.querySelector("#suggestion-status");
@@ -826,7 +825,6 @@ suggestionFormNode?.addEventListener("submit", async (event) => {
   const payload = {
     title: suggestionTitleNode?.value?.trim() || "",
     artist: suggestionArtistNode?.value?.trim() || "",
-    notes: suggestionNotesNode?.value?.trim() || "",
     body: suggestionBodyNode?.value?.trim() || "",
   };
 
