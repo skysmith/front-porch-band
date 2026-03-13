@@ -60,16 +60,12 @@ function issueTitle({ title, artist }) {
   return `Song suggestion: ${cleanTitle} - ${cleanArtist}`;
 }
 
-function issueBody({ title, artist, notes, body, submittedAt, source }) {
-  const noteBlock = notes ? `Notes: ${notes}\n` : "";
-
+function issueBody({ title, artist, body, submittedAt }) {
   return [
     "<!-- front-porch-band:suggestion -->",
     `Title: ${title || "Unknown title"}`,
     `Artist: ${artist || "Unknown artist"}`,
     `Submitted: ${submittedAt}`,
-    `Source: ${source}`,
-    noteBlock.trimEnd(),
     "",
     "```text",
     body.trim(),
@@ -107,13 +103,11 @@ async function createGitHubIssue(config, suggestion) {
   return response.json();
 }
 
-function toMarkdown({ title, artist, notes, body, submittedAt, source }) {
+function toMarkdown({ title, artist, body, submittedAt }) {
   return [
     `Title: ${title || "Unknown title"}`,
     `Artist: ${artist || "Unknown artist"}`,
     `Submitted: ${submittedAt}`,
-    `Source: ${source}`,
-    notes ? `Notes: ${notes}` : "",
     "",
     body.trim(),
     "",
@@ -131,8 +125,14 @@ module.exports = async (req, res) => {
 
   const title = String(req.body?.title || "").trim();
   const artist = String(req.body?.artist || "").trim();
-  const notes = String(req.body?.notes || "").trim();
   const body = String(req.body?.body || "").trim();
+  const company = String(req.body?.company || "").trim();
+  const startedAt = String(req.body?.startedAt || "").trim();
+
+  if (company) {
+    res.status(200).json({ ok: true, storage: "discarded", message: "Sent to the review inbox." });
+    return;
+  }
 
   if (!body || body.length < 24) {
     res.status(400).json({ error: "Paste a little more of the chart before sending it in." });
@@ -145,13 +145,18 @@ module.exports = async (req, res) => {
   }
 
   const submittedAt = new Date().toISOString();
+  const startedMs = Date.parse(startedAt);
+  const submittedMs = Date.parse(submittedAt);
+  if (!Number.isFinite(startedMs) || submittedMs - startedMs < 2500 || submittedMs - startedMs > 1000 * 60 * 60 * 24) {
+    res.status(400).json({ error: "That submission looked incomplete. Give it another try." });
+    return;
+  }
+
   const suggestion = {
     title,
     artist,
-    notes,
     body,
     submittedAt,
-    source: req.headers["x-forwarded-for"] || req.socket.remoteAddress || "unknown",
   };
 
   const github = getGitHubConfig();

@@ -247,6 +247,14 @@ body {
   gap: 0.28rem;
 }
 
+.suggestion-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .suggestion-form span {
   color: #d8e3f6;
   font-size: 0.78rem;

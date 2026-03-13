@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   approve-song:
-    if: github.event.label.name == 'approved-song'
+    if: github.event.label.name == 'approved-song' && contains(github.event.issue.body, '<!-- front-porch-band:suggestion -->')
     runs-on: ubuntu-latest
 
     steps:

@@ -133,6 +133,12 @@
             </div>
 
             <form id="suggestion-form" class="suggestion-form">
+              <input id="suggestion-started-at" name="startedAt" type="hidden" />
+              <label class="suggestion-honeypot" aria-hidden="true" tabindex="-1">
+                <span>Leave this blank</span>
+                <input id="suggestion-company" name="company" type="text" autocomplete="off" tabindex="-1" />
+              </label>
+
               <label>
                 <span>Song title</span>
                 <input id="suggestion-title" name="title" type="text" maxlength="120" placeholder="Title" />

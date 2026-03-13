@@ -29,6 +29,8 @@ const suggestionFormNode = document.querySelector("#suggestion-form");
 const suggestionTitleNode = document.querySelector("#suggestion-title");
 const suggestionArtistNode = document.querySelector("#suggestion-artist");
 const suggestionBodyNode = document.querySelector("#suggestion-body");
+const suggestionStartedAtNode = document.querySelector("#suggestion-started-at");
+const suggestionCompanyNode = document.querySelector("#suggestion-company");
 const suggestionSubmitNode = document.querySelector("#suggestion-submit");
 const suggestionStatusNode = document.querySelector("#suggestion-status");
 const helpToggleNodes = [...document.querySelectorAll(".help-toggle")];
@@ -116,6 +118,15 @@ function setSuggestionStatus(message, tone = "") {
 
   suggestionStatusNode.textContent = message;
   suggestionStatusNode.dataset.tone = tone;
+}
+
+function stampSuggestionForm() {
+  if (suggestionStartedAtNode) {
+    suggestionStartedAtNode.value = new Date().toISOString();
+  }
+  if (suggestionCompanyNode) {
+    suggestionCompanyNode.value = "";
+  }
 }
 
 function isMobileLayout() {
@@ -672,6 +683,7 @@ async function bootstrap() {
   restoreFontScale();
   restoreRailState();
   renderInstrumentChoices();
+  stampSuggestionForm();
 
   const response = await fetch("./data/songs.json");
   songs = await response.json();
@@ -826,6 +838,8 @@ suggestionFormNode?.addEventListener("submit", async (event) => {
     title: suggestionTitleNode?.value?.trim() || "",
     artist: suggestionArtistNode?.value?.trim() || "",
     body: suggestionBodyNode?.value?.trim() || "",
+    startedAt: suggestionStartedAtNode?.value || "",
+    company: suggestionCompanyNode?.value?.trim() || "",
   };
 
   if (!payload.body) {
@@ -853,6 +867,7 @@ suggestionFormNode?.addEventListener("submit", async (event) => {
     }
 
     suggestionFormNode.reset();
+    stampSuggestionForm();
     setSuggestionStatus(result.message || "Saved for review.", result.storage === "ephemeral" ? "warning" : "success");
   } catch (error) {
     setSuggestionStatus(error.message || "Could not send suggestion.", "error");

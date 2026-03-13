@@ -10,22 +10,22 @@ function parseFlag(args, flag, fallback = "") {
 
 function parseIssueSuggestion(text = "") {
   const clean = text.replace(/\r/g, "");
+  const hasMarker = clean.includes("<!-- front-porch-band:suggestion -->");
   const title = clean.match(/^Title:\s*(.+)$/m)?.[1]?.trim() || "Untitled suggestion";
   const artist = clean.match(/^Artist:\s*(.+)$/m)?.[1]?.trim() || "Unknown artist";
   const notes = clean.match(/^Notes:\s*(.+)$/m)?.[1]?.trim() || "";
   const submitted = clean.match(/^Submitted:\s*(.+)$/m)?.[1]?.trim() || "";
-  const source = clean.match(/^Source:\s*(.+)$/m)?.[1]?.trim() || "";
   const chartBody =
     clean.match(/```text\n([\s\S]*?)\n```/)?.[1]?.trim() ||
     clean.match(/```\n([\s\S]*?)\n```/)?.[1]?.trim() ||
     "";
 
   return {
+    hasMarker,
     title,
     artist,
     notes,
     submitted,
-    source,
     body: chartBody,
   };
 }
@@ -78,6 +78,9 @@ async function main() {
 
   const issue = await readEventIssue(eventPath);
   const suggestion = parseIssueSuggestion(issue.body || "");
+  if (!suggestion.hasMarker) {
+    throw new Error("Issue is not a Front Porch Band suggestion.");
+  }
   if (!suggestion.body.trim()) {
     throw new Error("Suggestion issue does not include a chart block.");
   }
