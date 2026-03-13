@@ -764,6 +764,11 @@ showRailNode.addEventListener("click", () => {
 });
 
 helpToggleNodes.forEach((button) => {
+  button.addEventListener("pointerdown", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+  });
+
   button.addEventListener("click", (event) => {
     event.preventDefault();
     event.stopPropagation();
