@@ -533,6 +533,15 @@ function createSongLink(song) {
   return link;
 }
 
+function songArtistAliases(song) {
+  const parts = String(song.artist || "Unknown")
+    .split("/")
+    .map((part) => part.trim())
+    .filter(Boolean);
+
+  return [...new Set(parts.length ? parts : ["Unknown"])];
+}
+
 function renderSongList(filter = "") {
   const normalized = filter.trim().toLowerCase();
   const fragment = document.createDocumentFragment();
@@ -546,11 +555,16 @@ function renderSongList(filter = "") {
 
   const groups = new Map();
   filteredSongs.forEach((song) => {
-    const key = song.artist || "Unknown";
-    if (!groups.has(key)) {
-      groups.set(key, []);
-    }
-    groups.get(key).push(song);
+    songArtistAliases(song).forEach((artist) => {
+      if (!groups.has(artist)) {
+        groups.set(artist, []);
+      }
+
+      const groupSongs = groups.get(artist);
+      if (!groupSongs.some((entry) => entry.slug === song.slug)) {
+        groupSongs.push(song);
+      }
+    });
   });
 
   for (const [artist, artistSongs] of [...groups.entries()].sort((a, b) => a[0].localeCompare(b[0]))) {
