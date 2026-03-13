@@ -32,6 +32,7 @@ const suggestionNotesNode = document.querySelector("#suggestion-notes");
 const suggestionBodyNode = document.querySelector("#suggestion-body");
 const suggestionSubmitNode = document.querySelector("#suggestion-submit");
 const suggestionStatusNode = document.querySelector("#suggestion-status");
+const helpToggleNodes = [...document.querySelectorAll(".help-toggle")];
 
 const FONT_KEY = "front-porch-band-font-scale";
 const RAIL_KEY = "front-porch-band-rail-collapsed";
@@ -760,6 +761,36 @@ toggleRailNode.addEventListener("click", () => {
 
 showRailNode.addEventListener("click", () => {
   setRailCollapsed(false);
+});
+
+helpToggleNodes.forEach((button) => {
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const targetId = button.dataset.helpTarget;
+    if (!targetId) {
+      return;
+    }
+
+    const targetNode = document.getElementById(targetId);
+    if (!targetNode) {
+      return;
+    }
+
+    const isOpen = !targetNode.hidden;
+
+    helpToggleNodes.forEach((otherButton) => {
+      const otherTarget = document.getElementById(otherButton.dataset.helpTarget || "");
+      if (otherTarget) {
+        otherTarget.hidden = true;
+      }
+      otherButton.setAttribute("aria-expanded", "false");
+    });
+
+    targetNode.hidden = isOpen;
+    button.setAttribute("aria-expanded", isOpen ? "false" : "true");
+  });
 });
 
 bootstrap().catch((error) => {

@@ -51,25 +51,55 @@
 
           <div class="chord-tool-row">
             <label class="transpose-picker" for="transpose-select">
-              <span>Transpose</span>
+              <span class="tool-label">
+                <span>Transpose</span>
+                <button class="help-toggle" type="button" aria-expanded="false" aria-controls="help-transpose" data-help-target="help-transpose">?</button>
+              </span>
               <select id="transpose-select"></select>
+              <span id="help-transpose" class="help-copy" hidden>Change the displayed chords for your instrument. The shared song stays in the original key.</span>
             </label>
             <label class="capo-picker" for="capo-select">
-              <span>Capo shapes</span>
+              <span class="tool-label">
+                <span>Capo shapes</span>
+                <button class="help-toggle" type="button" aria-expanded="false" aria-controls="help-capo" data-help-target="help-capo">?</button>
+              </span>
               <select id="capo-select"></select>
+              <span id="help-capo" class="help-copy" hidden>Shows what fret to capo and which chord shapes to play so you can voice the song differently without changing how it sounds.</span>
             </label>
             <label class="instrument-picker" for="instrument-select">
-              <span>Instrument</span>
+              <span class="tool-label">
+                <span>Instrument</span>
+                <button class="help-toggle" type="button" aria-expanded="false" aria-controls="help-instrument" data-help-target="help-instrument">?</button>
+              </span>
               <select id="instrument-select"></select>
+              <span id="help-instrument" class="help-copy" hidden>Switches the chord diagrams to the instrument you’re holding. It does not change the song itself.</span>
             </label>
-            <button id="mobile-qr-toggle" class="secondary-button mobile-qr-toggle" type="button" aria-label="Toggle QR code">QR off</button>
-            <button id="reset-transpose" class="secondary-button tool-row-action" type="button" aria-label="Reset transposition">Reset</button>
+            <div class="tool-action-group mobile-qr-group">
+              <span class="tool-label">
+                <span>QR</span>
+                <button class="help-toggle" type="button" aria-expanded="false" aria-controls="help-qr" data-help-target="help-qr">?</button>
+              </span>
+              <button id="mobile-qr-toggle" class="secondary-button mobile-qr-toggle" type="button" aria-label="Toggle QR code">QR off</button>
+              <span id="help-qr" class="help-copy" hidden>On phones, this shows or hides the floating QR code for the current song.</span>
+            </div>
+            <div class="tool-action-group tool-row-action">
+              <span class="tool-label">
+                <span>Reset</span>
+                <button class="help-toggle" type="button" aria-expanded="false" aria-controls="help-reset" data-help-target="help-reset">?</button>
+              </span>
+              <button id="reset-transpose" class="secondary-button" type="button" aria-label="Reset transposition">Reset</button>
+              <span id="help-reset" class="help-copy" hidden>Returns transpose and capo settings to the song’s original chart.</span>
+            </div>
           </div>
 
           <div id="custom-key-wrap" class="custom-key-wrap" hidden>
             <label class="custom-key-picker" for="custom-key-select">
-              <span>Chromatic transpose</span>
+              <span class="tool-label">
+                <span>Chromatic transpose</span>
+                <button class="help-toggle" type="button" aria-expanded="false" aria-controls="help-custom" data-help-target="help-custom">?</button>
+              </span>
               <select id="custom-key-select"></select>
+              <span id="help-custom" class="help-copy" hidden>Pick any target key if the shortcut options are not enough.</span>
             </label>
           </div>
 
@@ -77,10 +107,14 @@
 
           <details class="chord-shapes" id="chord-shapes">
             <summary class="chord-shapes-summary">
-              <span>Chord Shapes</span>
+              <span class="tool-label">
+                <span>Chord Shapes</span>
+                <button class="help-toggle" type="button" aria-expanded="false" aria-controls="help-shapes" data-help-target="help-shapes">?</button>
+              </span>
               <span id="chord-helper-count" class="chord-helper-count">No chords loaded yet.</span>
             </summary>
 
+            <p id="help-shapes" class="help-copy help-copy-block" hidden>Opens chord diagrams for the chords used in the current chart, based on the selected instrument and transpose setting.</p>
             <div id="chord-grid" class="chord-grid"></div>
           </details>
         </details>

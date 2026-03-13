@@ -512,12 +512,52 @@ body {
 .transpose-picker,
 .capo-picker,
 .instrument-picker,
-.custom-key-picker {
+.custom-key-picker,
+.tool-action-group {
   display: grid;
   gap: 0.3rem;
   color: var(--text-muted);
   font-size: 0.77rem;
   font-weight: 600;
+}
+
+.tool-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.help-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--panel-muted);
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0;
+}
+
+.help-copy {
+  color: var(--text-soft);
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.help-copy[hidden] {
+  display: none;
+}
+
+.help-copy-block {
+  margin: 0;
+  padding: 0 0.95rem 0.85rem;
 }
 
 .transpose-picker select,
@@ -550,6 +590,14 @@ body {
 
 .tool-row-action {
   margin-left: auto;
+}
+
+.tool-action-group .secondary-button {
+  min-width: 5.2rem;
+}
+
+.mobile-qr-group {
+  display: none;
 }
 
 .custom-key-wrap {
@@ -784,6 +832,8 @@ body {
 .transpose-picker select:focus-visible,
 .instrument-picker select:hover,
 .instrument-picker select:focus-visible,
+.help-toggle:hover,
+.help-toggle:focus-visible,
 .secondary-button:hover,
 .secondary-button:focus-visible {
   outline: none;
@@ -857,6 +907,10 @@ body {
     align-items: center;
     justify-content: center;
     min-width: 5.8rem;
+  }
+
+  .mobile-qr-group {
+    display: grid;
   }
 
   .chord-tool-row,
