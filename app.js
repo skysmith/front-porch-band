@@ -793,6 +793,21 @@ helpToggleNodes.forEach((button) => {
   });
 });
 
+document.addEventListener("click", (event) => {
+  const target = event.target;
+  if (!(target instanceof Element) || target.closest(".tool-label") || target.closest(".help-copy")) {
+    return;
+  }
+
+  helpToggleNodes.forEach((button) => {
+    const helpNode = document.getElementById(button.dataset.helpTarget || "");
+    if (helpNode) {
+      helpNode.hidden = true;
+    }
+    button.setAttribute("aria-expanded", "false");
+  });
+});
+
 bootstrap().catch((error) => {
   titleNode.textContent = "Front Porch Band";
   artistNode.textContent = "Could not load chart index.";

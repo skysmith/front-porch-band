@@ -556,12 +556,33 @@ body {
   padding: 0.65rem 0.75rem;
   border: 1px solid var(--border);
   border-radius: 0.8rem;
-  background: rgba(255, 255, 255, 0.98);
-  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.985);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
   color: var(--text-soft);
   font-size: 0.78rem;
   font-weight: 500;
   line-height: 1.45;
+}
+
+.help-copy::before,
+.help-copy::after {
+  content: "";
+  position: absolute;
+  left: 0.9rem;
+  width: 0;
+  height: 0;
+  border-left: 0.42rem solid transparent;
+  border-right: 0.42rem solid transparent;
+}
+
+.help-copy::before {
+  top: -0.55rem;
+  border-bottom: 0.55rem solid var(--border);
+}
+
+.help-copy::after {
+  top: -0.48rem;
+  border-bottom: 0.5rem solid rgba(255, 255, 255, 0.985);
 }
 
 .help-copy[hidden] {
@@ -577,6 +598,12 @@ body {
 .tool-action-group .help-copy {
   left: auto;
   right: 0;
+}
+
+.tool-action-group .help-copy::before,
+.tool-action-group .help-copy::after {
+  left: auto;
+  right: 0.9rem;
 }
 
 .chord-shapes {
