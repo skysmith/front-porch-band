@@ -584,6 +584,14 @@
     "sourcePath": "./approved-charts/this-land-is-your-land.md"
   },
   {
+    "slug": "this-train-is-bound-for-glory",
+    "title": "This Train is Bound for Glory",
+    "artist": "Woody Guthrie",
+    "key": "A",
+    "chartPath": "./charts/this-train-is-bound-for-glory.txt",
+    "sourcePath": "./approved-charts/this-train-is-bound-for-glory.md"
+  },
+  {
     "slug": "wagon-wheel",
     "title": "Wagon Wheel",
     "artist": "Old Crow Medicine Show",
