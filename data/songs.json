@@ -328,6 +328,14 @@
     "sourcePath": "../charts/livin-in-the-woods-in-the-trees.md"
   },
   {
+    "slug": "lover",
+    "title": "Lover",
+    "artist": "Taylor Swift",
+    "key": "G",
+    "chartPath": "./charts/lover.txt",
+    "sourcePath": "./approved-charts/lover.md"
+  },
+  {
     "slug": "maloney-wants-a-drink",
     "title": "Maloney Wants a Drink",
     "artist": "Shipwreckers",
