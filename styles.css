@@ -519,12 +519,15 @@ body {
   color: var(--text-muted);
   font-size: 0.77rem;
   font-weight: 600;
+  position: relative;
 }
 
 .tool-label {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
+  position: relative;
+  width: fit-content;
 }
 
 .help-toggle {
@@ -545,6 +548,16 @@ body {
 }
 
 .help-copy {
+  position: absolute;
+  top: calc(100% + 0.45rem);
+  left: 0;
+  z-index: 12;
+  max-width: 20rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
   color: var(--text-soft);
   font-size: 0.78rem;
   font-weight: 500;
@@ -556,8 +569,18 @@ body {
 }
 
 .help-copy-block {
+  top: calc(100% + 0.7rem);
+  left: 0.95rem;
   margin: 0;
-  padding: 0 0.95rem 0.85rem;
+}
+
+.tool-action-group .help-copy {
+  left: auto;
+  right: 0;
+}
+
+.chord-shapes {
+  position: relative;
 }
 
 .transpose-picker select,
@@ -911,6 +934,14 @@ body {
 
   .mobile-qr-group {
     display: grid;
+  }
+
+  .help-copy,
+  .tool-action-group .help-copy,
+  .help-copy-block {
+    left: 0;
+    right: auto;
+    max-width: min(18rem, calc(100vw - 3rem));
   }
 
   .chord-tool-row,
