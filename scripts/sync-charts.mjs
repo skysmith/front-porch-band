@@ -1,7 +1,8 @@
 import { mkdir, readFile, rm, writeFile, copyFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { listMarkdownFiles, parseChart, resolveSourceDirWithFallback, slugify, validateChart } from "./lib/chart-utils.mjs";
+import { hasChordTokens, listMarkdownFiles, parseChart, resolveSourceDirWithFallback, slugify, validateChart } from "./lib/chart-utils.mjs";
+import { exportTvOSResources } from "./lib/tvos-export.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectDir = path.resolve(__dirname, "..");
@@ -38,6 +39,7 @@ async function main() {
       title: parsed.title,
       artist: parsed.artist,
       key: parsed.key,
+      hasChords: hasChordTokens(parsed.body),
       chartPath: `./charts/${chartFile}`,
       sourcePath: `../charts/${entry.replace(/\\/g, "/")}`,
     });
@@ -45,6 +47,7 @@ async function main() {
 
   await writeFile(path.join(dataDir, "songs.json"), JSON.stringify(songs, null, 2) + "\n", "utf8");
   await copyFile(path.join(projectDir, "index.html"), path.join(projectDir, "404.html"));
+  await exportTvOSResources(projectDir, songs);
   console.log(`Synced ${songs.length} chart(s) from ${sourceDir}`);
 }
 

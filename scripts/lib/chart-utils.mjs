@@ -62,6 +62,10 @@ export function parseChart(fileText) {
   };
 }
 
+export function hasChordTokens(text) {
+  return /\b[A-G](?:#|b)?(?:\/[A-G](?:#|b)?)?(?:maj7|m7|sus2|sus4|m|6|7)?\b/.test(text);
+}
+
 export function validateChart(fileText) {
   const parsed = parseChart(fileText);
   const errors = [];
@@ -81,7 +85,7 @@ export function validateChart(fileText) {
     errors.push("Missing chart body after the artist header.");
   }
 
-  if (parsed.body && !/\b[A-G](?:#|b)?(?:\/[A-G](?:#|b)?)?(?:maj7|m7|sus2|sus4|m|6|7)?\b/.test(parsed.body)) {
+  if (parsed.body && !hasChordTokens(parsed.body)) {
     warnings.push("No chord tokens detected in the chart body.");
   }
 
