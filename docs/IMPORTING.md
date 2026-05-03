@@ -71,3 +71,58 @@ Notes:
 - rich text import uses macOS `textutil`
 - the importer is conservative about overwriting: if an existing chart looks more complete, it keeps the existing one
 - the importer is meant to get files close, not perfect; you should still review imported charts before publishing
+
+Sharing and merging another Front Porch library:
+
+If someone else already has a Front Porch Band library, ask them for their source chart files from `private-charts/`, not the generated `charts/` folder.
+
+Recommended merge flow:
+
+1. Copy the shared library source with the merge helper:
+
+```bash
+node scripts/merge-library-folder.mjs --from /path/to/friend-private-charts --name alex
+```
+
+That copies the folder into:
+
+```text
+./private-charts/from-friends/alex/
+```
+
+2. Keep the files in the normal chart format:
+
+```text
+Song Title
+
+Artist: Artist Name
+
+G            C
+First line of the chart
+```
+
+3. Validate and rebuild:
+
+```bash
+node scripts/validate-charts.mjs --source ./private-charts
+node scripts/sync-charts.mjs --source ./private-charts
+```
+
+Why this preserves transposition:
+
+- Front Porch Band detects chord tokens from the source chart body during sync
+- those detected chords are written into `data/songs.json`
+- the generated site then uses that metadata for transpose helpers and chord diagrams
+
+If the shared files are messy exports, scans, or copied text instead of clean chart sources, put them in the import inbox and run:
+
+```bash
+node scripts/import-inbox.mjs
+node scripts/validate-charts.mjs --source ./private-charts
+node scripts/sync-charts.mjs --source ./private-charts
+```
+
+Practical tip:
+
+- keep shared libraries in subfolders like `from-friends/alex/` or `shared-campfire/` so you can tell where songs came from
+- if two charts have the same song title but different quality, review them before overwriting; the importer tries to keep the more complete chart, but manual review is still smart

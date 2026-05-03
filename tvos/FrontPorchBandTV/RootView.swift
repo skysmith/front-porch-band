@@ -34,7 +34,7 @@ struct RootView: View {
                         initialQuery: launchConfiguration.initialQuery
                     )
                     .navigationDestination(for: SongRecord.self) { song in
-                        SongDetailView(song: song)
+                        SongDetailView(song: song, shareBaseURL: launchConfiguration.shareBaseURL)
                     }
                 }
                 .tabItem {
@@ -45,7 +45,7 @@ struct RootView: View {
                 NavigationStack {
                     FavoritesView()
                         .navigationDestination(for: SongRecord.self) { song in
-                            SongDetailView(song: song)
+                            SongDetailView(song: song, shareBaseURL: launchConfiguration.shareBaseURL)
                         }
                 }
                 .tabItem {
@@ -56,7 +56,7 @@ struct RootView: View {
                 NavigationStack {
                     RecentView()
                         .navigationDestination(for: SongRecord.self) { song in
-                            SongDetailView(song: song)
+                            SongDetailView(song: song, shareBaseURL: launchConfiguration.shareBaseURL)
                         }
                 }
                 .tabItem {

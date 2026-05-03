@@ -49,6 +49,7 @@ These are handy in Xcode scheme arguments before visual debugging:
 - `-FrontPorchInstrument guitar|mandolin|ukulele|banjo`
 - `-FrontPorchTranspose original|bb-instrument|eb-instrument|f-instrument|A|capo:G`
 - `-FrontPorchFontScale 1.2`
+- `-FrontPorchShareBaseURL https://your-songbook-host.example/`
 
 Example:
 
@@ -57,7 +58,48 @@ Example:
 -FrontPorchSongSlug a-hard-rain-s-a-gonna-fall
 -FrontPorchInstrument mandolin
 -FrontPorchTranspose capo:G
+-FrontPorchShareBaseURL https://skysmith.github.io/front-porch-band/
 ```
+
+If you do not set `-FrontPorchShareBaseURL`, the tvOS app currently defaults to:
+
+```text
+https://skysmith.github.io/front-porch-band/
+```
+
+Song QR codes append the current song slug as a hash route, for example:
+
+```text
+https://skysmith.github.io/front-porch-band/#a-hard-rain-s-a-gonna-fall
+```
+
+## Spotify Handoff
+
+The tvOS song detail screen can hand a mapped song off to Spotify on Apple TV. This is an app-to-app launch, not embedded playback inside `Front Porch Band`.
+
+To enable it for a song, add either field to the source song record in `data/songs.json`:
+
+```json
+{
+  "spotifyTrackId": "4uLU6hMCjMI75M1A2tKUQC"
+}
+```
+
+Or:
+
+```json
+{
+  "spotifyUrl": "https://open.spotify.com/track/4uLU6hMCjMI75M1A2tKUQC"
+}
+```
+
+Then refresh the bundled tvOS resources:
+
+```bash
+node scripts/export-tvos-data.mjs
+```
+
+If Spotify is installed and the Apple TV user is signed in, the app will try to open the mapped track there.
 
 ## First Visual Pass Checklist
 

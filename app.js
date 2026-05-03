@@ -5,8 +5,12 @@ const titleNode = document.querySelector("#song-title");
 const artistNode = document.querySelector("#song-artist");
 const chartNode = document.querySelector("#chart-body");
 const searchNode = document.querySelector("#song-search");
+const librarySelectNode = document.querySelector("#library-select");
+const chordFilterSelectNode = document.querySelector("#chord-filter-select");
 const fontUpNode = document.querySelector("#font-up");
 const fontDownNode = document.querySelector("#font-down");
+const importSongButtonNode = document.querySelector("#import-song-button");
+const importSongStatusNode = document.querySelector("#import-song-status");
 const mobileQrToggleNode = document.querySelector("#mobile-qr-toggle");
 const transposeSelectNode = document.querySelector("#transpose-select");
 const capoSelectNode = document.querySelector("#capo-select");
@@ -40,6 +44,8 @@ const RAIL_KEY = "front-porch-band-rail-collapsed";
 const INSTRUMENT_KEY = "front-porch-band-instrument";
 const MOBILE_QR_KEY = "front-porch-band-mobile-qr";
 const TRANSPOSE_KEY = "front-porch-band-transpose";
+const LIBRARY_KEY = "front-porch-band-library";
+const CHORD_FILTER_KEY = "front-porch-band-chord-filter";
 const DEFAULT_FONT_SIZE = 1;
 const FONT_STEP = 0.08;
 const MIN_FONT_SIZE = 0.84;
@@ -75,6 +81,50 @@ let currentSlug = "";
 let currentChartText = "";
 let currentRawChartText = "";
 let currentSong = null;
+
+function libraryIdForSong(song) {
+  return song?.slug?.startsWith("american-songbag-") ? "american-songbag" : "front-porch";
+}
+
+function libraryLabel(libraryId) {
+  return libraryId === "american-songbag" ? "American Songbag" : "Front Porch";
+}
+
+function currentLibrary() {
+  return librarySelectNode?.value || window.localStorage.getItem(LIBRARY_KEY) || "front-porch";
+}
+
+function setLibrary(libraryId, { rerender = true, clearSearch = false } = {}) {
+  const nextLibrary = libraryId === "american-songbag" ? "american-songbag" : "front-porch";
+  if (librarySelectNode) {
+    librarySelectNode.value = nextLibrary;
+  }
+  window.localStorage.setItem(LIBRARY_KEY, nextLibrary);
+
+  if (clearSearch && searchNode) {
+    searchNode.value = "";
+  }
+
+  if (rerender) {
+    renderSongList(searchNode?.value || "");
+  }
+}
+
+function currentChordFilter() {
+  return chordFilterSelectNode?.value || window.localStorage.getItem(CHORD_FILTER_KEY) || "all";
+}
+
+function setChordFilter(filterId, { rerender = true } = {}) {
+  const nextFilter = ["with-chords", "without-chords"].includes(filterId) ? filterId : "all";
+  if (chordFilterSelectNode) {
+    chordFilterSelectNode.value = nextFilter;
+  }
+  window.localStorage.setItem(CHORD_FILTER_KEY, nextFilter);
+
+  if (rerender) {
+    renderSongList(searchNode?.value || "");
+  }
+}
 
 function splitChartSections(text) {
   return text
@@ -118,6 +168,16 @@ function setSuggestionStatus(message, tone = "") {
 
   suggestionStatusNode.textContent = message;
   suggestionStatusNode.dataset.tone = tone;
+}
+
+function setImportSongStatus(message, tone = "") {
+  if (!importSongStatusNode) {
+    return;
+  }
+
+  importSongStatusNode.hidden = !message;
+  importSongStatusNode.textContent = message;
+  importSongStatusNode.dataset.tone = tone;
 }
 
 function stampSuggestionForm() {
@@ -545,7 +605,21 @@ function songArtistAliases(song) {
 function renderSongList(filter = "") {
   const normalized = filter.trim().toLowerCase();
   const fragment = document.createDocumentFragment();
+  const activeLibrary = currentLibrary();
+  const chordFilter = currentChordFilter();
   const filteredSongs = songs.filter((song) => {
+    if (libraryIdForSong(song) !== activeLibrary) {
+      return false;
+    }
+
+    if (chordFilter === "with-chords" && !song.hasChords) {
+      return false;
+    }
+
+    if (chordFilter === "without-chords" && song.hasChords) {
+      return false;
+    }
+
     if (!normalized) {
       return true;
     }
@@ -607,13 +681,30 @@ function updateActiveLink() {
   }
 }
 
+function updateImportButton() {
+  if (!importSongButtonNode) {
+    return;
+  }
+
+  const showImport = Boolean(currentSong) && libraryIdForSong(currentSong) === "american-songbag";
+  importSongButtonNode.hidden = !showImport;
+  importSongButtonNode.disabled = false;
+
+  if (!showImport) {
+    setImportSongStatus("");
+  }
+}
+
 function showHome() {
   currentSong = null;
   currentSlug = "";
   currentChartText = "";
   currentRawChartText = "";
   titleNode.textContent = "Front Porch Band";
-  artistNode.textContent = "Phone-first charts built for quick jams and easy sharing.";
+  artistNode.textContent =
+    currentLibrary() === "american-songbag"
+      ? "Public-domain songs from Carl Sandburg's American Songbag, kept separate from the main porch library."
+      : "Phone-first charts built for quick jams and easy sharing.";
   chartNode.replaceChildren();
   chartNode.classList.remove("chart-body-columns");
   chordGridNode.replaceChildren();
@@ -635,12 +726,14 @@ function showHome() {
   }
   chartCardNode.hidden = true;
   homeCardNode.hidden = false;
+  updateImportButton();
   updateActiveLink();
   updatePageMode();
   updateQrCode();
 }
 
 async function loadSong(song) {
+  setLibrary(libraryIdForSong(song), { rerender: false });
   currentSong = song;
   currentSlug = song.slug;
   updateActiveLink();
@@ -652,6 +745,7 @@ async function loadSong(song) {
   chordHelperNode.hidden = false;
   chartCardNode.hidden = false;
   homeCardNode.hidden = true;
+  updateImportButton();
   updatePageMode();
 
   const response = await fetch(song.chartPath);
@@ -669,6 +763,7 @@ async function loadSong(song) {
   currentRawChartText = await response.text();
   renderTransposeChoices(song, currentRawChartText);
   renderCurrentChart();
+  updateImportButton();
   updateQrCode();
 }
 
@@ -684,6 +779,8 @@ async function selectSongBySlug(slug) {
     showHome();
     return;
   }
+
+  setLibrary(libraryIdForSong(match), { rerender: true });
 
   if (window.location.hash !== `#${match.slug}`) {
     window.location.hash = match.slug;
@@ -702,12 +799,93 @@ async function bootstrap() {
   const response = await fetch("./data/songs.json");
   songs = await response.json();
 
+  setLibrary(window.localStorage.getItem(LIBRARY_KEY) || "front-porch", { rerender: false });
+  setChordFilter(window.localStorage.getItem(CHORD_FILTER_KEY) || "all", { rerender: false });
   renderSongList();
   await selectSongBySlug(slugFromLocation());
 }
 
 searchNode.addEventListener("input", () => {
   renderSongList(searchNode.value);
+});
+
+librarySelectNode?.addEventListener("change", () => {
+  setLibrary(librarySelectNode.value, { rerender: true, clearSearch: true });
+  if (currentSong && libraryIdForSong(currentSong) !== currentLibrary()) {
+    window.location.hash = "";
+    return;
+  }
+  showHome();
+});
+
+chordFilterSelectNode?.addEventListener("change", () => {
+  setChordFilter(chordFilterSelectNode.value, { rerender: true });
+});
+
+importSongButtonNode?.addEventListener("click", async () => {
+  if (!currentSong || libraryIdForSong(currentSong) !== "american-songbag" || !currentRawChartText) {
+    return;
+  }
+
+  importSongButtonNode.disabled = true;
+  setImportSongStatus("Importing into your library...");
+
+  try {
+    const response = await fetch("/api/import-song", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        title: currentSong.title,
+        artist: currentSong.artist,
+        body: currentRawChartText.trim(),
+        source: "American Songbag",
+      }),
+    });
+
+    const result = await response.json().catch(() => ({}));
+
+    if (!response.ok) {
+      if (response.status === 409 && result.slug) {
+        const existingSong = {
+          slug: result.slug,
+          title: currentSong.title,
+          artist: currentSong.artist,
+          key: "",
+          chartPath: result.chartPath || `./charts/${result.slug}.txt`,
+          sourcePath: `../charts/${result.slug}.md`,
+        };
+
+        if (!songs.some((song) => song.slug === existingSong.slug)) {
+          songs.push(existingSong);
+        }
+
+        setLibrary("front-porch", { rerender: true, clearSearch: true });
+        setImportSongStatus("That song was already in your library. Opening it now.", "success");
+        window.location.hash = existingSong.slug;
+        return;
+      }
+
+      throw new Error(result.error || "Could not import that song.");
+    }
+
+    const importedSong = result.song;
+    if (importedSong && !songs.some((song) => song.slug === importedSong.slug)) {
+      songs.push(importedSong);
+    }
+
+    setLibrary("front-porch", { rerender: true, clearSearch: true });
+    setImportSongStatus(result.message || "Imported into your library.", "success");
+
+    if (importedSong?.slug) {
+      window.location.hash = importedSong.slug;
+    }
+  } catch (error) {
+    setImportSongStatus(error.message || "Could not import that song yet.", "error");
+  } finally {
+    importSongButtonNode.disabled = false;
+  }
 });
 
 window.addEventListener("hashchange", () => {

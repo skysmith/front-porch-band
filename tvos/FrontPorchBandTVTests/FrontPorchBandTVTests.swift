@@ -72,11 +72,40 @@ final class FrontPorchBandTVTests: XCTestCase {
         )
     }
 
+    func testSpotifyURLsPreferTrackIDAndFallbackToExplicitURL() {
+        let mappedSong = makeSong(
+            title: "Mapped Song",
+            artist: "The Porch",
+            baseKey: "G",
+            chartText: "G D Em C",
+            spotifyTrackID: "4uLU6hMCjMI75M1A2tKUQC"
+        )
+
+        XCTAssertEqual(mappedSong.spotifyAppURL?.absoluteString, "spotify:track:4uLU6hMCjMI75M1A2tKUQC")
+        XCTAssertEqual(
+            mappedSong.spotifyWebURL?.absoluteString,
+            "https://open.spotify.com/track/4uLU6hMCjMI75M1A2tKUQC"
+        )
+
+        let explicitURLSong = makeSong(
+            title: "Explicit URL",
+            artist: "The Porch",
+            baseKey: "C",
+            chartText: "C F G",
+            spotifyURLString: "https://open.spotify.com/track/example"
+        )
+
+        XCTAssertNil(explicitURLSong.spotifyAppURL)
+        XCTAssertEqual(explicitURLSong.spotifyWebURL?.absoluteString, "https://open.spotify.com/track/example")
+    }
+
     private func makeSong(
         title: String,
         artist: String,
         baseKey: String,
-        chartText: String
+        chartText: String,
+        spotifyTrackID: String? = nil,
+        spotifyURLString: String? = nil
     ) -> SongRecord {
         SongRecord(
             slug: title.lowercased().replacingOccurrences(of: " ", with: "-"),
@@ -89,7 +118,9 @@ final class FrontPorchBandTVTests: XCTestCase {
             chartText: chartText,
             chordTokens: ChordEngine.extractChordTokens(chartText: chartText, aliases: [:]),
             sortTitle: title.lowercased(),
-            sortArtist: artist.lowercased()
+            sortArtist: artist.lowercased(),
+            spotifyTrackID: spotifyTrackID,
+            spotifyURLString: spotifyURLString
         )
     }
 

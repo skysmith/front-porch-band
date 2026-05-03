@@ -4,6 +4,7 @@
     "title": "A Hard Rain’s A-Gonna Fall",
     "artist": "Bob Dylan",
     "key": "D",
+    "hasChords": true,
     "chartPath": "./charts/a-hard-rain-s-a-gonna-fall.txt",
     "sourcePath": "../charts/a-hard-rain-s-a-gonna-fall.md"
   },
@@ -12,38 +13,1465 @@
     "title": "All Too Well",
     "artist": "Taylor Swift",
     "key": "C",
+    "hasChords": true,
     "chartPath": "./charts/all-too-well.txt",
-    "sourcePath": "./approved-charts/all-too-well.md"
+    "sourcePath": "../charts/all-too-well.md"
+  },
+  {
+    "slug": "american-songbag-a-boy-he-had-an-auger",
+    "title": "A BOY HE HAD AN AUGER",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-a-boy-he-had-an-auger.txt",
+    "sourcePath": "../charts/american-songbag/a-boy-he-had-an-auger.md"
+  },
+  {
+    "slug": "american-songbag-a-pretty-fair-maid",
+    "title": "A PRETTY FAIR MAID",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-a-pretty-fair-maid.txt",
+    "sourcePath": "../charts/american-songbag/a-pretty-fair-maid.md"
+  },
+  {
+    "slug": "american-songbag-abalone",
+    "title": "ABALONE",
+    "artist": "Traditional",
+    "key": "F",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-abalone.txt",
+    "sourcePath": "../charts/american-songbag/abalone.md"
+  },
+  {
+    "slug": "american-songbag-across-the-western-ocean",
+    "title": "ACROSS THE WESTERN OCEAN",
+    "artist": "Traditional",
+    "key": "B",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-across-the-western-ocean.txt",
+    "sourcePath": "../charts/american-songbag/across-the-western-ocean.md"
+  },
+  {
+    "slug": "american-songbag-ain-go-n-to-study-war-no-mo",
+    "title": "AIN' GO'N' TO STUDY WAR NO MO\"",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-ain-go-n-to-study-war-no-mo.txt",
+    "sourcePath": "../charts/american-songbag/ain-go-n-to-study-war-no-mo.md"
+  },
+  {
+    "slug": "american-songbag-alice-b",
+    "title": "ALICE B.",
+    "artist": "Traditional",
+    "key": "B",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-alice-b.txt",
+    "sourcePath": "../charts/american-songbag/alice-b.md"
+  },
+  {
+    "slug": "american-songbag-american-songbag-index",
+    "title": "American Songbag Index",
+    "artist": "Carl Sandburg",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-american-songbag-index.txt",
+    "sourcePath": "../charts/american-songbag/american-songbag-index.md"
+  },
+  {
+    "slug": "american-songbag-animal-fair",
+    "title": "ANIMAL FAIR",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-animal-fair.txt",
+    "sourcePath": "../charts/american-songbag/animal-fair.md"
+  },
+  {
+    "slug": "american-songbag-as-i-walked-out-in-the-streets-of-laredo",
+    "title": "AS I WALKED OUT IN THE STREETS OF LAREDO",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-as-i-walked-out-in-the-streets-of-laredo.txt",
+    "sourcePath": "../charts/american-songbag/as-i-walked-out-in-the-streets-of-laredo.md"
+  },
+  {
+    "slug": "american-songbag-blind-man-lay-beside-the-way",
+    "title": "BLIND MAN LAY BESIDE THE WAY",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-blind-man-lay-beside-the-way.txt",
+    "sourcePath": "../charts/american-songbag/blind-man-lay-beside-the-way.md"
+  },
+  {
+    "slug": "american-songbag-blow-the-man-down",
+    "title": "BLOW THE MAN DOWN",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-blow-the-man-down.txt",
+    "sourcePath": "../charts/american-songbag/blow-the-man-down.md"
+  },
+  {
+    "slug": "american-songbag-c-c-rider",
+    "title": "C.C. RIDER",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-c-c-rider.txt",
+    "sourcePath": "../charts/american-songbag/c-c-rider.md"
+  },
+  {
+    "slug": "american-songbag-california",
+    "title": "CALIFORNIA",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-california.txt",
+    "sourcePath": "../charts/american-songbag/california.md"
+  },
+  {
+    "slug": "american-songbag-calliope",
+    "title": "CALLIOPE",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-calliope.txt",
+    "sourcePath": "../charts/american-songbag/calliope.md"
+  },
+  {
+    "slug": "american-songbag-careless-love",
+    "title": "CARELESS LOVE",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-careless-love.txt",
+    "sourcePath": "../charts/american-songbag/careless-love.md"
+  },
+  {
+    "slug": "american-songbag-casey-jones",
+    "title": "CASEY JONES",
+    "artist": "Traditional",
+    "key": "C",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-casey-jones.txt",
+    "sourcePath": "../charts/american-songbag/casey-jones.md"
+  },
+  {
+    "slug": "american-songbag-chahcoal-man",
+    "title": "CHAHCOAL MAN",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-chahcoal-man.txt",
+    "sourcePath": "../charts/american-songbag/chahcoal-man.md"
+  },
+  {
+    "slug": "american-songbag-chicken-reel",
+    "title": "CHICKEN REEL",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-chicken-reel.txt",
+    "sourcePath": "../charts/american-songbag/chicken-reel.md"
+  },
+  {
+    "slug": "american-songbag-cigarettes-will-spoil-yer-life",
+    "title": "CIGARETTES WILL SPOIL YER LIFE",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-cigarettes-will-spoil-yer-life.txt",
+    "sourcePath": "../charts/american-songbag/cigarettes-will-spoil-yer-life.md"
+  },
+  {
+    "slug": "american-songbag-cocaine-lil",
+    "title": "COCAINE LIL",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-cocaine-lil.txt",
+    "sourcePath": "../charts/american-songbag/cocaine-lil.md"
+  },
+  {
+    "slug": "american-songbag-common-bill",
+    "title": "COMMON BILL",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-common-bill.txt",
+    "sourcePath": "../charts/american-songbag/common-bill.md"
+  },
+  {
+    "slug": "american-songbag-coon-can-poor-boy",
+    "title": "COON CAN (POOR BOY)",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-coon-can-poor-boy.txt",
+    "sourcePath": "../charts/american-songbag/coon-can-poor-boy.md"
+  },
+  {
+    "slug": "american-songbag-crazy-song-to-the-air-of-dixie",
+    "title": "CRAZY SONG TO THE AIR OF \"DIXIE\"",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-crazy-song-to-the-air-of-dixie.txt",
+    "sourcePath": "../charts/american-songbag/crazy-song-to-the-air-of-dixie.md"
+  },
+  {
+    "slug": "american-songbag-dakota-land",
+    "title": "DAKOTA LAND",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-dakota-land.txt",
+    "sourcePath": "../charts/american-songbag/dakota-land.md"
+  },
+  {
+    "slug": "american-songbag-de-blues-ain-nothin",
+    "title": "DE BLUES AIN' NOTHIN'",
+    "artist": "Traditional",
+    "key": "B",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-de-blues-ain-nothin.txt",
+    "sourcePath": "../charts/american-songbag/de-blues-ain-nothin.md"
+  },
+  {
+    "slug": "american-songbag-de-titanic",
+    "title": "DE TITANIC",
+    "artist": "Traditional",
+    "key": "C",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-de-titanic.txt",
+    "sourcePath": "../charts/american-songbag/de-titanic.md"
+  },
+  {
+    "slug": "american-songbag-dese-bones-gwine-to-rise-again",
+    "title": "DESE BONES GWINE TO RISE AGAIN",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-dese-bones-gwine-to-rise-again.txt",
+    "sourcePath": "../charts/american-songbag/dese-bones-gwine-to-rise-again.md"
+  },
+  {
+    "slug": "american-songbag-did-you-ever-ever-ever",
+    "title": "DID YOU EVER, EVER, EVER?",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-did-you-ever-ever-ever.txt",
+    "sourcePath": "../charts/american-songbag/did-you-ever-ever-ever.md"
+  },
+  {
+    "slug": "american-songbag-dis-mornin-dis-evenin-so-soon",
+    "title": "DIS MORNIN', DIS EVENIN', SO SOON",
+    "artist": "Traditional",
+    "key": "F",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-dis-mornin-dis-evenin-so-soon.txt",
+    "sourcePath": "../charts/american-songbag/dis-mornin-dis-evenin-so-soon.md"
+  },
+  {
+    "slug": "american-songbag-don-let-yo-watch-run-down",
+    "title": "DON' LET YO' WATCH RUN DOWN",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-don-let-yo-watch-run-down.txt",
+    "sourcePath": "../charts/american-songbag/don-let-yo-watch-run-down.md"
+  },
+  {
+    "slug": "american-songbag-down-down-derry-down",
+    "title": "DOWN, DOWN DERRY DOWN",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-down-down-derry-down.txt",
+    "sourcePath": "../charts/american-songbag/down-down-derry-down.md"
+  },
+  {
+    "slug": "american-songbag-driving-saw-logs-on-the-plover",
+    "title": "DRIVING SAW-LOGS ON THE PLOVER",
+    "artist": "Traditional",
+    "key": "C",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-driving-saw-logs-on-the-plover.txt",
+    "sourcePath": "../charts/american-songbag/driving-saw-logs-on-the-plover.md"
+  },
+  {
+    "slug": "american-songbag-ever-since-uncle-john-henry-been-dead",
+    "title": "EVER SINCE UNCLE JOHN HENRY BEEN DEAD",
+    "artist": "Traditional",
+    "key": "F",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-ever-since-uncle-john-henry-been-dead.txt",
+    "sourcePath": "../charts/american-songbag/ever-since-uncle-john-henry-been-dead.md"
+  },
+  {
+    "slug": "american-songbag-fond-affection",
+    "title": "FOND AFFECTION",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-fond-affection.txt",
+    "sourcePath": "../charts/american-songbag/fond-affection.md"
+  },
+  {
+    "slug": "american-songbag-frankie-blues",
+    "title": "FRANKIE BLUES",
+    "artist": "Traditional",
+    "key": "G",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-frankie-blues.txt",
+    "sourcePath": "../charts/american-songbag/frankie-blues.md"
+  },
+  {
+    "slug": "american-songbag-give-me-three-grains-of-corn-mother",
+    "title": "GIVE ME THREE GRAINS OF CORN, MOTHER",
+    "artist": "Traditional",
+    "key": "C",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-give-me-three-grains-of-corn-mother.txt",
+    "sourcePath": "../charts/american-songbag/give-me-three-grains-of-corn-mother.md"
+  },
+  {
+    "slug": "american-songbag-go-get-the-ax",
+    "title": "GO GET THE AX",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-go-get-the-ax.txt",
+    "sourcePath": "../charts/american-songbag/go-get-the-ax.md"
+  },
+  {
+    "slug": "american-songbag-go-to-sleepy",
+    "title": "GO TO SLEEPY",
+    "artist": "Traditional",
+    "key": "E",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-go-to-sleepy.txt",
+    "sourcePath": "../charts/american-songbag/go-to-sleepy.md"
+  },
+  {
+    "slug": "american-songbag-god-s-goin-to-set-this-world-on-fire",
+    "title": "GOD'S GOIN' TO SET THIS WORLD ON FIRE",
+    "artist": "Traditional",
+    "key": "B",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-god-s-goin-to-set-this-world-on-fire.txt",
+    "sourcePath": "../charts/american-songbag/god-s-goin-to-set-this-world-on-fire.md"
+  },
+  {
+    "slug": "american-songbag-good-by-liza-jane",
+    "title": "GOOD-BY LIZA JANE",
+    "artist": "Traditional",
+    "key": "C",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-good-by-liza-jane.txt",
+    "sourcePath": "../charts/american-songbag/good-by-liza-jane.md"
+  },
+  {
+    "slug": "american-songbag-good-bye-brother",
+    "title": "GOOD-BYE, BROTHER",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-good-bye-brother.txt",
+    "sourcePath": "../charts/american-songbag/good-bye-brother.md"
+  },
+  {
+    "slug": "american-songbag-greens",
+    "title": "GREENS",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-greens.txt",
+    "sourcePath": "../charts/american-songbag/greens.md"
+  },
+  {
+    "slug": "american-songbag-gypsy-davy",
+    "title": "GYpsy DAvy",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-gypsy-davy.txt",
+    "sourcePath": "../charts/american-songbag/gypsy-davy.md"
+  },
+  {
+    "slug": "american-songbag-hallelujah-i-m-a-bum",
+    "title": "HALLELUJAH, I'M A BUM!",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-hallelujah-i-m-a-bum.txt",
+    "sourcePath": "../charts/american-songbag/hallelujah-i-m-a-bum.md"
+  },
+  {
+    "slug": "american-songbag-hanging-out-the-linen-clothes",
+    "title": "HANGING OUT THE LINEN CLOTHES",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-hanging-out-the-linen-clothes.txt",
+    "sourcePath": "../charts/american-songbag/hanging-out-the-linen-clothes.md"
+  },
+  {
+    "slug": "american-songbag-hangman",
+    "title": "HANGMAN",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-hangman.txt",
+    "sourcePath": "../charts/american-songbag/hangman.md"
+  },
+  {
+    "slug": "american-songbag-hayseed",
+    "title": "HAYSEED",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-hayseed.txt",
+    "sourcePath": "../charts/american-songbag/hayseed.md"
+  },
+  {
+    "slug": "american-songbag-heave-away",
+    "title": "HEAVE AWAY",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-heave-away.txt",
+    "sourcePath": "../charts/american-songbag/heave-away.md"
+  },
+  {
+    "slug": "american-songbag-hog-eye",
+    "title": "HOG-EYE",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-hog-eye.txt",
+    "sourcePath": "../charts/american-songbag/hog-eye.md"
+  },
+  {
+    "slug": "american-songbag-i-catch-a-da-plenty-of-feesh",
+    "title": "I CATCH-A DA PLENTY OF FEESH",
+    "artist": "Traditional",
+    "key": "F",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-i-catch-a-da-plenty-of-feesh.txt",
+    "sourcePath": "../charts/american-songbag/i-catch-a-da-plenty-of-feesh.md"
+  },
+  {
+    "slug": "american-songbag-i-don-t-like-no-railroad-man",
+    "title": "I DON'T LIKE NO RAILROAD MAN",
+    "artist": "Traditional",
+    "key": "F",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-i-don-t-like-no-railroad-man.txt",
+    "sourcePath": "../charts/american-songbag/i-don-t-like-no-railroad-man.md"
+  },
+  {
+    "slug": "american-songbag-i-don-t-want-to-be-a-gambler",
+    "title": "I DON'T WANT TO BE A GAMBLER",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-i-don-t-want-to-be-a-gambler.txt",
+    "sourcePath": "../charts/american-songbag/i-don-t-want-to-be-a-gambler.md"
+  },
+  {
+    "slug": "american-songbag-i-got-a-gal-at-the-head-of-the-holler",
+    "title": "I GOT A GAL AT THE HEAD OF THE HOLLER",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-i-got-a-gal-at-the-head-of-the-holler.txt",
+    "sourcePath": "../charts/american-songbag/i-got-a-gal-at-the-head-of-the-holler.md"
+  },
+  {
+    "slug": "american-songbag-i-m-sad-and-i-m-lonely",
+    "title": "I'M SAD AND I'M LONELY",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-i-m-sad-and-i-m-lonely.txt",
+    "sourcePath": "../charts/american-songbag/i-m-sad-and-i-m-lonely.md"
+  },
+  {
+    "slug": "american-songbag-i-was-born-almost-ten-thousand-years-ago",
+    "title": "I WAS BORN ALMOST TEN THOUSAND YEARS AGO",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-i-was-born-almost-ten-thousand-years-ago.txt",
+    "sourcePath": "../charts/american-songbag/i-was-born-almost-ten-thousand-years-ago.md"
+  },
+  {
+    "slug": "american-songbag-i-went-down-to-the-depot",
+    "title": "I WENT DOWN TO THE DEPOT",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-i-went-down-to-the-depot.txt",
+    "sourcePath": "../charts/american-songbag/i-went-down-to-the-depot.md"
+  },
+  {
+    "slug": "american-songbag-i-wish-i-was-a-little-bird",
+    "title": "I WISH I WAS A LITTLE BIRD",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-i-wish-i-was-a-little-bird.txt",
+    "sourcePath": "../charts/american-songbag/i-wish-i-was-a-little-bird.md"
+  },
+  {
+    "slug": "american-songbag-if-i-die-a-railroad-man",
+    "title": "IF I DIE A RAILROAD MAN",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-if-i-die-a-railroad-man.txt",
+    "sourcePath": "../charts/american-songbag/if-i-die-a-railroad-man.md"
+  },
+  {
+    "slug": "american-songbag-in-de-vinter-time",
+    "title": "IN DE VINTER TIME",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-in-de-vinter-time.txt",
+    "sourcePath": "../charts/american-songbag/in-de-vinter-time.md"
+  },
+  {
+    "slug": "american-songbag-in-the-days-of-old-rameses",
+    "title": "IN THE DAYS OF OLD RAMESES",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-in-the-days-of-old-rameses.txt",
+    "sourcePath": "../charts/american-songbag/in-the-days-of-old-rameses.md"
+  },
+  {
+    "slug": "american-songbag-it-s-the-syme-the-whole-world-over",
+    "title": "IT'S THE SYME THE WHOLE WORLD OVER",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-it-s-the-syme-the-whole-world-over.txt",
+    "sourcePath": "../charts/american-songbag/it-s-the-syme-the-whole-world-over.md"
+  },
+  {
+    "slug": "american-songbag-jesse-james",
+    "title": "JESSE JAMES",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-jesse-james.txt",
+    "sourcePath": "../charts/american-songbag/jesse-james.md"
+  },
+  {
+    "slug": "american-songbag-joe-turner",
+    "title": "JOE TURNER",
+    "artist": "Traditional",
+    "key": "C",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-joe-turner.txt",
+    "sourcePath": "../charts/american-songbag/joe-turner.md"
+  },
+  {
+    "slug": "american-songbag-john-henry",
+    "title": "JOHN HENRY",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-john-henry.txt",
+    "sourcePath": "../charts/american-songbag/john-henry.md"
+  },
+  {
+    "slug": "american-songbag-josie",
+    "title": "JOSIE",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-josie.txt",
+    "sourcePath": "../charts/american-songbag/josie.md"
+  },
+  {
+    "slug": "american-songbag-kevin-barry",
+    "title": "KEVIN BARRY",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-kevin-barry.txt",
+    "sourcePath": "../charts/american-songbag/kevin-barry.md"
+  },
+  {
+    "slug": "american-songbag-leave-her-bullies-leave-her",
+    "title": "LEAVE HER, BULLIES, LEAVE HER",
+    "artist": "Traditional",
+    "key": "B",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-leave-her-bullies-leave-her.txt",
+    "sourcePath": "../charts/american-songbag/leave-her-bullies-leave-her.md"
+  },
+  {
+    "slug": "american-songbag-levee-moan",
+    "title": "LEVEE MOAN",
+    "artist": "Traditional",
+    "key": "C",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-levee-moan.txt",
+    "sourcePath": "../charts/american-songbag/levee-moan.md"
+  },
+  {
+    "slug": "american-songbag-little-ah-sid",
+    "title": "LITTLE AH SID",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-little-ah-sid.txt",
+    "sourcePath": "../charts/american-songbag/little-ah-sid.md"
+  },
+  {
+    "slug": "american-songbag-little-scotch-ee",
+    "title": "LITTLE SCOTCH-EE",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-little-scotch-ee.txt",
+    "sourcePath": "../charts/american-songbag/little-scotch-ee.md"
+  },
+  {
+    "slug": "american-songbag-lonesome-road",
+    "title": "LONESOME ROAD",
+    "artist": "Traditional",
+    "key": "C",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-lonesome-road.txt",
+    "sourcePath": "../charts/american-songbag/lonesome-road.md"
+  },
+  {
+    "slug": "american-songbag-lord-lovel",
+    "title": "LORD LOVEL",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-lord-lovel.txt",
+    "sourcePath": "../charts/american-songbag/lord-lovel.md"
+  },
+  {
+    "slug": "american-songbag-lydia-pinkham",
+    "title": "LYDIA PINKHAM",
+    "artist": "Traditional",
+    "key": "E",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-lydia-pinkham.txt",
+    "sourcePath": "../charts/american-songbag/lydia-pinkham.md"
+  },
+  {
+    "slug": "american-songbag-mag-s-song",
+    "title": "MAG'S SONG",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-mag-s-song.txt",
+    "sourcePath": "../charts/american-songbag/mag-s-song.md"
+  },
+  {
+    "slug": "american-songbag-mama-have-you-heard-the-news",
+    "title": "MAMA HAVE YOU HEARD THE NEWS?",
+    "artist": "Traditional",
+    "key": "C",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-mama-have-you-heard-the-news.txt",
+    "sourcePath": "../charts/american-songbag/mama-have-you-heard-the-news.md"
+  },
+  {
+    "slug": "american-songbag-mary-had-a-william-goat",
+    "title": "MARY HAD A WILLIAM GOAT",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-mary-had-a-william-goat.txt",
+    "sourcePath": "../charts/american-songbag/mary-had-a-william-goat.md"
+  },
+  {
+    "slug": "american-songbag-mary-wore-three-links-of-chain",
+    "title": "MARY WORE THREE LINKS OF CHAIN",
+    "artist": "Traditional",
+    "key": "E",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-mary-wore-three-links-of-chain.txt",
+    "sourcePath": "../charts/american-songbag/mary-wore-three-links-of-chain.md"
+  },
+  {
+    "slug": "american-songbag-midnight-special",
+    "title": "MIDNIGHT SPECIAL",
+    "artist": "Traditional",
+    "key": "E",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-midnight-special.txt",
+    "sourcePath": "../charts/american-songbag/midnight-special.md"
+  },
+  {
+    "slug": "american-songbag-money",
+    "title": "MONEY",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-money.txt",
+    "sourcePath": "../charts/american-songbag/money.md"
+  },
+  {
+    "slug": "american-songbag-morrissey-and-the-russian-sailor",
+    "title": "MORRISSEY AND THE RUSSIAN SAILOR",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-morrissey-and-the-russian-sailor.txt",
+    "sourcePath": "../charts/american-songbag/morrissey-and-the-russian-sailor.md"
+  },
+  {
+    "slug": "american-songbag-mountain-top",
+    "title": "MOUNTAIN TOP",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-mountain-top.txt",
+    "sourcePath": "../charts/american-songbag/mountain-top.md"
+  },
+  {
+    "slug": "american-songbag-mule-skinner-s-song",
+    "title": "MULE SKINNER'S SONG",
+    "artist": "Traditional",
+    "key": "F",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-mule-skinner-s-song.txt",
+    "sourcePath": "../charts/american-songbag/mule-skinner-s-song.md"
+  },
+  {
+    "slug": "american-songbag-my-lulu",
+    "title": "MY LULU",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-my-lulu.txt",
+    "sourcePath": "../charts/american-songbag/my-lulu.md"
+  },
+  {
+    "slug": "american-songbag-my-old-hammah",
+    "title": "MY OLD HAMMAH",
+    "artist": "Traditional",
+    "key": "F",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-my-old-hammah.txt",
+    "sourcePath": "../charts/american-songbag/my-old-hammah.md"
+  },
+  {
+    "slug": "american-songbag-my-sister-she-works-in-a-laundry",
+    "title": "MY SISTER SHE WORKS IN A LAUNDRY",
+    "artist": "Traditional",
+    "key": "E",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-my-sister-she-works-in-a-laundry.txt",
+    "sourcePath": "../charts/american-songbag/my-sister-she-works-in-a-laundry.md"
+  },
+  {
+    "slug": "american-songbag-negro-reel",
+    "title": "NEGRO REEL",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-negro-reel.txt",
+    "sourcePath": "../charts/american-songbag/negro-reel.md"
+  },
+  {
+    "slug": "american-songbag-o-bury-me-beneath-the-willow",
+    "title": "O BURY ME BENEATH THE WILLOW",
+    "artist": "Traditional",
+    "key": "G",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-o-bury-me-beneath-the-willow.txt",
+    "sourcePath": "../charts/american-songbag/o-bury-me-beneath-the-willow.md"
+  },
+  {
+    "slug": "american-songbag-o-my-honey-take-me-back",
+    "title": "O MY HONEY, TAKE ME BACK",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-o-my-honey-take-me-back.txt",
+    "sourcePath": "../charts/american-songbag/o-my-honey-take-me-back.md"
+  },
+  {
+    "slug": "american-songbag-oh-bury-me-not-on-the-lone-prairie",
+    "title": "OH, BURY ME NOT ON THE LONE PRAIRIE",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-oh-bury-me-not-on-the-lone-prairie.txt",
+    "sourcePath": "../charts/american-songbag/oh-bury-me-not-on-the-lone-prairie.md"
+  },
+  {
+    "slug": "american-songbag-old-adam",
+    "title": "OLD ADAM",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-old-adam.txt",
+    "sourcePath": "../charts/american-songbag/old-adam.md"
+  },
+  {
+    "slug": "american-songbag-old-gray-mare",
+    "title": "OLD GRAY MARE",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-old-gray-mare.txt",
+    "sourcePath": "../charts/american-songbag/old-gray-mare.md"
+  },
+  {
+    "slug": "american-songbag-on-to-the-morgue",
+    "title": "ON TO THE MORGUE",
+    "artist": "Traditional",
+    "key": "D",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-on-to-the-morgue.txt",
+    "sourcePath": "../charts/american-songbag/on-to-the-morgue.md"
+  },
+  {
+    "slug": "american-songbag-pharaoh-s-army-got-drownded",
+    "title": "PHARAOH'S ARMY GOT DROWNDED",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-pharaoh-s-army-got-drownded.txt",
+    "sourcePath": "../charts/american-songbag/pharaoh-s-army-got-drownded.md"
+  },
+  {
+    "slug": "american-songbag-po-boy",
+    "title": "PO' BOY",
+    "artist": "Traditional",
+    "key": "G",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-po-boy.txt",
+    "sourcePath": "../charts/american-songbag/po-boy.md"
+  },
+  {
+    "slug": "american-songbag-poor-lonesome-cowboy",
+    "title": "POOR LONESOME CowBOY",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-poor-lonesome-cowboy.txt",
+    "sourcePath": "../charts/american-songbag/poor-lonesome-cowboy.md"
+  },
+  {
+    "slug": "american-songbag-pretty-polly",
+    "title": "PRETTY POLLY",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-pretty-polly.txt",
+    "sourcePath": "../charts/american-songbag/pretty-polly.md"
+  },
+  {
+    "slug": "american-songbag-rabble-soldier",
+    "title": "RABBLE SOLDIER",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-rabble-soldier.txt",
+    "sourcePath": "../charts/american-songbag/rabble-soldier.md"
+  },
+  {
+    "slug": "american-songbag-railroad-bill",
+    "title": "RAILROAD BILL",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-railroad-bill.txt",
+    "sourcePath": "../charts/american-songbag/railroad-bill.md"
+  },
+  {
+    "slug": "american-songbag-rosie-nell",
+    "title": "ROSIE NELL",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-rosie-nell.txt",
+    "sourcePath": "../charts/american-songbag/rosie-nell.md"
+  },
+  {
+    "slug": "american-songbag-sadie",
+    "title": "SADIE",
+    "artist": "Traditional",
+    "key": "B",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-sadie.txt",
+    "sourcePath": "../charts/american-songbag/sadie.md"
+  },
+  {
+    "slug": "american-songbag-sam-bass",
+    "title": "SAM BASS",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-sam-bass.txt",
+    "sourcePath": "../charts/american-songbag/sam-bass.md"
+  },
+  {
+    "slug": "american-songbag-satan-s-a-liah",
+    "title": "SATAN'S A LIAH",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-satan-s-a-liah.txt",
+    "sourcePath": "../charts/american-songbag/satan-s-a-liah.md"
+  },
+  {
+    "slug": "american-songbag-she-ll-be-comin-round-the-mountain",
+    "title": "SHE'LL BE COMIN' ROUND THE MOUNTAIN",
+    "artist": "Traditional",
+    "key": "B",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-she-ll-be-comin-round-the-mountain.txt",
+    "sourcePath": "../charts/american-songbag/she-ll-be-comin-round-the-mountain.md"
+  },
+  {
+    "slug": "american-songbag-she-promised-she-d-meet-me",
+    "title": "SHE PROMISED SHE'D MEET ME",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-she-promised-she-d-meet-me.txt",
+    "sourcePath": "../charts/american-songbag/she-promised-she-d-meet-me.md"
+  },
+  {
+    "slug": "american-songbag-si-hubbard",
+    "title": "SI HUBBARD",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-si-hubbard.txt",
+    "sourcePath": "../charts/american-songbag/si-hubbard.md"
+  },
+  {
+    "slug": "american-songbag-somebody",
+    "title": "SOMEBODY",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-somebody.txt",
+    "sourcePath": "../charts/american-songbag/somebody.md"
+  },
+  {
+    "slug": "american-songbag-sweet-betsy-from-pike",
+    "title": "SWEET BETSY FROM PIKE",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-sweet-betsy-from-pike.txt",
+    "sourcePath": "../charts/american-songbag/sweet-betsy-from-pike.md"
+  },
+  {
+    "slug": "american-songbag-ten-thousand-miles-away-from-home",
+    "title": "TEN THOUSAND MILES AWAY FROM HOME",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-ten-thousand-miles-away-from-home.txt",
+    "sourcePath": "../charts/american-songbag/ten-thousand-miles-away-from-home.md"
+  },
+  {
+    "slug": "american-songbag-ten-thousand-miles-away",
+    "title": "TEN THOUSAND MILES AWAY",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-ten-thousand-miles-away.txt",
+    "sourcePath": "../charts/american-songbag/ten-thousand-miles-away.md"
+  },
+  {
+    "slug": "american-songbag-the-banks-of-sacramento",
+    "title": "THE BANKS OF SACRAMENTO",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-the-banks-of-sacramento.txt",
+    "sourcePath": "../charts/american-songbag/the-banks-of-sacramento.md"
+  },
+  {
+    "slug": "american-songbag-the-buffalo-skinners",
+    "title": "THE BUFFALO SKINNERS",
+    "artist": "Traditional",
+    "key": "C",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-the-buffalo-skinners.txt",
+    "sourcePath": "../charts/american-songbag/the-buffalo-skinners.md"
+  },
+  {
+    "slug": "american-songbag-the-colorado-trail",
+    "title": "THE COLORADO TRAIL",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-the-colorado-trail.txt",
+    "sourcePath": "../charts/american-songbag/the-colorado-trail.md"
+  },
+  {
+    "slug": "american-songbag-the-dead-horse",
+    "title": "THE DEAD HORSE",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-the-dead-horse.txt",
+    "sourcePath": "../charts/american-songbag/the-dead-horse.md"
+  },
+  {
+    "slug": "american-songbag-the-dreary-black-hills",
+    "title": "THE DREARY BLACK HILLS",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-the-dreary-black-hills.txt",
+    "sourcePath": "../charts/american-songbag/the-dreary-black-hills.md"
+  },
+  {
+    "slug": "american-songbag-the-drunkard-s-doom",
+    "title": "THE DRUNKARD'S DOOM",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-the-drunkard-s-doom.txt",
+    "sourcePath": "../charts/american-songbag/the-drunkard-s-doom.md"
+  },
+  {
+    "slug": "american-songbag-the-dying-hogger",
+    "title": "THE DYING HOGGER",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-the-dying-hogger.txt",
+    "sourcePath": "../charts/american-songbag/the-dying-hogger.md"
+  },
+  {
+    "slug": "american-songbag-the-farmer",
+    "title": "THE FARMER",
+    "artist": "Traditional",
+    "key": "G",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-the-farmer.txt",
+    "sourcePath": "../charts/american-songbag/the-farmer.md"
+  },
+  {
+    "slug": "american-songbag-the-frozen-girl",
+    "title": "THE FROZEN GIRL",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-the-frozen-girl.txt",
+    "sourcePath": "../charts/american-songbag/the-frozen-girl.md"
+  },
+  {
+    "slug": "american-songbag-the-good-boy",
+    "title": "THE GOOD BOY",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-the-good-boy.txt",
+    "sourcePath": "../charts/american-songbag/the-good-boy.md"
+  },
+  {
+    "slug": "american-songbag-the-hearse-song",
+    "title": "THE HEARSE SONG",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-the-hearse-song.txt",
+    "sourcePath": "../charts/american-songbag/the-hearse-song.md"
+  },
+  {
+    "slug": "american-songbag-the-hog-eye-man",
+    "title": "THE HOG-EYE MAN",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-the-hog-eye-man.txt",
+    "sourcePath": "../charts/american-songbag/the-hog-eye-man.md"
+  },
+  {
+    "slug": "american-songbag-the-horse-named-bill",
+    "title": "THE HORSE NAMED BILL",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-the-horse-named-bill.txt",
+    "sourcePath": "../charts/american-songbag/the-horse-named-bill.md"
+  },
+  {
+    "slug": "american-songbag-the-house-carpenter",
+    "title": "THE HOUSE CARPENTER",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-the-house-carpenter.txt",
+    "sourcePath": "../charts/american-songbag/the-house-carpenter.md"
+  },
+  {
+    "slug": "american-songbag-the-jam-on-gerry-s-rock",
+    "title": "THE JAM ON GERRY'S ROCK",
+    "artist": "Traditional",
+    "key": "G",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-the-jam-on-gerry-s-rock.txt",
+    "sourcePath": "../charts/american-songbag/the-jam-on-gerry-s-rock.md"
+  },
+  {
+    "slug": "american-songbag-the-john-b-sails",
+    "title": "THE JOHN B. SAILS",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-the-john-b-sails.txt",
+    "sourcePath": "../charts/american-songbag/the-john-b-sails.md"
+  },
+  {
+    "slug": "american-songbag-the-kinkaiders",
+    "title": "THE KINKAIDERS",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-the-kinkaiders.txt",
+    "sourcePath": "../charts/american-songbag/the-kinkaiders.md"
+  },
+  {
+    "slug": "american-songbag-the-lane-county-bachelor",
+    "title": "THE LANE COUNTY BACHELOR",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-the-lane-county-bachelor.txt",
+    "sourcePath": "../charts/american-songbag/the-lane-county-bachelor.md"
+  },
+  {
+    "slug": "american-songbag-the-lone-star-trail",
+    "title": "THE LONE STAR TRAIL",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-the-lone-star-trail.txt",
+    "sourcePath": "../charts/american-songbag/the-lone-star-trail.md"
+  },
+  {
+    "slug": "american-songbag-the-maid-freed-from-the-gallows",
+    "title": "THE MAID FREED FROM THE GALLOWS",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-the-maid-freed-from-the-gallows.txt",
+    "sourcePath": "../charts/american-songbag/the-maid-freed-from-the-gallows.md"
+  },
+  {
+    "slug": "american-songbag-the-midnight-train",
+    "title": "THE MIDNIGHT TRAIN",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-the-midnight-train.txt",
+    "sourcePath": "../charts/american-songbag/the-midnight-train.md"
+  },
+  {
+    "slug": "american-songbag-the-monkey-s-wedding",
+    "title": "THE MONKEY'S WEDDING",
+    "artist": "Traditional",
+    "key": "E",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-the-monkey-s-wedding.txt",
+    "sourcePath": "../charts/american-songbag/the-monkey-s-wedding.md"
+  },
+  {
+    "slug": "american-songbag-the-quaker-s-wooing",
+    "title": "THE QUAKER'S WOOING",
+    "artist": "Traditional",
+    "key": "Am",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-the-quaker-s-wooing.txt",
+    "sourcePath": "../charts/american-songbag/the-quaker-s-wooing.md"
+  },
+  {
+    "slug": "american-songbag-the-roving-gambler",
+    "title": "THE ROVING GAMBLER",
+    "artist": "Traditional",
+    "key": "B",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-the-roving-gambler.txt",
+    "sourcePath": "../charts/american-songbag/the-roving-gambler.md"
+  },
+  {
+    "slug": "american-songbag-the-sergeant-he-is-the-worst-of-all",
+    "title": "THE SERGEANT, HE IS THE WORST OF ALL",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-the-sergeant-he-is-the-worst-of-all.txt",
+    "sourcePath": "../charts/american-songbag/the-sergeant-he-is-the-worst-of-all.md"
+  },
+  {
+    "slug": "american-songbag-the-tenderfoot",
+    "title": "THE TENDERFOOT",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-the-tenderfoot.txt",
+    "sourcePath": "../charts/american-songbag/the-tenderfoot.md"
+  },
+  {
+    "slug": "american-songbag-the-trail-to-mexico",
+    "title": "THE TRAIL TO MEXICO",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-the-trail-to-mexico.txt",
+    "sourcePath": "../charts/american-songbag/the-trail-to-mexico.md"
+  },
+  {
+    "slug": "american-songbag-the-true-lover-s-farewell",
+    "title": "THE TRUE LOVER'S FAREWELL",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-the-true-lover-s-farewell.txt",
+    "sourcePath": "../charts/american-songbag/the-true-lover-s-farewell.md"
+  },
+  {
+    "slug": "american-songbag-the-weaver",
+    "title": "THE WEAVER",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-the-weaver.txt",
+    "sourcePath": "../charts/american-songbag/the-weaver.md"
+  },
+  {
+    "slug": "american-songbag-the-wide-mizzoura",
+    "title": "THE WIDE MIZZOURA",
+    "artist": "Traditional",
+    "key": "B",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-the-wide-mizzoura.txt",
+    "sourcePath": "../charts/american-songbag/the-wide-mizzoura.md"
+  },
+  {
+    "slug": "american-songbag-the-wind-it-blew-up-the-railroad-track",
+    "title": "THE WIND IT BLEW UP THE RAILROAD TRACK",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-the-wind-it-blew-up-the-railroad-track.txt",
+    "sourcePath": "../charts/american-songbag/the-wind-it-blew-up-the-railroad-track.md"
+  },
+  {
+    "slug": "american-songbag-those-gambler-s-blues",
+    "title": "THOSE GAMBLER'S BLUES",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-those-gambler-s-blues.txt",
+    "sourcePath": "../charts/american-songbag/those-gambler-s-blues.md"
+  },
+  {
+    "slug": "american-songbag-timber",
+    "title": "TIMBER",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-timber.txt",
+    "sourcePath": "../charts/american-songbag/timber.md"
+  },
+  {
+    "slug": "american-songbag-times-gettin-hard-boys",
+    "title": "TIMES GETTIN' HARD, BOYS",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-times-gettin-hard-boys.txt",
+    "sourcePath": "../charts/american-songbag/times-gettin-hard-boys.md"
+  },
+  {
+    "slug": "american-songbag-turkey-in-the-straw",
+    "title": "TURKEY IN THE STRAW",
+    "artist": "Traditional",
+    "key": "B",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-turkey-in-the-straw.txt",
+    "sourcePath": "../charts/american-songbag/turkey-in-the-straw.md"
+  },
+  {
+    "slug": "american-songbag-two-white-horses",
+    "title": "TWO WHITE HORSES",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-two-white-horses.txt",
+    "sourcePath": "../charts/american-songbag/two-white-horses.md"
+  },
+  {
+    "slug": "american-songbag-versos-de-montalgo",
+    "title": "VERSOS DE MONTALGO",
+    "artist": "Traditional",
+    "key": "G",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-versos-de-montalgo.txt",
+    "sourcePath": "../charts/american-songbag/versos-de-montalgo.md"
+  },
+  {
+    "slug": "american-songbag-waillie-waillie",
+    "title": "WAILLIE, WAILLIE!",
+    "artist": "Traditional",
+    "key": "B",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-waillie-waillie.txt",
+    "sourcePath": "../charts/american-songbag/waillie-waillie.md"
+  },
+  {
+    "slug": "american-songbag-walky-talky-jenny",
+    "title": "WALKY-TALKY JENNY",
+    "artist": "Traditional",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/american-songbag-walky-talky-jenny.txt",
+    "sourcePath": "../charts/american-songbag/walky-talky-jenny.md"
+  },
+  {
+    "slug": "american-songbag-wanderin",
+    "title": "WANDERIN",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-wanderin.txt",
+    "sourcePath": "../charts/american-songbag/wanderin.md"
+  },
+  {
+    "slug": "american-songbag-way-over-in-the-new-buryin-groun",
+    "title": "WAY OVER IN THE NEW BURYIN' GROUN'",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-way-over-in-the-new-buryin-groun.txt",
+    "sourcePath": "../charts/american-songbag/way-over-in-the-new-buryin-groun.md"
+  },
+  {
+    "slug": "american-songbag-we-are-four-bums",
+    "title": "WE ARE FOUR BUMS",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-we-are-four-bums.txt",
+    "sourcePath": "../charts/american-songbag/we-are-four-bums.md"
+  },
+  {
+    "slug": "american-songbag-what-was-your-name-in-the-states",
+    "title": "WHAT WAS YOUR NAME IN THE STATES?",
+    "artist": "Traditional",
+    "key": "F",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-what-was-your-name-in-the-states.txt",
+    "sourcePath": "../charts/american-songbag/what-was-your-name-in-the-states.md"
+  },
+  {
+    "slug": "american-songbag-when-a-woman-blue",
+    "title": "WHEN A WOMAN BLUE",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-when-a-woman-blue.txt",
+    "sourcePath": "../charts/american-songbag/when-a-woman-blue.md"
+  },
+  {
+    "slug": "american-songbag-when-poor-mary-came-wandering-home",
+    "title": "WHEN POOR MARY CAME WANDERING HOME",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-when-poor-mary-came-wandering-home.txt",
+    "sourcePath": "../charts/american-songbag/when-poor-mary-came-wandering-home.md"
+  },
+  {
+    "slug": "american-songbag-when-the-work-s-all-done-this-fall",
+    "title": "WHEN THE WORK'S ALL DONE THIS FALL",
+    "artist": "Traditional",
+    "key": "F",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-when-the-work-s-all-done-this-fall.txt",
+    "sourcePath": "../charts/american-songbag/when-the-work-s-all-done-this-fall.md"
+  },
+  {
+    "slug": "american-songbag-where-o-where-is-old-elijah",
+    "title": "WHERE O WHERE IS OLD ELIJAH?",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-where-o-where-is-old-elijah.txt",
+    "sourcePath": "../charts/american-songbag/where-o-where-is-old-elijah.md"
+  },
+  {
+    "slug": "american-songbag-where-they-were",
+    "title": "WHERE THEY WERE",
+    "artist": "Traditional",
+    "key": "G",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-where-they-were.txt",
+    "sourcePath": "../charts/american-songbag/where-they-were.md"
+  },
+  {
+    "slug": "american-songbag-wizard-oil",
+    "title": "WIZARD OIL",
+    "artist": "Traditional",
+    "key": "E",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-wizard-oil.txt",
+    "sourcePath": "../charts/american-songbag/wizard-oil.md"
+  },
+  {
+    "slug": "american-songbag-yonder-comes-the-high-sheriff",
+    "title": "YONDER COMES THE HIGH SHERIFF",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-yonder-comes-the-high-sheriff.txt",
+    "sourcePath": "../charts/american-songbag/yonder-comes-the-high-sheriff.md"
+  },
+  {
+    "slug": "american-songbag-you-fight-on",
+    "title": "YOU FIGHT ON",
+    "artist": "Traditional",
+    "key": "A",
+    "hasChords": true,
+    "chartPath": "./charts/american-songbag-you-fight-on.txt",
+    "sourcePath": "../charts/american-songbag/you-fight-on.md"
   },
   {
     "slug": "and-so-it-goes",
     "title": "And So It Goes",
     "artist": "Billy Joel",
     "key": "G",
+    "hasChords": true,
     "chartPath": "./charts/and-so-it-goes.txt",
     "sourcePath": "../charts/and-so-it-goes.md"
-  },
-  {
-    "slug": "tony-grove-better-half",
-    "title": "Better Half",
-    "artist": "Tony Grove",
-    "key": "",
-    "chartPath": "./charts/tony-grove-better-half.txt",
-    "sourcePath": "../charts/tony-grove/better-half.md"
-  },
-  {
-    "slug": "tony-grove-bitterness",
-    "title": "Bitterness",
-    "artist": "Tony Grove",
-    "key": "",
-    "chartPath": "./charts/tony-grove-bitterness.txt",
-    "sourcePath": "../charts/tony-grove/bitterness.md"
   },
   {
     "slug": "black-velvet-band",
     "title": "Black Velvet Band",
     "artist": "Shipwreckers",
     "key": "G",
+    "hasChords": true,
     "chartPath": "./charts/black-velvet-band.txt",
     "sourcePath": "../charts/black-velvet-band.md"
   },
@@ -52,6 +1480,7 @@
     "title": "Blowin’ in the Wind",
     "artist": "Bob Dylan",
     "key": "G",
+    "hasChords": true,
     "chartPath": "./charts/blowin-in-the-wind.txt",
     "sourcePath": "../charts/blowin-in-the-wind.md"
   },
@@ -60,14 +1489,16 @@
     "title": "Bongo Bong",
     "artist": "Manu Chao",
     "key": "Am",
+    "hasChords": true,
     "chartPath": "./charts/bongo-bong.txt",
-    "sourcePath": "./approved-charts/bongo-bong.md"
+    "sourcePath": "../charts/bongo-bong.md"
   },
   {
     "slug": "city-of-new-orleans",
     "title": "City of New Orleans",
     "artist": "Arlo Guthrie",
     "key": "G",
+    "hasChords": true,
     "chartPath": "./charts/city-of-new-orleans.txt",
     "sourcePath": "../charts/city-of-new-orleans.md"
   },
@@ -75,15 +1506,17 @@
     "slug": "clandestino",
     "title": "Clandestino",
     "artist": "Manu Chao",
-    "key": "Bm",
+    "key": "F#m",
+    "hasChords": true,
     "chartPath": "./charts/clandestino.txt",
-    "sourcePath": "./approved-charts/clandestino.md"
+    "sourcePath": "../charts/clandestino.md"
   },
   {
     "slug": "come-out-ye-black-and-tans",
     "title": "Come Out Ye Black And Tans",
     "artist": "Shipwreckers",
     "key": "",
+    "hasChords": false,
     "chartPath": "./charts/come-out-ye-black-and-tans.txt",
     "sourcePath": "../charts/come-out-ye-black-and-tans.md"
   },
@@ -92,6 +1525,7 @@
     "title": "Days Aren't Long Enough",
     "artist": "Cover",
     "key": "C",
+    "hasChords": true,
     "chartPath": "./charts/days-aren-t-long-enough.txt",
     "sourcePath": "../charts/days-aren-t-long-enough.md"
   },
@@ -100,14 +1534,16 @@
     "title": "Desaparecido",
     "artist": "Manu Chao",
     "key": "Am",
+    "hasChords": true,
     "chartPath": "./charts/desaparecido.txt",
-    "sourcePath": "./approved-charts/desaparecido.md"
+    "sourcePath": "../charts/desaparecido.md"
   },
   {
     "slug": "drink-it-up-men",
     "title": "Drink it up Men",
     "artist": "Shipwreckers",
     "key": "C",
+    "hasChords": true,
     "chartPath": "./charts/drink-it-up-men.txt",
     "sourcePath": "../charts/drink-it-up-men.md"
   },
@@ -116,30 +1552,34 @@
     "title": "Election Day",
     "artist": "Blaze Foley",
     "key": "Am",
+    "hasChords": true,
     "chartPath": "./charts/election-day.txt",
-    "sourcePath": "./approved-charts/election-day.md"
+    "sourcePath": "../charts/election-day.md"
   },
   {
     "slug": "everybody-knows",
     "title": "Everybody Knows",
     "artist": "Leonard Cohen",
     "key": "Dm",
+    "hasChords": true,
     "chartPath": "./charts/everybody-knows.txt",
-    "sourcePath": "./approved-charts/everybody-knows.md"
+    "sourcePath": "../charts/everybody-knows.md"
   },
   {
     "slug": "famous-blue-raincoat",
     "title": "Famous Blue Raincoat",
     "artist": "Leonard Cohen",
     "key": "Am",
+    "hasChords": true,
     "chartPath": "./charts/famous-blue-raincoat.txt",
-    "sourcePath": "./approved-charts/famous-blue-raincoat.md"
+    "sourcePath": "../charts/famous-blue-raincoat.md"
   },
   {
     "slug": "first-day-of-my-life",
     "title": "First Day of my Life",
     "artist": "Bright Eyes",
     "key": "C",
+    "hasChords": true,
     "chartPath": "./charts/first-day-of-my-life.txt",
     "sourcePath": "../charts/first-day-of-my-life.md"
   },
@@ -148,6 +1588,7 @@
     "title": "Flightless Bird, American Mouth",
     "artist": "Iron & Wine",
     "key": "C",
+    "hasChords": true,
     "chartPath": "./charts/flightless-bird-american-mouth.txt",
     "sourcePath": "../charts/flightless-bird-american-mouth.md"
   },
@@ -156,6 +1597,7 @@
     "title": "Freckled Girl",
     "artist": "Iron & Wine",
     "key": "G",
+    "hasChords": true,
     "chartPath": "./charts/freckled-girl.txt",
     "sourcePath": "../charts/freckled-girl.md"
   },
@@ -164,6 +1606,7 @@
     "title": "Go to Sea No More",
     "artist": "Shipwreckers",
     "key": "Dm",
+    "hasChords": true,
     "chartPath": "./charts/go-to-sea-no-more.txt",
     "sourcePath": "../charts/go-to-sea-no-more.md"
   },
@@ -172,6 +1615,7 @@
     "title": "Gotta Have You",
     "artist": "The Weepies",
     "key": "G",
+    "hasChords": true,
     "chartPath": "./charts/gotta-have-you.txt",
     "sourcePath": "../charts/gotta-have-you.md"
   },
@@ -180,22 +1624,16 @@
     "title": "Gotta Serve Somebody",
     "artist": "Bob Dylan",
     "key": "A",
+    "hasChords": true,
     "chartPath": "./charts/gotta-serve-somebody.txt",
     "sourcePath": "../charts/gotta-serve-somebody.md"
-  },
-  {
-    "slug": "tony-grove-haley-s-song",
-    "title": "Haley's Song",
-    "artist": "Tony Grove",
-    "key": "",
-    "chartPath": "./charts/tony-grove-haley-s-song.txt",
-    "sourcePath": "../charts/tony-grove/haley-s-song.md"
   },
   {
     "slug": "hallelujah",
     "title": "Hallelujah",
     "artist": "Leonard Cohen",
     "key": "C",
+    "hasChords": true,
     "chartPath": "./charts/hallelujah.txt",
     "sourcePath": "../charts/hallelujah.md"
   },
@@ -204,6 +1642,7 @@
     "title": "Have You Ever Seen the Rain",
     "artist": "Creedence Clearwater Revival",
     "key": "C",
+    "hasChords": true,
     "chartPath": "./charts/have-you-ever-seen-the-rain.txt",
     "sourcePath": "../charts/have-you-ever-seen-the-rain.md"
   },
@@ -212,6 +1651,7 @@
     "title": "Here Comes the Sun",
     "artist": "The Beatles",
     "key": "D",
+    "hasChords": true,
     "chartPath": "./charts/here-comes-the-sun.txt",
     "sourcePath": "../charts/here-comes-the-sun.md"
   },
@@ -220,6 +1660,7 @@
     "title": "High Germany",
     "artist": "Shipwreckers",
     "key": "Dm",
+    "hasChords": true,
     "chartPath": "./charts/high-germany.txt",
     "sourcePath": "../charts/high-germany.md"
   },
@@ -228,6 +1669,7 @@
     "title": "Home Boys Home",
     "artist": "Shipwreckers",
     "key": "G",
+    "hasChords": true,
     "chartPath": "./charts/home-boys-home.txt",
     "sourcePath": "../charts/home-boys-home.md"
   },
@@ -236,6 +1678,7 @@
     "title": "I Am a Rock",
     "artist": "Simon and Garfunkel",
     "key": "C",
+    "hasChords": true,
     "chartPath": "./charts/i-am-a-rock.txt",
     "sourcePath": "../charts/i-am-a-rock.md"
   },
@@ -244,38 +1687,43 @@
     "title": "I Believe I can Fly",
     "artist": "A. Stinker",
     "key": "C",
+    "hasChords": true,
     "chartPath": "./charts/i-believe-i-can-fly.txt",
     "sourcePath": "../charts/i-believe-i-can-fly.md"
-  },
-  {
-    "slug": "i-will-follow-you-into-the-dark",
-    "title": "I will follow you into the dark",
-    "artist": "Death Cab for Cutie",
-    "key": "C",
-    "chartPath": "./charts/i-will-follow-you-into-the-dark.txt",
-    "sourcePath": "../charts/i-will-follow-you-into-the-dark.md"
   },
   {
     "slug": "i-m-your-man",
     "title": "I'm Your Man",
     "artist": "Leonard Cohen",
     "key": "Em",
+    "hasChords": true,
     "chartPath": "./charts/i-m-your-man.txt",
-    "sourcePath": "./approved-charts/i-m-your-man.md"
+    "sourcePath": "../charts/i-m-your-man.md"
+  },
+  {
+    "slug": "i-will-follow-you-into-the-dark",
+    "title": "I will follow you into the dark",
+    "artist": "Death Cab for Cutie",
+    "key": "C",
+    "hasChords": true,
+    "chartPath": "./charts/i-will-follow-you-into-the-dark.txt",
+    "sourcePath": "../charts/i-will-follow-you-into-the-dark.md"
   },
   {
     "slug": "if-i-could-only-fly",
     "title": "If I Could Only Fly",
     "artist": "Blaze Foley",
     "key": "C",
+    "hasChords": true,
     "chartPath": "./charts/if-i-could-only-fly.txt",
-    "sourcePath": "./approved-charts/if-i-could-only-fly.md"
+    "sourcePath": "../charts/if-i-could-only-fly.md"
   },
   {
     "slug": "in-my-life",
     "title": "In My Life",
     "artist": "The Beatles",
     "key": "B",
+    "hasChords": true,
     "chartPath": "./charts/in-my-life.txt",
     "sourcePath": "../charts/in-my-life.md"
   },
@@ -284,6 +1732,7 @@
     "title": "Indian Moon (Long View Farm)",
     "artist": "State Radio / Chadwick Stokes",
     "key": "Em",
+    "hasChords": true,
     "chartPath": "./charts/indian-moon-long-view-farm.txt",
     "sourcePath": "../charts/indian-moon-long-view-farm.md"
   },
@@ -292,22 +1741,16 @@
     "title": "Judgement",
     "artist": "Iron & Wine",
     "key": "F",
+    "hasChords": true,
     "chartPath": "./charts/judgement.txt",
     "sourcePath": "../charts/judgement.md"
-  },
-  {
-    "slug": "tony-grove-lay-the-anchor",
-    "title": "Lay the Anchor",
-    "artist": "Tony Grove",
-    "key": "",
-    "chartPath": "./charts/tony-grove-lay-the-anchor.txt",
-    "sourcePath": "../charts/tony-grove/lay-the-anchor.md"
   },
   {
     "slug": "leaving-on-a-jet-plane",
     "title": "Leaving on a Jet Plane",
     "artist": "John Denver",
     "key": "G",
+    "hasChords": true,
     "chartPath": "./charts/leaving-on-a-jet-plane.txt",
     "sourcePath": "../charts/leaving-on-a-jet-plane.md"
   },
@@ -316,6 +1759,7 @@
     "title": "Lifeboat Mona",
     "artist": "Shipwreckers",
     "key": "Cm",
+    "hasChords": true,
     "chartPath": "./charts/lifeboat-mona.txt",
     "sourcePath": "../charts/lifeboat-mona.md"
   },
@@ -324,6 +1768,7 @@
     "title": "Live High",
     "artist": "Jason Mraz",
     "key": "A",
+    "hasChords": true,
     "chartPath": "./charts/live-high.txt",
     "sourcePath": "../charts/live-high.md"
   },
@@ -332,6 +1777,7 @@
     "title": "Livin' in the Woods in the Trees",
     "artist": "Blaze Foley",
     "key": "C",
+    "hasChords": true,
     "chartPath": "./charts/livin-in-the-woods-in-the-trees.txt",
     "sourcePath": "../charts/livin-in-the-woods-in-the-trees.md"
   },
@@ -340,14 +1786,16 @@
     "title": "Lover",
     "artist": "Taylor Swift",
     "key": "G",
+    "hasChords": true,
     "chartPath": "./charts/lover.txt",
-    "sourcePath": "./approved-charts/lover.md"
+    "sourcePath": "../charts/lover.md"
   },
   {
     "slug": "maloney-wants-a-drink",
     "title": "Maloney Wants a Drink",
     "artist": "Shipwreckers",
     "key": "C",
+    "hasChords": true,
     "chartPath": "./charts/maloney-wants-a-drink.txt",
     "sourcePath": "../charts/maloney-wants-a-drink.md"
   },
@@ -356,6 +1804,7 @@
     "title": "Molly Malone",
     "artist": "Shipwreckers",
     "key": "D",
+    "hasChords": true,
     "chartPath": "./charts/molly-malone.txt",
     "sourcePath": "../charts/molly-malone.md"
   },
@@ -363,15 +1812,17 @@
     "slug": "moonlight-song",
     "title": "Moonlight Song",
     "artist": "Blaze Foley",
-    "key": "F",
+    "key": "C",
+    "hasChords": true,
     "chartPath": "./charts/moonlight-song.txt",
-    "sourcePath": "./approved-charts/moonlight-song.md"
+    "sourcePath": "../charts/moonlight-song.md"
   },
   {
     "slug": "mrs-robinson",
     "title": "Mrs. Robinson",
     "artist": "Simon and Garfunkel",
     "key": "E",
+    "hasChords": true,
     "chartPath": "./charts/mrs-robinson.txt",
     "sourcePath": "../charts/mrs-robinson.md"
   },
@@ -380,6 +1831,7 @@
     "title": "No Woman No Cry",
     "artist": "Bob Marley",
     "key": "C",
+    "hasChords": true,
     "chartPath": "./charts/no-woman-no-cry.txt",
     "sourcePath": "../charts/no-woman-no-cry.md"
   },
@@ -388,6 +1840,7 @@
     "title": "Peat Bog Soldiers",
     "artist": "Shipwreckers",
     "key": "Em",
+    "hasChords": true,
     "chartPath": "./charts/peat-bog-soldiers.txt",
     "sourcePath": "../charts/peat-bog-soldiers.md"
   },
@@ -396,6 +1849,7 @@
     "title": "Pub with No Beer",
     "artist": "Shipwreckers",
     "key": "C",
+    "hasChords": true,
     "chartPath": "./charts/pub-with-no-beer.txt",
     "sourcePath": "../charts/pub-with-no-beer.md"
   },
@@ -404,6 +1858,7 @@
     "title": "Redemption Song",
     "artist": "Bob Marley",
     "key": "G",
+    "hasChords": true,
     "chartPath": "./charts/redemption-song.txt",
     "sourcePath": "../charts/redemption-song.md"
   },
@@ -412,6 +1867,7 @@
     "title": "Sally Maclennane",
     "artist": "Shipwreckers",
     "key": "D",
+    "hasChords": true,
     "chartPath": "./charts/sally-maclennane.txt",
     "sourcePath": "../charts/sally-maclennane.md"
   },
@@ -420,6 +1876,7 @@
     "title": "Seashell Tale",
     "artist": "M. Ward",
     "key": "C",
+    "hasChords": true,
     "chartPath": "./charts/seashell-tale.txt",
     "sourcePath": "../charts/seashell-tale.md"
   },
@@ -428,6 +1885,7 @@
     "title": "Seven Deadly Sins",
     "artist": "Shipwreckers",
     "key": "C",
+    "hasChords": true,
     "chartPath": "./charts/seven-deadly-sins.txt",
     "sourcePath": "../charts/seven-deadly-sins.md"
   },
@@ -436,6 +1894,7 @@
     "title": "Seven Drunken Nights",
     "artist": "Shipwreckers",
     "key": "A",
+    "hasChords": true,
     "chartPath": "./charts/seven-drunken-nights.txt",
     "sourcePath": "../charts/seven-drunken-nights.md"
   },
@@ -444,14 +1903,16 @@
     "title": "Skinny Love",
     "artist": "Bon Iver",
     "key": "Am",
+    "hasChords": true,
     "chartPath": "./charts/skinny-love.txt",
-    "sourcePath": "./approved-charts/skinny-love.md"
+    "sourcePath": "../charts/skinny-love.md"
   },
   {
     "slug": "something",
     "title": "Something",
     "artist": "The Beatles",
     "key": "C",
+    "hasChords": true,
     "chartPath": "./charts/something.txt",
     "sourcePath": "../charts/something.md"
   },
@@ -460,38 +1921,25 @@
     "title": "Sound of Silence",
     "artist": "Simon and Garfunkel",
     "key": "Am",
+    "hasChords": true,
     "chartPath": "./charts/sound-of-silence.txt",
     "sourcePath": "../charts/sound-of-silence.md"
-  },
-  {
-    "slug": "tony-grove-space-age",
-    "title": "Space Age",
-    "artist": "Tony Grove",
-    "key": "C",
-    "chartPath": "./charts/tony-grove-space-age.txt",
-    "sourcePath": "../charts/tony-grove/space-age.md"
   },
   {
     "slug": "spring-cleaning",
     "title": "Spring Cleaning",
     "artist": "Bright Eyes / Neva Dinova",
     "key": "C",
+    "hasChords": true,
     "chartPath": "./charts/spring-cleaning.txt",
     "sourcePath": "../charts/spring-cleaning.md"
-  },
-  {
-    "slug": "tony-grove-stand-up",
-    "title": "Stand Up",
-    "artist": "Tony Grove",
-    "key": "C",
-    "chartPath": "./charts/tony-grove-stand-up.txt",
-    "sourcePath": "../charts/tony-grove/stand-up.md"
   },
   {
     "slug": "such-great-heights",
     "title": "Such Great Heights",
     "artist": "The Postal Service",
     "key": "C",
+    "hasChords": true,
     "chartPath": "./charts/such-great-heights.txt",
     "sourcePath": "../charts/such-great-heights.md"
   },
@@ -500,6 +1948,7 @@
     "title": "Summer of ’69",
     "artist": "Bryan Adams",
     "key": "A",
+    "hasChords": true,
     "chartPath": "./charts/summer-of-69.txt",
     "sourcePath": "../charts/summer-of-69.md"
   },
@@ -508,6 +1957,7 @@
     "title": "Sweet Baby James",
     "artist": "James Taylor",
     "key": "D",
+    "hasChords": true,
     "chartPath": "./charts/sweet-baby-james.txt",
     "sourcePath": "../charts/sweet-baby-james.md"
   },
@@ -516,6 +1966,7 @@
     "title": "Sweet Caroline",
     "artist": "Neil Diamond",
     "key": "E",
+    "hasChords": true,
     "chartPath": "./charts/sweet-caroline.txt",
     "sourcePath": "../charts/sweet-caroline.md"
   },
@@ -524,6 +1975,7 @@
     "title": "Take It Easy",
     "artist": "Eagles",
     "key": "G",
+    "hasChords": true,
     "chartPath": "./charts/take-it-easy.txt",
     "sourcePath": "../charts/take-it-easy.md"
   },
@@ -532,6 +1984,7 @@
     "title": "Take Me Home, Country Roads",
     "artist": "John Denver",
     "key": "G",
+    "hasChords": true,
     "chartPath": "./charts/take-me-home-country-roads.txt",
     "sourcePath": "../charts/take-me-home-country-roads.md"
   },
@@ -540,30 +1993,25 @@
     "title": "Teach Your Children Well",
     "artist": "Crosby, Stills, Nash, and Young",
     "key": "D",
+    "hasChords": true,
     "chartPath": "./charts/teach-your-children-well.txt",
     "sourcePath": "../charts/teach-your-children-well.md"
-  },
-  {
-    "slug": "test-porch-approval",
-    "title": "Test Porch Approval",
-    "artist": "Front Porch Band",
-    "key": "D",
-    "chartPath": "./charts/test-porch-approval.txt",
-    "sourcePath": "./approved-charts/test-porch-approval.md"
   },
   {
     "slug": "that-funny-feeling",
     "title": "That Funny Feeling",
     "artist": "Bo Burnham",
     "key": "D",
+    "hasChords": true,
     "chartPath": "./charts/that-funny-feeling.txt",
-    "sourcePath": "./approved-charts/that-funny-feeling.md"
+    "sourcePath": "../charts/that-funny-feeling.md"
   },
   {
     "slug": "the-59th-street-bridge-song",
     "title": "The 59th Street Bridge Song",
     "artist": "Simon and Garfunkel",
     "key": "C",
+    "hasChords": true,
     "chartPath": "./charts/the-59th-street-bridge-song.txt",
     "sourcePath": "../charts/the-59th-street-bridge-song.md"
   },
@@ -572,6 +2020,7 @@
     "title": "The Boxer",
     "artist": "Simon & Garfunkel",
     "key": "C",
+    "hasChords": true,
     "chartPath": "./charts/the-boxer.txt",
     "sourcePath": "../charts/the-boxer.md"
   },
@@ -580,6 +2029,7 @@
     "title": "The Trapeze Swinger",
     "artist": "Iron & Wine",
     "key": "C",
+    "hasChords": true,
     "chartPath": "./charts/the-trapeze-swinger.txt",
     "sourcePath": "../charts/the-trapeze-swinger.md"
   },
@@ -588,6 +2038,7 @@
     "title": "The Wild Rover",
     "artist": "Shipwreckers",
     "key": "G",
+    "hasChords": true,
     "chartPath": "./charts/the-wild-rover.txt",
     "sourcePath": "../charts/the-wild-rover.md"
   },
@@ -596,6 +2047,7 @@
     "title": "This Charming Man",
     "artist": "The Smiths",
     "key": "Asus2",
+    "hasChords": true,
     "chartPath": "./charts/this-charming-man.txt",
     "sourcePath": "../charts/this-charming-man.md"
   },
@@ -604,22 +2056,79 @@
     "title": "This Land is Your Land",
     "artist": "Woody Guthrie",
     "key": "F",
+    "hasChords": true,
     "chartPath": "./charts/this-land-is-your-land.txt",
-    "sourcePath": "./approved-charts/this-land-is-your-land.md"
+    "sourcePath": "../charts/this-land-is-your-land.md"
   },
   {
     "slug": "this-train-is-bound-for-glory",
     "title": "This Train is Bound for Glory",
     "artist": "Woody Guthrie",
     "key": "A",
+    "hasChords": true,
     "chartPath": "./charts/this-train-is-bound-for-glory.txt",
-    "sourcePath": "./approved-charts/this-train-is-bound-for-glory.md"
+    "sourcePath": "../charts/this-train-is-bound-for-glory.md"
+  },
+  {
+    "slug": "tony-grove-better-half",
+    "title": "Better Half",
+    "artist": "Tony Grove",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/tony-grove-better-half.txt",
+    "sourcePath": "../charts/tony-grove-better-half.md"
+  },
+  {
+    "slug": "tony-grove-bitterness",
+    "title": "Bitterness",
+    "artist": "Tony Grove",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/tony-grove-bitterness.txt",
+    "sourcePath": "../charts/tony-grove-bitterness.md"
+  },
+  {
+    "slug": "tony-grove-haley-s-song",
+    "title": "Haley's Song",
+    "artist": "Tony Grove",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/tony-grove-haley-s-song.txt",
+    "sourcePath": "../charts/tony-grove-haley-s-song.md"
+  },
+  {
+    "slug": "tony-grove-lay-the-anchor",
+    "title": "Lay the Anchor",
+    "artist": "Tony Grove",
+    "key": "",
+    "hasChords": false,
+    "chartPath": "./charts/tony-grove-lay-the-anchor.txt",
+    "sourcePath": "../charts/tony-grove-lay-the-anchor.md"
+  },
+  {
+    "slug": "tony-grove-space-age",
+    "title": "Space Age",
+    "artist": "Tony Grove",
+    "key": "C",
+    "hasChords": true,
+    "chartPath": "./charts/tony-grove-space-age.txt",
+    "sourcePath": "../charts/tony-grove-space-age.md"
+  },
+  {
+    "slug": "tony-grove-stand-up",
+    "title": "Stand Up",
+    "artist": "Tony Grove",
+    "key": "C",
+    "hasChords": true,
+    "chartPath": "./charts/tony-grove-stand-up.txt",
+    "sourcePath": "../charts/tony-grove-stand-up.md"
   },
   {
     "slug": "wagon-wheel",
     "title": "Wagon Wheel",
     "artist": "Old Crow Medicine Show",
     "key": "C",
+    "hasChords": true,
     "chartPath": "./charts/wagon-wheel.txt",
     "sourcePath": "../charts/wagon-wheel.md"
   },
@@ -628,14 +2137,25 @@
     "title": "Waitin for a Superman",
     "artist": "The Flaming Lips",
     "key": "Am",
+    "hasChords": true,
     "chartPath": "./charts/waitin-for-a-superman.txt",
     "sourcePath": "../charts/waitin-for-a-superman.md"
+  },
+  {
+    "slug": "welcome-to-the-porch",
+    "title": "Welcome to the Porch",
+    "artist": "Front Porch Band",
+    "key": "G",
+    "hasChords": true,
+    "chartPath": "./charts/welcome-to-the-porch.txt",
+    "sourcePath": "../charts/welcome-to-the-porch.md"
   },
   {
     "slug": "whiskey-in-the-jar",
     "title": "Whiskey In The Jar",
     "artist": "Shipwreckers",
     "key": "C",
+    "hasChords": true,
     "chartPath": "./charts/whiskey-in-the-jar.txt",
     "sourcePath": "../charts/whiskey-in-the-jar.md"
   },
@@ -644,6 +2164,7 @@
     "title": "Whiskey on a Sunday",
     "artist": "Shipwreckers",
     "key": "D",
+    "hasChords": true,
     "chartPath": "./charts/whiskey-on-a-sunday.txt",
     "sourcePath": "../charts/whiskey-on-a-sunday.md"
   },
@@ -652,14 +2173,16 @@
     "title": "Who by Fire",
     "artist": "Leonard Cohen",
     "key": "Am",
+    "hasChords": true,
     "chartPath": "./charts/who-by-fire.txt",
-    "sourcePath": "./approved-charts/who-by-fire.md"
+    "sourcePath": "../charts/who-by-fire.md"
   },
   {
     "slug": "world-spins-madly-on",
     "title": "World Spins Madly On",
     "artist": "The Weepies",
     "key": "G",
+    "hasChords": true,
     "chartPath": "./charts/world-spins-madly-on.txt",
     "sourcePath": "../charts/world-spins-madly-on.md"
   },
@@ -668,6 +2191,7 @@
     "title": "You and I Both",
     "artist": "Jason Mraz",
     "key": "G",
+    "hasChords": true,
     "chartPath": "./charts/you-and-i-both.txt",
     "sourcePath": "../charts/you-and-i-both.md"
   },
@@ -676,6 +2200,7 @@
     "title": "You Belong to Me",
     "artist": "Bob Dylan",
     "key": "C",
+    "hasChords": true,
     "chartPath": "./charts/you-belong-to-me.txt",
     "sourcePath": "../charts/you-belong-to-me.md"
   }

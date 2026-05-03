@@ -32,7 +32,7 @@ final class UserLibraryState: ObservableObject {
         self.preferredInstrument = InstrumentID(rawValue: defaults.string(forKey: Keys.preferredInstrument) ?? "") ?? .guitar
 
         let savedFontScale = defaults.object(forKey: Keys.fontScale) as? Double ?? 1.0
-        self.fontScale = min(1.8, max(0.85, savedFontScale))
+        self.fontScale = min(1.8, max(0.6, savedFontScale))
 
         let savedTranspose = defaults.string(forKey: Keys.transposeTarget) ?? TransposeTarget.original.rawValue
         self.transposeTarget = TransposeTarget(rawValue: savedTranspose)
@@ -60,7 +60,7 @@ final class UserLibraryState: ObservableObject {
     }
 
     func adjustFont(by delta: Double) {
-        fontScale = min(1.8, max(0.85, fontScale + delta))
+        fontScale = min(1.8, max(0.6, fontScale + delta))
     }
 
     func resetPreferences() {

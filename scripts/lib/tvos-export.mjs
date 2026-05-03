@@ -117,6 +117,8 @@ export async function exportTvOSResources(projectDir, songs = null) {
       chordTokens: extractChordTokens(chartText, chordLibrary.aliases),
       sortTitle: normalizeSortKey(song.title),
       sortArtist: normalizeSortKey(song.artist),
+      spotifyTrackID: song.spotifyTrackId || null,
+      spotifyURLString: song.spotifyUrl || null,
     });
   }
 

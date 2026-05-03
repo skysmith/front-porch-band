@@ -1,0 +1,21 @@
+{
+  "layers" : [
+    {
+      "filename" : "Image.imagestacklayer"
+    },
+    {
+      "filename" : "Back.imagestacklayer"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "canvasSize" : {
+      "width" : 400,
+      "height" : 240
+    },
+    "pre-rendered" : true
+  }
+}

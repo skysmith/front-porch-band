@@ -1,4 +1,6 @@
 .DS_Store
 .env
+*.xcuserdata/
+xcuserdata/
 private-charts/
 private-build/

@@ -26,6 +26,19 @@
         </div>
 
         <label class="search-wrap" for="song-search">
+          <span>Library</span>
+          <select id="library-select" class="library-select" aria-label="Choose song library">
+            <option value="front-porch">Front Porch</option>
+            <option value="american-songbag">American Songbag</option>
+          </select>
+
+          <span>Chord filter</span>
+          <select id="chord-filter-select" class="library-select" aria-label="Filter by chord detection">
+            <option value="all">All songs</option>
+            <option value="with-chords">Chords detected</option>
+            <option value="without-chords">No chords detected</option>
+          </select>
+
           <span>Find a song</span>
           <input id="song-search" type="search" placeholder="Search title or artist" autocomplete="off" />
         </label>
@@ -41,12 +54,15 @@
           </div>
 
           <div class="view-controls">
+            <button id="import-song-button" class="secondary-button import-song-button" type="button" hidden>Import to my library</button>
             <div class="font-pill" aria-label="Chart font size">
               <button id="font-down" type="button" aria-label="Decrease chart size">A-</button>
               <button id="font-up" type="button" aria-label="Increase chart size">A+</button>
             </div>
           </div>
         </header>
+
+        <p id="import-song-status" class="import-song-status" hidden aria-live="polite"></p>
 
         <details class="chord-helper" id="chord-helper">
           <summary class="chord-helper-summary">

@@ -17,6 +17,7 @@ struct AppLaunchConfiguration: Equatable {
     let preferredInstrument: InstrumentID?
     let transposeTarget: TransposeTarget?
     let fontScale: Double?
+    let shareBaseURL: URL?
 
     static let `default` = AppLaunchConfiguration(
         resetState: false,
@@ -27,7 +28,8 @@ struct AppLaunchConfiguration: Equatable {
         initialSongSlug: nil,
         preferredInstrument: nil,
         transposeTarget: nil,
-        fontScale: nil
+        fontScale: nil,
+        shareBaseURL: URL(string: "https://skysmith.github.io/front-porch-band/")
     )
 
     static var current: AppLaunchConfiguration {
@@ -42,7 +44,9 @@ struct AppLaunchConfiguration: Equatable {
             initialSongSlug: value(after: "-FrontPorchSongSlug", in: arguments),
             preferredInstrument: value(after: "-FrontPorchInstrument", in: arguments).flatMap(InstrumentID.init(rawValue:)),
             transposeTarget: value(after: "-FrontPorchTranspose", in: arguments).map(TransposeTarget.init(rawValue:)),
-            fontScale: value(after: "-FrontPorchFontScale", in: arguments).flatMap(Double.init)
+            fontScale: value(after: "-FrontPorchFontScale", in: arguments).flatMap(Double.init),
+            shareBaseURL: value(after: "-FrontPorchShareBaseURL", in: arguments).flatMap(URL.init(string:))
+                ?? AppLaunchConfiguration.default.shareBaseURL
         )
     }
 

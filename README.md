@@ -1,6 +1,27 @@
 Front Porch Band
 
+## Workspace Metadata
+
+- Name: Front Porch Band
+- Domain: personal
+- Status: active
+- Purpose: Phone-friendly jam-session songbook with transposition, charts, and lightweight hosting
+- Path: personal/music/front-porch-band
+- Related:
+  - personal/music
+  - personal/data
+  - lab/audio
+- Tags:
+  - songbook
+  - music
+  - charts
+  - static-site
+
 Front Porch Band is a static, phone-friendly songbook for jam sessions. It keeps charts readable on mobile, supports per-device transposition and instrument views, and stays easy to host on any static platform.
+
+There is also a native Apple TV app in [tvos/FrontPorchBandTV.xcodeproj](./tvos/FrontPorchBandTV.xcodeproj). See [docs/TVOS.md](./docs/TVOS.md) for the tvOS workflow, build command, and useful simulator launch arguments.
+
+There is also a native Apple Watch reference app in the same Xcode project. See [docs/WATCHOS.md](./docs/WATCHOS.md) for the watchOS scope and build command.
 
 ## Screenshots
 
@@ -112,6 +133,31 @@ node scripts/import-inbox.mjs
 node scripts/validate-charts.mjs --source ./private-charts
 node scripts/sync-charts.mjs --source ./private-charts
 ```
+
+Sharing Or Merging Libraries
+
+If a friend already uses Front Porch Band, the easiest way to share a library is to exchange the source chart files, not the generated site output.
+
+Best thing to share:
+
+- their `private-charts/` folder, or a subfolder exported from it
+
+Avoid sharing as the source of truth:
+
+- `charts/*.txt`
+- `data/songs.json`
+
+Why: the source `.md` charts keep the title, artist, and chord layout in a format that Front Porch Band can validate and re-index. When you resync from source, the app can still detect chord tokens for transpose helpers and chord diagrams.
+
+Typical merge flow:
+
+1. Run `node scripts/merge-library-folder.mjs --from /path/to/friend-private-charts --name alex`.
+2. Run `node scripts/validate-charts.mjs --source ./private-charts`.
+3. Run `node scripts/sync-charts.mjs --source ./private-charts`.
+
+The merge helper copies the shared folder into `./private-charts/from-friends/<name>/` so you can keep track of where it came from.
+
+If the shared files are rough text exports instead of clean chart sources, drop them into the import inbox and use the normal import flow from [docs/IMPORTING.md](./docs/IMPORTING.md).
 
 Correction inbox
 
