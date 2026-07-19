@@ -173,9 +173,96 @@ body {
   color: rgba(223, 232, 244, 0.44);
 }
 
+.setlist-panel {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0 0 1rem;
+  padding: 0.7rem;
+  border: 1px solid rgba(145, 180, 255, 0.18);
+  border-radius: 0.9rem;
+  background: rgba(36, 87, 214, 0.12);
+}
+
+.setlist-panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  color: #a8c1f7;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.setlist-count {
+  color: rgba(223, 232, 244, 0.58);
+  font-size: 0.65rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.setlist-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.35rem;
+}
+
+.setlist-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  min-height: 2.25rem;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid rgba(226, 232, 240, 0.1);
+  border-radius: 0.7rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: #dce7fb;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.setlist-link:hover,
+.setlist-link:focus-visible {
+  border-color: rgba(145, 180, 255, 0.34);
+  background: rgba(255, 255, 255, 0.1);
+  outline: none;
+}
+
+.setlist-link.active {
+  border-color: rgba(145, 180, 255, 0.55);
+  background: rgba(145, 180, 255, 0.18);
+  color: #ffffff;
+}
+
+.setlist-link-count {
+  color: rgba(223, 232, 244, 0.56);
+  font-size: 0.66rem;
+}
+
+.song-list-heading {
+  margin: 0 0 0.45rem;
+  color: rgba(223, 232, 244, 0.58);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .song-list {
   display: grid;
   gap: 0.45rem;
+}
+
+.setlist-songs {
+  display: grid;
+  gap: 0.16rem;
+  padding: 0.25rem;
+  border: 1px solid rgba(226, 232, 240, 0.08);
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .suggestion-panel {
@@ -395,6 +482,17 @@ body {
   text-overflow: ellipsis;
   font-size: 0.92rem;
   color: #f4f7fd;
+}
+
+.song-link-artist {
+  display: block;
+  margin-top: 0.12rem;
+  overflow: hidden;
+  color: rgba(223, 232, 244, 0.56);
+  font-size: 0.72rem;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .song-stage {

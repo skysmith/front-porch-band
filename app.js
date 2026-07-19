@@ -1,6 +1,9 @@
 import { getInstrumentChoices, getInstrumentLabel, renderChordCards } from "./chord-diagrams.js";
 
 const listNode = document.querySelector("#song-list");
+const setlistListNode = document.querySelector("#setlist-list");
+const setlistCountNode = document.querySelector("#active-setlist-count");
+const songListHeadingNode = document.querySelector("#song-list-heading");
 const titleNode = document.querySelector("#song-title");
 const artistNode = document.querySelector("#song-artist");
 const chartNode = document.querySelector("#chart-body");
@@ -71,6 +74,8 @@ const NOTE_INDEX = {
 const CAPO_SHAPES = ["G", "C", "D", "A", "E"];
 
 let songs = [];
+let setlists = [];
+let activeSetlistSlug = "";
 let currentSlug = "";
 let currentChartText = "";
 let currentRawChartText = "";
@@ -519,7 +524,7 @@ function renderCurrentChart() {
   updateChordHelper();
 }
 
-function createSongLink(song) {
+function createSongLink(song, { showArtist = false } = {}) {
   const link = document.createElement("a");
   link.className = "song-link";
   link.href = `#${song.slug}`;
@@ -530,7 +535,66 @@ function createSongLink(song) {
   title.textContent = song.title;
 
   link.append(title);
+
+  if (showArtist) {
+    const artist = document.createElement("span");
+    artist.className = "song-link-artist";
+    artist.textContent = song.artist;
+    link.append(artist);
+  }
+
   return link;
+}
+
+function setlistSlugFromLocation() {
+  return new URLSearchParams(window.location.search).get("setlist") || "";
+}
+
+function currentSetlist() {
+  return setlists.find((setlist) => setlist.slug === activeSetlistSlug) || null;
+}
+
+function setlistHref(slug) {
+  const url = new URL(window.location.href);
+  if (slug) {
+    url.searchParams.set("setlist", slug);
+  } else {
+    url.searchParams.delete("setlist");
+  }
+  return `${url.pathname}${url.search}${url.hash}`;
+}
+
+function songsInSetlist(setlist) {
+  const bySlug = new Map(songs.map((song) => [song.slug, song]));
+  return setlist.songs
+    .map((slug) => bySlug.get(slug))
+    .filter(Boolean)
+    .sort((a, b) => a.title.localeCompare(b.title));
+}
+
+function renderSetlistPicker() {
+  const fragment = document.createDocumentFragment();
+  const choices = [{ slug: "", title: "All songs", songs }].concat(setlists);
+
+  choices.forEach((setlist) => {
+    const link = document.createElement("a");
+    const isActive = setlist.slug === activeSetlistSlug;
+    const count = setlist.slug ? songsInSetlist(setlist).length : songs.length;
+    link.className = "setlist-link";
+    link.classList.toggle("active", isActive);
+    link.href = setlistHref(setlist.slug);
+    link.setAttribute("aria-current", isActive ? "page" : "false");
+
+    const title = document.createElement("span");
+    title.textContent = setlist.title;
+    const badge = document.createElement("span");
+    badge.className = "setlist-link-count";
+    badge.textContent = String(count);
+    link.append(title, badge);
+    fragment.append(link);
+  });
+
+  setlistListNode.replaceChildren(fragment);
 }
 
 function songArtistAliases(song) {
@@ -545,13 +609,30 @@ function songArtistAliases(song) {
 function renderSongList(filter = "") {
   const normalized = filter.trim().toLowerCase();
   const fragment = document.createDocumentFragment();
-  const filteredSongs = songs.filter((song) => {
+  const setlist = currentSetlist();
+  const availableSongs = setlist ? songsInSetlist(setlist) : songs;
+  const filteredSongs = availableSongs.filter((song) => {
     if (!normalized) {
       return true;
     }
 
     return `${song.title} ${song.artist}`.toLowerCase().includes(normalized);
   });
+
+  songListHeadingNode.textContent = setlist ? setlist.title : "All songs";
+  setlistCountNode.textContent = setlist ? `${filteredSongs.length} songs` : "";
+
+  if (setlist) {
+    const songWrap = document.createElement("div");
+    songWrap.className = "setlist-songs";
+    filteredSongs.forEach((song) => {
+      songWrap.append(createSongLink(song, { showArtist: true }));
+    });
+    fragment.append(songWrap);
+    listNode.replaceChildren(fragment);
+    updateActiveLink();
+    return;
+  }
 
   const groups = new Map();
   filteredSongs.forEach((song) => {
@@ -699,9 +780,18 @@ async function bootstrap() {
   renderInstrumentChoices();
   stampSuggestionForm();
 
-  const response = await fetch("./data/songs.json");
-  songs = await response.json();
+  const [songResponse, setlistResponse] = await Promise.all([
+    fetch("./data/songs.json"),
+    fetch("./data/setlists.json"),
+  ]);
+  songs = await songResponse.json();
+  setlists = setlistResponse.ok ? await setlistResponse.json() : [];
+  activeSetlistSlug = setlistSlugFromLocation();
+  if (!setlists.some((setlist) => setlist.slug === activeSetlistSlug)) {
+    activeSetlistSlug = "";
+  }
 
+  renderSetlistPicker();
   renderSongList();
   await selectSongBySlug(slugFromLocation());
 }

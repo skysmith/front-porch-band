@@ -1,0 +1,132 @@
+Wild World
+
+Artist: Yusuf / Cat Stevens
+
+[Intro]
+Am        D7                  G
+ La-la-la-la-la-la-la-la, la, la
+          C                   F
+ La-la-la-la-la-la-la-la, la, la
+          Dm                  E      Esus4  E
+ La-la-la-la-la-la-la-la, la, la-la, la
+
+[Verse 1]
+Am             D7                 G
+ Now that I’ve lost everything to you
+            C                     F
+You say you wanna start something new
+         Dm                       E
+And it’s breaking my heart you’re leaving
+         Esus4 E
+Baby I’m griev-ing
+Am                D7               G
+ But if you wanna leave, take good care
+                C                     F
+Hope you have a lot of nice things to wear
+           Dm                      E7       G   (riff 1)
+But then a lot of nice things turn bad out there
+
+Riff 1:
+e|---------------------------|
+B|-----0-0-0-0-0-0-0-0-0-0-0-|
+G|---0-0-0-0-0-0-0-0-0-0-0-0-|
+D|-0-3---3---2---2---0---0---|
+A|---------------------------|
+E|---------------------------|
+
+[Chorus]
+C    G                 F         (riff 2)
+ Oh, baby, baby it’s a wild world
+
+Riff 2:
+e|------------------|
+B|-1p0--------------|
+G|-----2p0----------|
+D|---------3p2p0----|
+A|---------------3--|
+E|-----------------3|
+
+G                 F               C    (riff 3)
+ It’s hard to get by, just upon a smile
+
+Riff 3:
+e|---------------------|
+B|---------------------|
+G|---------------------|
+D|---------------------|
+A|-----0-3-3-3-0-------|
+E|--3-3-----------3----|
+
+C    G                 F         (riff 2)
+ Oh, baby, baby it’s a wild world
+G              F                 C          Dm    E  (riff 4)
+ I’ll always remember you like a child girl
+
+Riff 4:
+  (Dm        E)
+e|-------1--------0--|
+B|-----3--------0----|
+G|---2--------1------|
+D|-0--------2--------|
+A|-------------------|
+E|-------------------|
+
+[Verse 2]
+Am                    D7                        G
+ You know I’ve seen a lot of what the world can do
+         C                    F
+And it’s breaking my heart in two
+      Dm                    E
+But I never want to see you sad girl
+           Esus4 E
+Don’t be a bad   girl
+Am                 D7               G
+But if you want to leave, take good care
+                C                       F
+Hope you make a lot of nice friends out there
+           Dm                          E7    G   (riff 1)
+But just remember there’s a lot of bad and beware
+
+[Chorus]
+C    G                 F         (riff 2)
+ Oh, baby, baby it’s a wild world
+G                 F               C    (riff 3)
+ It’s hard to get by, just upon a smile
+C    G                 F         (riff 2)
+ Oh, baby, baby it’s a wild world
+G              F                 C          Dm    E  (riff 4)
+ I’ll always remember you like a child girl
+
+[Bridge]
+  Am        D7               G
+...la-la-la-la-la-la-la, la, la
+         C                        F
+La-la-la-la-la-la-la-la la la-la, la
+         Dm                       E
+La-la-la-la-la-la-la-la la la-la, la
+Esus4   E
+Baby, I love you
+Am                 D7               G
+But if you want to leave, take good care
+                C                     F
+Hope you make a lot of nice friends out there
+           Dm                          E7       G  (riff 1)
+But just remember there’s a lot of bad and beware
+
+[Chorus]
+C    G                 F         (riff 2)
+ Oh, baby, baby it’s a wild world
+G                 F               C    (riff 3)
+ It’s hard to get by, just upon a smile
+C    G                 F         (riff 2)
+ Oh, baby, baby it’s a wild world
+G              F                 C          Dm    E  (riff 4)
+ I’ll always remember you like a child girl
+C    G                 F         (riff 2)
+ Oh, baby, baby it’s a wild world
+G                 F               C    (riff 3)
+ It’s hard to get by, just upon a smile
+C    G                 F         (riff 2)
+ Oh, baby, baby it’s a wild world
+G              F                 C
+ I’ll always remember you like a child girl

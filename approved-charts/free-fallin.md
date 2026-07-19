@@ -1,0 +1,84 @@
+Free Fallin'
+
+Artist: Tom Petty
+
+[Intro]
+D   G     G D  A     x2
+
+
+[Verse 1]
+        D    G     G   D     A
+She's a good girl, loves her mama
+      D  G      G  D    A
+Loves Jesus and America too
+        D    G     G      D    A
+She's a good girl, crazy 'bout Elvis
+      D  G           G  D      A
+Loves horses and her boyfriend too
+
+
+[Interlude]
+D   G     G D  A
+
+
+[Verse 2]
+           D    G   G      D    A
+And it's a long day livin' in Reseda
+          D   G   G       D           A
+There's a freeway runnin' through the yard
+          D   G             G     D    A
+And I'm a bad boy, 'cause I don't even miss her
+      D   G       G   D        A
+I'm a bad boy for breakin' her heart
+
+
+[Chorus]
+        D   G     G D  A      D     G     G D  A
+Now I'm free,            free fallin'
+          D   G     G D  A      D    G     G D  A
+Yeah, I'm free,            free fallin'
+
+
+[Verse 3]
+        D   G    G       D           A
+All the vampires walkin' through the valley
+     D    G       G  D      A
+Move west down Ventura Boulevard
+            D   G        G        D      A
+And all the bad boys are standing in the shadows
+        D    G            G         D      A
+And the good girls are at home with broken hearts
+
+
+[Chorus]
+        D   G     G D  A      D     G     G D  A
+Now I'm free,            free fallin'
+          D   G     G D  A      D     G     G D  A
+Yeah, I'm free,            free fallin'
+D   G     G D  A     D      G               G D    A
+                      (Free fallin', now I'm, free fallin', now I'm)
+D   G     G D  A     D      G               G D    A
+                      (Free fallin', now I'm, free fallin', now I'm)
+
+
+[Verse 4]
+        D     G    G D     A
+I wanna glide down over Mulholland
+        D     G   G    D      A
+I wanna write her name in the sky
+          D    G    G   D    A
+I'm gonna free fall out into nothin'
+      D     G    G     D     A
+Gonna leave this world for a while
+
+
+[Chorus]
+        D   G     G D  A      D     G     G D  A
+Now I'm free,            free fallin'
+          D   G     G D  A      D     G     G D  A
+Yeah, I'm free,            free fallin'
+
+[Final Chorus]
+
+        D   G     G D  A      D     G     G D  A
+Now I'm free,            free fallin'

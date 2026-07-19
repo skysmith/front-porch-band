@@ -1,5 +1,13 @@
 [
   {
+    "slug": "99-red-balloons",
+    "title": "99 Red Balloons",
+    "artist": "Nena",
+    "key": "D",
+    "chartPath": "./charts/99-red-balloons.txt",
+    "sourcePath": "./approved-charts/99-red-balloons.md"
+  },
+  {
     "slug": "a-hard-rain-s-a-gonna-fall",
     "title": "A Hard Rain’s A-Gonna Fall",
     "artist": "Bob Dylan",
@@ -8,12 +16,36 @@
     "sourcePath": "../charts/a-hard-rain-s-a-gonna-fall.md"
   },
   {
+    "slug": "all-the-small-things",
+    "title": "All the Small Things",
+    "artist": "blink-182",
+    "key": "C",
+    "chartPath": "./charts/all-the-small-things.txt",
+    "sourcePath": "./approved-charts/all-the-small-things.md"
+  },
+  {
+    "slug": "all-these-things-that-i-ve-done",
+    "title": "All These Things That I've Done",
+    "artist": "The Killers",
+    "key": "E",
+    "chartPath": "./charts/all-these-things-that-i-ve-done.txt",
+    "sourcePath": "./approved-charts/all-these-things-that-i-ve-done.md"
+  },
+  {
     "slug": "all-too-well",
     "title": "All Too Well",
     "artist": "Taylor Swift",
     "key": "C",
     "chartPath": "./charts/all-too-well.txt",
     "sourcePath": "./approved-charts/all-too-well.md"
+  },
+  {
+    "slug": "american-pie",
+    "title": "American Pie",
+    "artist": "Don McLean",
+    "key": "G",
+    "chartPath": "./charts/american-pie.txt",
+    "sourcePath": "./approved-charts/american-pie.md"
   },
   {
     "slug": "and-so-it-goes",
@@ -64,6 +96,14 @@
     "sourcePath": "./approved-charts/bongo-bong.md"
   },
   {
+    "slug": "brown-eyed-girl",
+    "title": "Brown Eyed Girl",
+    "artist": "Van Morrison",
+    "key": "G",
+    "chartPath": "./charts/brown-eyed-girl.txt",
+    "sourcePath": "./approved-charts/brown-eyed-girl.md"
+  },
+  {
     "slug": "city-of-new-orleans",
     "title": "City of New Orleans",
     "artist": "Arlo Guthrie",
@@ -80,12 +120,28 @@
     "sourcePath": "./approved-charts/clandestino.md"
   },
   {
+    "slug": "come-on-eileen",
+    "title": "Come On Eileen",
+    "artist": "Dexys Midnight Runners",
+    "key": "C",
+    "chartPath": "./charts/come-on-eileen.txt",
+    "sourcePath": "./approved-charts/come-on-eileen.md"
+  },
+  {
     "slug": "come-out-ye-black-and-tans",
     "title": "Come Out Ye Black And Tans",
     "artist": "Shipwreckers",
     "key": "",
     "chartPath": "./charts/come-out-ye-black-and-tans.txt",
     "sourcePath": "../charts/come-out-ye-black-and-tans.md"
+  },
+  {
+    "slug": "creep",
+    "title": "Creep",
+    "artist": "Radiohead",
+    "key": "G",
+    "chartPath": "./charts/creep.txt",
+    "sourcePath": "./approved-charts/creep.md"
   },
   {
     "slug": "days-aren-t-long-enough",
@@ -152,6 +208,14 @@
     "sourcePath": "../charts/flightless-bird-american-mouth.md"
   },
   {
+    "slug": "forever-young",
+    "title": "Forever Young",
+    "artist": "Bob Dylan",
+    "key": "G",
+    "chartPath": "./charts/forever-young.txt",
+    "sourcePath": "./approved-charts/forever-young.md"
+  },
+  {
     "slug": "freckled-girl",
     "title": "Freckled Girl",
     "artist": "Iron & Wine",
@@ -160,12 +224,36 @@
     "sourcePath": "../charts/freckled-girl.md"
   },
   {
+    "slug": "free-fallin",
+    "title": "Free Fallin'",
+    "artist": "Tom Petty",
+    "key": "D",
+    "chartPath": "./charts/free-fallin.txt",
+    "sourcePath": "./approved-charts/free-fallin.md"
+  },
+  {
+    "slug": "friday-i-m-in-love",
+    "title": "Friday I'm in Love",
+    "artist": "The Cure",
+    "key": "D",
+    "chartPath": "./charts/friday-i-m-in-love.txt",
+    "sourcePath": "./approved-charts/friday-i-m-in-love.md"
+  },
+  {
     "slug": "go-to-sea-no-more",
     "title": "Go to Sea No More",
     "artist": "Shipwreckers",
     "key": "Dm",
     "chartPath": "./charts/go-to-sea-no-more.txt",
     "sourcePath": "../charts/go-to-sea-no-more.md"
+  },
+  {
+    "slug": "good-riddance-time-of-your-life",
+    "title": "Good Riddance (Time of Your Life)",
+    "artist": "Green Day",
+    "key": "G",
+    "chartPath": "./charts/good-riddance-time-of-your-life.txt",
+    "sourcePath": "./approved-charts/good-riddance-time-of-your-life.md"
   },
   {
     "slug": "gotta-have-you",
@@ -200,12 +288,28 @@
     "sourcePath": "../charts/hallelujah.md"
   },
   {
+    "slug": "harvest-moon",
+    "title": "Harvest Moon",
+    "artist": "Neil Young",
+    "key": "D",
+    "chartPath": "./charts/harvest-moon.txt",
+    "sourcePath": "./approved-charts/harvest-moon.md"
+  },
+  {
     "slug": "have-you-ever-seen-the-rain",
     "title": "Have You Ever Seen the Rain",
     "artist": "Creedence Clearwater Revival",
     "key": "C",
     "chartPath": "./charts/have-you-ever-seen-the-rain.txt",
     "sourcePath": "../charts/have-you-ever-seen-the-rain.md"
+  },
+  {
+    "slug": "heart-of-gold",
+    "title": "Heart of Gold",
+    "artist": "Neil Young",
+    "key": "Em",
+    "chartPath": "./charts/heart-of-gold.txt",
+    "sourcePath": "./approved-charts/heart-of-gold.md"
   },
   {
     "slug": "here-comes-the-sun",
@@ -216,6 +320,14 @@
     "sourcePath": "../charts/here-comes-the-sun.md"
   },
   {
+    "slug": "here-comes-your-man",
+    "title": "Here Comes Your Man",
+    "artist": "Pixies",
+    "key": "D",
+    "chartPath": "./charts/here-comes-your-man.txt",
+    "sourcePath": "./approved-charts/here-comes-your-man.md"
+  },
+  {
     "slug": "high-germany",
     "title": "High Germany",
     "artist": "Shipwreckers",
@@ -224,12 +336,36 @@
     "sourcePath": "../charts/high-germany.md"
   },
   {
+    "slug": "ho-hey",
+    "title": "Ho Hey",
+    "artist": "The Lumineers",
+    "key": "C",
+    "chartPath": "./charts/ho-hey.txt",
+    "sourcePath": "./approved-charts/ho-hey.md"
+  },
+  {
     "slug": "home-boys-home",
     "title": "Home Boys Home",
     "artist": "Shipwreckers",
     "key": "G",
     "chartPath": "./charts/home-boys-home.txt",
     "sourcePath": "../charts/home-boys-home.md"
+  },
+  {
+    "slug": "hooked-on-a-feeling",
+    "title": "Hooked on a Feeling",
+    "artist": "Blue Swede",
+    "key": "G",
+    "chartPath": "./charts/hooked-on-a-feeling.txt",
+    "sourcePath": "./approved-charts/hooked-on-a-feeling.md"
+  },
+  {
+    "slug": "how-to-write-a-song-without-you",
+    "title": "How to Write a Song Without You",
+    "artist": "Nick Jonas",
+    "key": "C",
+    "chartPath": "./charts/how-to-write-a-song-without-you.txt",
+    "sourcePath": "./approved-charts/how-to-write-a-song-without-you.md"
   },
   {
     "slug": "i-am-a-rock",
@@ -248,6 +384,14 @@
     "sourcePath": "../charts/i-believe-i-can-fly.md"
   },
   {
+    "slug": "i-think-we-re-alone-now",
+    "title": "I Think We're Alone Now",
+    "artist": "Tiffany",
+    "key": "D",
+    "chartPath": "./charts/i-think-we-re-alone-now.txt",
+    "sourcePath": "./approved-charts/i-think-we-re-alone-now.md"
+  },
+  {
     "slug": "i-will-follow-you-into-the-dark",
     "title": "I will follow you into the dark",
     "artist": "Death Cab for Cutie",
@@ -262,6 +406,14 @@
     "key": "Em",
     "chartPath": "./charts/i-m-your-man.txt",
     "sourcePath": "./approved-charts/i-m-your-man.md"
+  },
+  {
+    "slug": "im-yours",
+    "title": "I'm Yours",
+    "artist": "Jason Mraz",
+    "key": "C",
+    "chartPath": "./charts/im-yours.txt",
+    "sourcePath": "./approved-charts/im-yours.md"
   },
   {
     "slug": "if-i-could-only-fly",
@@ -294,6 +446,30 @@
     "key": "F",
     "chartPath": "./charts/judgement.txt",
     "sourcePath": "../charts/judgement.md"
+  },
+  {
+    "slug": "just-like-heaven",
+    "title": "Just Like Heaven",
+    "artist": "The Cure",
+    "key": "A",
+    "chartPath": "./charts/just-like-heaven.txt",
+    "sourcePath": "./approved-charts/just-like-heaven.md"
+  },
+  {
+    "slug": "knockin-on-heavens-door",
+    "title": "Knockin' on Heaven's Door",
+    "artist": "Bob Dylan",
+    "key": "G",
+    "chartPath": "./charts/knockin-on-heavens-door.txt",
+    "sourcePath": "./approved-charts/knockin-on-heavens-door.md"
+  },
+  {
+    "slug": "landslide",
+    "title": "Landslide",
+    "artist": "Fleetwood Mac",
+    "key": "C",
+    "chartPath": "./charts/landslide.txt",
+    "sourcePath": "./approved-charts/landslide.md"
   },
   {
     "slug": "tony-grove-lay-the-anchor",
@@ -352,6 +528,14 @@
     "sourcePath": "../charts/maloney-wants-a-drink.md"
   },
   {
+    "slug": "me-and-julio-down-by-the-schoolyard",
+    "title": "Me and Julio Down by the Schoolyard",
+    "artist": "Paul Simon",
+    "key": "A",
+    "chartPath": "./charts/me-and-julio-down-by-the-schoolyard.txt",
+    "sourcePath": "./approved-charts/me-and-julio-down-by-the-schoolyard.md"
+  },
+  {
     "slug": "molly-malone",
     "title": "Molly Malone",
     "artist": "Shipwreckers",
@@ -392,6 +576,22 @@
     "sourcePath": "../charts/on-the-front-porch-with-you.md"
   },
   {
+    "slug": "our-house",
+    "title": "Our House",
+    "artist": "Crosby, Stills, Nash & Young",
+    "key": "A",
+    "chartPath": "./charts/our-house.txt",
+    "sourcePath": "./approved-charts/our-house.md"
+  },
+  {
+    "slug": "out-on-the-weekend",
+    "title": "Out on the Weekend",
+    "artist": "Neil Young",
+    "key": "A",
+    "chartPath": "./charts/out-on-the-weekend.txt",
+    "sourcePath": "./approved-charts/out-on-the-weekend.md"
+  },
+  {
     "slug": "peat-bog-soldiers",
     "title": "Peat Bog Soldiers",
     "artist": "Shipwreckers",
@@ -408,12 +608,44 @@
     "sourcePath": "../charts/pub-with-no-beer.md"
   },
   {
+    "slug": "puff-the-magic-dragon",
+    "title": "Puff, the Magic Dragon",
+    "artist": "Peter, Paul and Mary",
+    "key": "C",
+    "chartPath": "./charts/puff-the-magic-dragon.txt",
+    "sourcePath": "./approved-charts/puff-the-magic-dragon.md"
+  },
+  {
     "slug": "redemption-song",
     "title": "Redemption Song",
     "artist": "Bob Marley",
     "key": "G",
     "chartPath": "./charts/redemption-song.txt",
     "sourcePath": "../charts/redemption-song.md"
+  },
+  {
+    "slug": "ring-of-fire",
+    "title": "Ring of Fire",
+    "artist": "Johnny Cash",
+    "key": "G",
+    "chartPath": "./charts/ring-of-fire.txt",
+    "sourcePath": "./approved-charts/ring-of-fire.md"
+  },
+  {
+    "slug": "riptide",
+    "title": "Riptide",
+    "artist": "Vance Joy",
+    "key": "Am",
+    "chartPath": "./charts/riptide.txt",
+    "sourcePath": "./approved-charts/riptide.md"
+  },
+  {
+    "slug": "rocket-man",
+    "title": "Rocket Man",
+    "artist": "Elton John",
+    "key": "G",
+    "chartPath": "./charts/rocket-man.txt",
+    "sourcePath": "./approved-charts/rocket-man.md"
   },
   {
     "slug": "sally-maclennane",
@@ -464,6 +696,14 @@
     "sourcePath": "../charts/something.md"
   },
   {
+    "slug": "somewhere-over-the-rainbow-what-a-wonderful-world",
+    "title": "Somewhere Over the Rainbow / What a Wonderful World",
+    "artist": "Israel Kamakawiwo'ole",
+    "key": "C",
+    "chartPath": "./charts/somewhere-over-the-rainbow-what-a-wonderful-world.txt",
+    "sourcePath": "./approved-charts/somewhere-over-the-rainbow-what-a-wonderful-world.md"
+  },
+  {
     "slug": "sound-of-silence",
     "title": "Sound of Silence",
     "artist": "Simon and Garfunkel",
@@ -480,6 +720,14 @@
     "sourcePath": "../charts/tony-grove/space-age.md"
   },
   {
+    "slug": "space-oddity",
+    "title": "Space Oddity",
+    "artist": "David Bowie",
+    "key": "C",
+    "chartPath": "./charts/space-oddity.txt",
+    "sourcePath": "./approved-charts/space-oddity.md"
+  },
+  {
     "slug": "spring-cleaning",
     "title": "Spring Cleaning",
     "artist": "Bright Eyes / Neva Dinova",
@@ -488,12 +736,36 @@
     "sourcePath": "../charts/spring-cleaning.md"
   },
   {
+    "slug": "stand-by-me",
+    "title": "Stand by Me",
+    "artist": "Ben E. King",
+    "key": "G",
+    "chartPath": "./charts/stand-by-me.txt",
+    "sourcePath": "./approved-charts/stand-by-me.md"
+  },
+  {
     "slug": "tony-grove-stand-up",
     "title": "Stand Up",
     "artist": "Tony Grove",
     "key": "C",
     "chartPath": "./charts/tony-grove-stand-up.txt",
     "sourcePath": "../charts/tony-grove/stand-up.md"
+  },
+  {
+    "slug": "stolen-dance",
+    "title": "Stolen Dance",
+    "artist": "Milky Chance",
+    "key": "G#m",
+    "chartPath": "./charts/stolen-dance.txt",
+    "sourcePath": "./approved-charts/stolen-dance.md"
+  },
+  {
+    "slug": "stuck-in-the-middle-with-you",
+    "title": "Stuck in the Middle with You",
+    "artist": "Stealers Wheel",
+    "key": "D",
+    "chartPath": "./charts/stuck-in-the-middle-with-you.txt",
+    "sourcePath": "./approved-charts/stuck-in-the-middle-with-you.md"
   },
   {
     "slug": "such-great-heights",
@@ -528,6 +800,14 @@
     "sourcePath": "../charts/sweet-caroline.md"
   },
   {
+    "slug": "sweet-home-alabama",
+    "title": "Sweet Home Alabama",
+    "artist": "Lynyrd Skynyrd",
+    "key": "D",
+    "chartPath": "./charts/sweet-home-alabama.txt",
+    "sourcePath": "./approved-charts/sweet-home-alabama.md"
+  },
+  {
     "slug": "take-it-easy",
     "title": "Take It Easy",
     "artist": "Eagles",
@@ -542,6 +822,14 @@
     "key": "G",
     "chartPath": "./charts/take-me-home-country-roads.txt",
     "sourcePath": "../charts/take-me-home-country-roads.md"
+  },
+  {
+    "slug": "take-on-me",
+    "title": "Take on Me",
+    "artist": "a-ha",
+    "key": "A",
+    "chartPath": "./charts/take-on-me.txt",
+    "sourcePath": "./approved-charts/take-on-me.md"
   },
   {
     "slug": "teach-your-children-well",
@@ -584,6 +872,14 @@
     "sourcePath": "../charts/the-boxer.md"
   },
   {
+    "slug": "the-middle",
+    "title": "The Middle",
+    "artist": "Jimmy Eat World",
+    "key": "D",
+    "chartPath": "./charts/the-middle.txt",
+    "sourcePath": "./approved-charts/the-middle.md"
+  },
+  {
     "slug": "the-trapeze-swinger",
     "title": "The Trapeze Swinger",
     "artist": "Iron & Wine",
@@ -624,6 +920,14 @@
     "sourcePath": "./approved-charts/this-train-is-bound-for-glory.md"
   },
   {
+    "slug": "tiny-dancer",
+    "title": "Tiny Dancer",
+    "artist": "Elton John",
+    "key": "C",
+    "chartPath": "./charts/tiny-dancer.txt",
+    "sourcePath": "./approved-charts/tiny-dancer.md"
+  },
+  {
     "slug": "wagon-wheel",
     "title": "Wagon Wheel",
     "artist": "Old Crow Medicine Show",
@@ -638,6 +942,14 @@
     "key": "Am",
     "chartPath": "./charts/waitin-for-a-superman.txt",
     "sourcePath": "../charts/waitin-for-a-superman.md"
+  },
+  {
+    "slug": "while-my-guitar-gently-weeps",
+    "title": "While My Guitar Gently Weeps",
+    "artist": "The Beatles",
+    "key": "Am",
+    "chartPath": "./charts/while-my-guitar-gently-weeps.txt",
+    "sourcePath": "./approved-charts/while-my-guitar-gently-weeps.md"
   },
   {
     "slug": "whiskey-in-the-jar",
@@ -664,12 +976,44 @@
     "sourcePath": "./approved-charts/who-by-fire.md"
   },
   {
+    "slug": "wild-world",
+    "title": "Wild World",
+    "artist": "Yusuf / Cat Stevens",
+    "key": "Am",
+    "chartPath": "./charts/wild-world.txt",
+    "sourcePath": "./approved-charts/wild-world.md"
+  },
+  {
+    "slug": "wish-you-were-here",
+    "title": "Wish You Were Here",
+    "artist": "Pink Floyd",
+    "key": "G",
+    "chartPath": "./charts/wish-you-were-here.txt",
+    "sourcePath": "./approved-charts/wish-you-were-here.md"
+  },
+  {
+    "slug": "wonderwall",
+    "title": "Wonderwall",
+    "artist": "Oasis",
+    "key": "Em",
+    "chartPath": "./charts/wonderwall.txt",
+    "sourcePath": "./approved-charts/wonderwall.md"
+  },
+  {
     "slug": "world-spins-madly-on",
     "title": "World Spins Madly On",
     "artist": "The Weepies",
     "key": "G",
     "chartPath": "./charts/world-spins-madly-on.txt",
     "sourcePath": "../charts/world-spins-madly-on.md"
+  },
+  {
+    "slug": "wouldn-t-it-be-nice",
+    "title": "Wouldn't It Be Nice",
+    "artist": "The Beach Boys",
+    "key": "F",
+    "chartPath": "./charts/wouldn-t-it-be-nice.txt",
+    "sourcePath": "./approved-charts/wouldn-t-it-be-nice.md"
   },
   {
     "slug": "you-and-i-both",
@@ -686,5 +1030,21 @@
     "key": "C",
     "chartPath": "./charts/you-belong-to-me.txt",
     "sourcePath": "../charts/you-belong-to-me.md"
+  },
+  {
+    "slug": "you-can-t-always-get-what-you-want",
+    "title": "You Can't Always Get What You Want",
+    "artist": "The Rolling Stones",
+    "key": "G",
+    "chartPath": "./charts/you-can-t-always-get-what-you-want.txt",
+    "sourcePath": "./approved-charts/you-can-t-always-get-what-you-want.md"
+  },
+  {
+    "slug": "your-song",
+    "title": "Your Song",
+    "artist": "Elton John",
+    "key": "D",
+    "chartPath": "./charts/your-song.txt",
+    "sourcePath": "./approved-charts/your-song.md"
   }
 ]

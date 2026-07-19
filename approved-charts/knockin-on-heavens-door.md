@@ -1,0 +1,60 @@
+Knockin' on Heaven's Door
+
+Artist: Bob Dylan
+
+[Intro]
+| G D | Am |
+(instrumental)
+G    D   C
+ Oo, ooh-ooh
+G    D   Am
+ Oo, ooh-ooh
+G    D   C
+ Oo, ooh-ooh
+
+[Verse 1]
+G      D                      Am
+ Mama, take this badge off of me
+G        D         C
+ I can't use it anymore
+G             D               Am
+ It's getting dark, too dark to see
+G              D                    C
+ Feel like I'm knocking on heaven's door
+
+[Chorus]
+G               D                    Am
+  Knock, knock, knockin’ on heaven's door
+G                D                   C
+  Knock, knock, knockin’ on heaven’s door
+G               D                    Am
+  Knock, knock, knockin’ on heaven's door
+G                D                   C
+  Knock, knock, knockin’ on heaven’s door
+
+[Verse 2]
+G           D              Am
+  Mama, put my guns in the ground
+G        D             C
+ I can't shoot them anymore
+G                D               Am
+ That long black cloud is coming down
+G           D                    C
+ I feel I'm knocking on heaven's door
+
+[Chorus]
+G               D                   Am
+  Knock, knock, knockin’ on heaven's door
+G                D                   C
+  Knock, knock, knockin’ on heaven’s door
+G               D                   Am
+  Knock, knock, knockin’ on heaven's door
+G                D                   C
+  Knock, knock, knockin’ on heaven’s door
+
+[Outro]
+G    D   Am
+ Oo, ooh-ooh
+G    D   C
+ Oo, ooh-ooh
+(quick fade)
