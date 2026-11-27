@@ -1,6 +1,5 @@
 const fs = require("node:fs/promises");
 const path = require("node:path");
-const os = require("node:os");
 
 function slugify(input) {
   return String(input || "")
@@ -10,27 +9,6 @@ function slugify(input) {
     .toLowerCase()
     .replace(/[\s_-]+/g, "-")
     .replace(/^-+|-+$/g, "");
-}
-
-function pickReviewDir() {
-  if (process.env.FRONT_PORCH_SUGGESTIONS_DIR) {
-    return {
-      dir: process.env.FRONT_PORCH_SUGGESTIONS_DIR,
-      storage: "durable",
-    };
-  }
-
-  if (!process.env.VERCEL) {
-    return {
-      dir: path.join(process.cwd(), "private-build", "suggestions"),
-      storage: "durable",
-    };
-  }
-
-  return {
-    dir: path.join(os.tmpdir(), "front-porch-band-suggestions"),
-    storage: "ephemeral",
-  };
 }
 
 function getGitHubConfig() {
@@ -77,30 +55,36 @@ function issueBody({ title, artist, body, submittedAt }) {
 }
 
 async function createGitHubIssue(config, suggestion) {
-  const response = await fetch(
-    `https://api.github.com/repos/${config.owner}/${config.repo}/issues`,
-    {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${config.token}`,
-        Accept: "application/vnd.github+json",
-        "Content-Type": "application/json",
-        "User-Agent": "front-porch-band",
-      },
-      body: JSON.stringify({
-        title: issueTitle(suggestion),
-        body: issueBody(suggestion),
-        labels: config.labels,
-      }),
-    },
-  );
-
-  if (!response.ok) {
-    const text = await response.text();
-    throw new Error(`GitHub issue create failed (${response.status}): ${text}`);
+  const repoUrl = `https://api.github.com/repos/${config.owner}/${config.repo}`;
+  const headers = {
+    Authorization: `Bearer ${config.token}`,
+    Accept: "application/vnd.github+json",
+    "Content-Type": "application/json",
+    "User-Agent": "front-porch-band",
+  };
+  const repository = await fetch(repoUrl, { headers, redirect: "error" });
+  if (!repository.ok) {
+    throw new Error("Could not verify the suggestion repository.");
   }
 
-  return response.json();
+  const metadata = await repository.json();
+  if (metadata.private !== true || metadata.visibility !== "private" || metadata.archived) {
+    throw new Error("Suggestions require a private, active GitHub repository.");
+  }
+
+  const response = await fetch(`${repoUrl}/issues`, {
+    method: "POST",
+    headers,
+    redirect: "error",
+    body: JSON.stringify({
+      title: issueTitle(suggestion),
+      body: issueBody(suggestion),
+      labels: config.labels,
+    }),
+  });
+  if (!response.ok) {
+    throw new Error("Could not create a private suggestion issue.");
+  }
 }
 
 function toMarkdown({ title, artist, body, submittedAt }) {
@@ -162,41 +146,38 @@ module.exports = async (req, res) => {
   const github = getGitHubConfig();
   if (github) {
     try {
-      const issue = await createGitHubIssue(github, suggestion);
+      await createGitHubIssue(github, suggestion);
       res.status(200).json({
         ok: true,
         storage: "github-issues",
         message: "Sent to the review inbox.",
-        issueNumber: issue.number,
-        issueUrl: issue.html_url,
       });
       return;
-    } catch (error) {
-      res.status(502).json({
-        error: "Could not send that suggestion to GitHub yet.",
-        detail: error.message,
-      });
+    } catch {
+      res.status(503).json({ error: "The private review inbox is unavailable. Please try again later." });
       return;
     }
   }
 
-  const { dir, storage } = pickReviewDir();
+  if (process.env.VERCEL) {
+    res.status(503).json({ error: "The private review inbox is unavailable. Please try again later." });
+    return;
+  }
+
+  const dir = process.env.FRONT_PORCH_SUGGESTIONS_DIR || path.join(process.cwd(), "private-build", "suggestions");
   const stamp = submittedAt.replaceAll(":", "-");
   const label = [artist, title].filter(Boolean).join(" - ") || "song-suggestion";
   const filename = `${stamp}-${slugify(label) || "song-suggestion"}.md`;
   const content = toMarkdown(suggestion);
 
   try {
-    await fs.mkdir(dir, { recursive: true });
-    await fs.writeFile(path.join(dir, filename), content, "utf8");
+    await fs.mkdir(dir, { recursive: true, mode: 0o700 });
+    await fs.writeFile(path.join(dir, filename), content, { encoding: "utf8", mode: 0o600, flag: "wx" });
 
     res.status(200).json({
       ok: true,
-      storage,
-      message:
-        storage === "ephemeral"
-          ? "Saved to the review inbox for now. Add GitHub issue env vars or a durable suggestions directory later."
-          : "Saved to the local review inbox.",
+      storage: "durable",
+      message: "Saved to the local review inbox.",
     });
   } catch {
     res.status(500).json({ error: "Could not save that suggestion yet." });
