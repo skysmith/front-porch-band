@@ -201,23 +201,19 @@ Suggestion inbox
 
 The home screen includes a suggestion box that posts pasted charts to `/api/suggestions` for manual review.
 
-Recommended setup: GitHub Issues
+Hosted setup with a private GitHub inbox
 
-Set these env vars in your host:
+Create a dedicated private repository for reviewing suggestions and set these variables on the host. Use a fine-grained token with Issues read/write on the inbox repository.
 
 ```bash
-FRONT_PORCH_GITHUB_REPO=owner/repo
+FRONT_PORCH_GITHUB_REPO=owner/private-suggestion-inbox
 FRONT_PORCH_GITHUB_TOKEN=github_pat_or_fine_grained_token
 FRONT_PORCH_GITHUB_LABELS=song-suggestion
 ```
 
-Then each suggestion becomes an open labeled issue in that repo.
+The handler verifies that the destination is private before creating an issue. On Vercel, the form requires a working private inbox to accept a submission.
 
-Fallback behavior:
-
-- local/self-hosted without GitHub env vars: suggestions are written to `private-build/suggestions`
-- custom local path: set `FRONT_PORCH_SUGGESTIONS_DIR=/absolute/path`
-- Vercel without GitHub env vars or a durable local directory: submissions fall back to an ephemeral temp folder, which is only useful for testing
+Local and self-hosted installs without GitHub configuration write suggestions to `private-build/suggestions`. Set `FRONT_PORCH_SUGGESTIONS_DIR` to choose a private directory outside the site's served files.
 
 Reviewing GitHub suggestions
 
@@ -230,9 +226,9 @@ node scripts/review-github-suggestions.mjs approve 123 --charts ../charts
 node scripts/review-github-suggestions.mjs reject 123
 ```
 
-Web approval flow
+Repo-native approval flow
 
-If you want to approve from the GitHub web UI instead of the local CLI:
+The following workflow is for deliberately publishing charts in the songbook repository. Review private inbox submissions with the local CLI above.
 
 1. open the suggestion issue
 2. add the `approved-song` label
